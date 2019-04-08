@@ -1,4 +1,4 @@
-package com.techelevator.model;
+package com.techelevator.dao;
 
 import javax.sql.DataSource;
 
