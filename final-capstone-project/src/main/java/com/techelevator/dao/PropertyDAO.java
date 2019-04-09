@@ -8,7 +8,7 @@ public interface PropertyDAO {
 
 	List<Property> searchAvilableProperties();
 
-	Property searchPropertyById(String propertyId);
+	Property searchPropertyById(int propertyId);
 
 	Property searchByZipCode(int zipcode);
 

@@ -6,7 +6,7 @@
 
 	<div class="listingContainer">
 		<div class="listingImage">
-			<c:url var="listingLink" value="/listingDetail">
+			<c:url var="listingLink" value="/propertyDetail">
 				<c:param name="propertyId">${listing.propertyId}</c:param>
 			</c:url>
 			<a href="${listingLink}"> <img

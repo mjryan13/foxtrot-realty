@@ -17,7 +17,24 @@ public class Property {
 	private String city;
 	private String state;
 	private int zipcode;
-	
+	private String propertyName;
+	private boolean offerAvailable;
+
+	public String getPropertyName() {
+		return propertyName;
+	}
+
+	public void setPropertyName(String propertyName) {
+		this.propertyName = propertyName;
+	}
+
+	public boolean isOfferAvailable() {
+		return offerAvailable;
+	}
+
+	public void setOfferAvailable(boolean offerAvailable) {
+		this.offerAvailable = offerAvailable;
+	}
 
 	public String getStreetAddress1() {
 		return streetAddress1;
