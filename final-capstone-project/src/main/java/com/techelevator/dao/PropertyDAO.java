@@ -12,6 +12,8 @@ public interface PropertyDAO {
 
 	List<Property> searchPropertiesByChoice(int zipcode, int numberOfBedrooms);
 	
+	List<Property> sortPropertiesByChoice (String choice);
+	
 	void applyProperty(int propertyId);
 
 	Property searchByBedrooms(int noOfBedrooms);

@@ -24,7 +24,11 @@
 					<c:url var="listingsPage" value="/listings" />
 					<li><a href="${homePage}">Home</a></li>
 					<li><a href="${listingsPage}">Listings</a></li>
-					<li><a href="">About Us</a></li>
+					<li><a href="" >Admin</a></li>
+					<li><a href="" >Property Owners</a></li>
+					<li><a href="" >Tenants</a></li>
+					<c:url var="aboutUs" value="/aboutUs" />
+					<li><a href="${aboutUs}">About Us</a></li>
 				<!-- </ul> -->
 
 <!-- 				<div class="login">

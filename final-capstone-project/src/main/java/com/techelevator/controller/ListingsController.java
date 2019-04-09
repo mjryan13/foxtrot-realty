@@ -43,6 +43,20 @@ public class ListingsController {
 
 	}
 	
+	@RequestMapping(path = "/sortListings", method = RequestMethod.GET)
+	public String showSortListings(ModelMap map, @RequestParam("sortBy") String sortBy) {
+		
+		List<Property> propertiesList = propertyDao.sortPropertiesByChoice(sortBy);
+		//System.out.println(sortBy);
+//		for(Property p: propertiesList) {
+//			System.out.println(p.getZipcode());
+//		}
+		map.addAttribute("listings", propertiesList);
+		return "listingsPage";
+
+	}
+	
+	
 	@RequestMapping(path = "/visitorConfirmation", method = RequestMethod.POST)
 	public String showConfirmation (ModelMap map, @RequestParam("propertyId") int propertyId) {
 		propertyDao.applyProperty(propertyId);
@@ -50,4 +64,10 @@ public class ListingsController {
 		return "confirmationPage";
 
 	}
+	
+	@RequestMapping(path = "/aboutUs", method = RequestMethod.GET)
+	public String showAboutUs () {
+		return "aboutUsPage";
+	}
+	
 }

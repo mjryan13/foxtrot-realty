@@ -143,6 +143,10 @@ INSERT INTO service_request(property_id, description, request_status) VALUES ('1
 //Select * from user;
 //select * from address;
 select * from property;
+update property set property_status = 'available'
+where property_status = 'pending';
+
+Select * from property Order By zipcode DESC
 //select * from payment;
 //select * from service_request;
 

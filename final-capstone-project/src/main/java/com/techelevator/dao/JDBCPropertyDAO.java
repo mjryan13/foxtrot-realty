@@ -48,7 +48,31 @@ public class JDBCPropertyDAO implements PropertyDAO {
 
 		return newProperty;
 	}
+	@Override
+	public List<Property> sortPropertiesByChoice(String choice) {
+		// TODO Auto-generated method stub
+		List<Property> sortProperties = new ArrayList<>();
+		String sqlSelectPropertyBySort;
+		if(choice.equals("zipcode")) {
+			 sqlSelectPropertyBySort= "Select * from property Order By zipcode desc";	
+		} else if (choice.equals("number_of_bedrooms")) {
+			 sqlSelectPropertyBySort= "Select * from property Order By number_of_bedrooms desc";	
+		} else {
+			 sqlSelectPropertyBySort= "Select * from property Order By rent";	
+		}
+		
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPropertyBySort);
 
+		while (results.next()) {
+			sortProperties.add(mapRowToProperty(results));
+		}
+		for (Property p: sortProperties) {
+			System.out.println(p.getZipcode());
+		}
+
+		return  sortProperties;
+	}
+	
 	@Override
 	public List<Property>  searchPropertiesByChoice(int zipcode, int numberOfBedrooms) {
 		// TODO Auto-generated method stub
@@ -81,6 +105,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		jdbcTemplate.update(sqlUpdatePropertyStatus, propertyId);
 		
 	}
+	
 
 	private Property mapRowToProperty(SqlRowSet row) {
 		Property newProperty = new Property();
@@ -105,6 +130,8 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		return newProperty;
 
 	}
+
+	
 
 
 

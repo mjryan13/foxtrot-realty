@@ -2,7 +2,7 @@
 <%@ include file="header.jsp"%>
 
 <div class="listing-main">
-	<c:url var="searchProperties" value="/searchListings" />
+	<%-- <c:url var="searchProperties" value="/searchListings" />
 	<p>Search for Properties:</p>
 	<form class="search" method="GET" action="${searchProperties}">
 		<input type="text" placeholder="Enter Zip..." name="zipcode" id="zipcode" />
@@ -16,6 +16,18 @@
 		<button type="submit" value="Search">
 			<i class="fa fa-search"></i>
 		</button>
+	</form> --%>
+	<c:url var="sortProperties" value="/sortListings" />
+	<form class="sortBy" method="GET" action="${sortProperties}">
+	<label for="sortBy"> Sort By:</label>
+	<select name="sortBy" id="sortBy">
+			<option value="zipcode">Zipcode</option>
+			<option value="number_of_bedrooms">Bedrooms</option>
+			<option value="number_of_bathrooms">Bathrooms</option>
+			<option value="rent">Rent</option>
+		</select>
+		<input type="submit" >
+		
 	</form>
 
 	<c:forEach items="${listings}" var="listing">
@@ -47,7 +59,9 @@
 				<div class="bedrooms">
 					<c:out value="No. of Bedrooms:  ${listing.numberOfBedrooms}" />
 				</div>
-
+                <div class="rent">
+					<c:out value="Rent:  ${listing.rent}" />
+				</div>
 			</div>
 
 		</div>
