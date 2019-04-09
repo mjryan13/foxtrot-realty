@@ -1,6 +1,7 @@
 body {
-	background-color: #ffffff;
-	font-family: sans-serif;
+	background-color: #f9f9f9;
+	/* font-family: sans-serif; */
+	font-family: fantasy;
 }
 
 body, header, nav {
@@ -8,11 +9,16 @@ body, header, nav {
 }
 
 header {
-	background-color: #99ffcc;
-/*  	padding: 10px 10px;*/
+	background-color: #659EC7;
+	margin-bottom: 30px;
 	display: flex;
 	flex-direction: row;
-	width: auto;
+	width: auto; 
+}
+
+.headerTitle img{
+	width: 35%;
+	padding: 10px;
 }
 
 h1 {
@@ -26,22 +32,20 @@ h2 {
 	margin-top: 0%;
 	margin-left: 10%;
 	font-size: 125%;
-}
+}nav {	
 
-nav {	
-/*	margin-bottom: 20px;
-	padding: 5 px;
-	height: 50 px;  */
-	display: flex;
-	flex-direction: row;	
+	background-color: #659EC7;
+	justify-content: right;	
+	margin-left: auto;
+	align-itens: flex-end;
+	padding-right: 10px;
 }
 
 .navBar {
 	display: inline;
 	flex-direction: row;
 	padding-left: 70%;  
-	justify-content: right;
-
+	
 }
 
 .login {
@@ -49,7 +53,7 @@ nav {
 }
 
 ul {	
-	padding-left 4px;
+	padding-left: 10px;
 }
 
 li {
@@ -62,6 +66,11 @@ li a {
 	list-style: none;
 	text-align: center;
 	vertical-align: middle;
+	margin-left: 10px;
+}
+nav li {
+	display: inline-block;
+	justify-content: right;
 }
 
 nav ul li {	
@@ -84,10 +93,37 @@ nav ul li {
 
 footer {
 	text-align: center;
-	background-color: #99ffcc;
-	margin-top: 50%;
+	background-color: #659EC7;
+	margin-top: 20px;
+	margin-bottom: 10px;
 	padding: 5px;
-	height: 50px;
+	height: 40px;
+}
+#main-content {
+	/* display: flex;
+	width: 100%; */
+}
+
+.listing-main {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+  	grid-template-rows: auto;
+}
+
+.listingContainer {	
+	
+	/* padding-left: auto;
+	padding-right: auto; */
+	/* float: left; */
+	
+	text-align: center;
+    margin: 20px;
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	border-radius: 5px;
+	background-color: #F5F5F5;
 }
 
 .browseListings {
@@ -97,25 +133,61 @@ footer {
 }
 
 .listingImage img {
-	height: 50%;
-	width: 30%;
+	height: 80%;
+	width: 80%;
+	padding: 10px;
 }
 
-#main-content {
-	display: flex;
+
+
+.listingInfo {
+	margin-bottom: 10px;
+}
+
+.city{
 	
+/* 	font-family: cursive; */
+	color: gray;
+}
+
+.bedrooms{
+	font-family: serif; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.search input[type=text] {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.search button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.search button:hover {
+  background: #0b7dda;
+}
+
+form.search::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 	
-}
-
-.listingContainer {	
-	/* padding-left: auto;
-	padding-right: auto; */
-	float: left;
-	margin-top: 10%;
-	text-align: center;
-    width: 33.33%; 
-    padding: 5px;
-	border-style: solid;
-}
-
 
