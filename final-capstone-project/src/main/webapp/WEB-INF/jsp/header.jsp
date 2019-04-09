@@ -12,26 +12,30 @@
 <body>
 	<header>
 		<div class="headerTitle">
-			<h1 class="foxtrot">FOXTROT</h1>
-			<h2>REAL   ESTATE</h2>			
-		</div>
-		<div class="navBar">
-			<nav>
+		<c:url var="homePage" value="/" />
+		<c:url value="/img/FoxtrotRE.png" var="homepageImage" />
+		<a href="${homePage}" ><img src="${homepageImage}" alt="Foxtrot Logo"></a>
+			<!-- <h1 class="foxtrot">FOXTROT</h1>
+			<h2>REAL   ESTATE</h2>	 -->		
+ 		</div>
+ <!-- 		<div class="navBar">
+ -->			<nav>
 				<ul>
-					<li><a href="">Home</a></li>
-					<li><a href="">Listings</a></li>
+					<c:url var="listingsPage" value="/listings" />
+					<li><a href="${homePage}">Home</a></li>
+					<li><a href="${listingsPage}">Listings</a></li>
 					<li><a href="">About Us</a></li>
-				</ul>
+				<!-- </ul> -->
 
-				<div class="login">
-					<ul>
+<!-- 				<div class="login">
+ -->					<!-- <ul> -->
 						<li><a href="">Login</a></li>
 						<li><a href="">Register</a></li>
 					</ul>
-				</div>
-			</nav>
-		</div>
-
+<!-- 				</div>
+ -->			</nav>
+<!--  		</div> -->
+ 
 	</header>
 
 	<div id="main-content">

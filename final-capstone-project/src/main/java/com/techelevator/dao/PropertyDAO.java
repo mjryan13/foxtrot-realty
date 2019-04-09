@@ -10,10 +10,12 @@ public interface PropertyDAO {
 
 	Property searchPropertyById(int propertyId);
 
-	Property searchByZipCode(int zipcode);
+	List<Property> searchPropertiesByChoice(int zipcode, int numberOfBedrooms);
+	
+	void applyProperty(int propertyId);
 
 	Property searchByBedrooms(int noOfBedrooms);
-	
+
 	void saveProperty(Property property);
 
 }

@@ -58,6 +58,17 @@ value= "img/${property.propertyId}.jpg" />
 	<div class="zipcode">
 		<c:out value="${property.zipcode}" />
 	</div>
+	
+	<c:url var="visitorConfirmation" value="/visitorConfirmation" />
+	
+	<form class="search" method="POST" action="${visitorConfirmation}">
+		<input type="email" placeholder="Enter your Email.." pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$" size="30" name="email" id="email" required />
+		<input type ="hidden" name="propertyId" value="${property.propertyId}" />
+		
+		<button type="submit" value="Apply Now">
+			<i class="fa fa-search"></i>
+		</button>
+	</form>
 </div>
 
 <%@ include file="footer.jsp"%>

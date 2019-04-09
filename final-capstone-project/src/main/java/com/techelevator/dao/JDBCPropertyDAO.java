@@ -50,9 +50,17 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	}
 
 	@Override
-	public Property searchByZipCode(int zipcode) {
+	public List<Property>  searchPropertiesByChoice(int zipcode, int numberOfBedrooms) {
 		// TODO Auto-generated method stub
-		return null;
+		List<Property> searchProperties = new ArrayList<>();
+		String sqlSelectPropertyBySearch = "Select * from property where zipcode = ? and number_of_bedrooms= ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPropertyBySearch, zipcode, numberOfBedrooms);
+
+		if (results.next()) {
+			searchProperties.add(mapRowToProperty(results));
+		}
+
+		return  searchProperties;
 	}
 
 	@Override
@@ -65,6 +73,13 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	public void saveProperty(Property property) {
 		// TODO Auto-generated method stub
 
+	}
+	@Override
+	public void applyProperty(int propertyId) {
+		// TODO Auto-generated method stub
+		String sqlUpdatePropertyStatus  = "update property set property_status= 'pending' where property_id = ?";
+		jdbcTemplate.update(sqlUpdatePropertyStatus, propertyId);
+		
 	}
 
 	private Property mapRowToProperty(SqlRowSet row) {
@@ -90,5 +105,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		return newProperty;
 
 	}
+
+
 
 }

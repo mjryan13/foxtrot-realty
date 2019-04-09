@@ -34,4 +34,20 @@ public class ListingsController {
 		return "propertyDetail";
 
 	}
+	
+	@RequestMapping(path = "/searchListings", method = RequestMethod.GET)
+	public String showSearchListings(ModelMap map, @RequestParam("zipcode") int zipcode, @RequestParam("numberOfBedrooms") int numberOfBedrooms ) {
+		List<Property> propertiesList = propertyDao.searchPropertiesByChoice(zipcode, numberOfBedrooms);
+		map.addAttribute("searchListings", propertiesList);
+		return "searchListingsPage";
+
+	}
+	
+	@RequestMapping(path = "/visitorConfirmation", method = RequestMethod.POST)
+	public String showConfirmation (ModelMap map, @RequestParam("propertyId") int propertyId) {
+		propertyDao.applyProperty(propertyId);
+
+		return "confirmationPage";
+
+	}
 }

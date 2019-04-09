@@ -44,12 +44,19 @@ CREATE TABLE property
 (
 	property_id serial,
 	square_feet int not null,
+<<<<<<< HEAD
 	property_name varchar(100) not null,
 	offer_available boolean not null,
 	number_of_bedrooms int not null,
 	number_of_bathrooms int not null,
 	rent int not null,
 	property_description varchar(1000) not null,
+=======
+	number_of_bedrooms int not null,
+	number_of_bathrooms int not null,
+	cost int not null,
+	proprty_description varchar(1000) not null,
+>>>>>>> 1615c070e627da8e3590b83acbb924a7973fc46c
 	property_type varchar(100) not null,
 	property_status varchar(100) not null, 
 	user_id int not null,
@@ -86,6 +93,7 @@ CREATE TABLE service_request
 
 
 
+
 	
 --populate data
 INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email) VALUES ('John', 'Smith', 'smith1', 'password', 'admin', '6142225656', 'john1@gmail.com');
@@ -111,6 +119,32 @@ INSERT INTO payment(rent, property_id) VALUES ('1000', '1');
 INSERT INTO service_request(property_id, description, request_status) VALUES ('1', 'Great room electric sockets are not working', 'pending');
 INSERT INTO service_request(property_id, description, request_status) VALUES ('1', 'Garbage disposal is not working', 'done');
 
+
+=======
+
+	
+--populate data
+INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email) VALUES ('John', 'Smith', 'smith1', 'password', 'admin', '6142225656', 'john1@gmail.com');
+
+
+INSERT INTO address(street_name1, street_name2, city, state,  zipcode) VALUES ('1212 Kinnear Road', 'rev1 Building', 'Columbus', 'Ohio', '43015');
+
+
+INSERT INTO property ( square_feet, number_of_bedrooms, number_of_bathrooms, cost, proprty_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
+VALUES ('2000', '3', '2', '1200', 'Come home to Orange Woods, a charming apartment home community in Lewis Center, Ohio. Situated on a wood-lined street, we offer the feel of rural living while still having the conveniences of a big city.', 'Apartment', 'available', '1', '1', '1212 Polaris Road', 'Polaris Apartment', 'Columbus', 'Ohio', '43081');
+
+INSERT INTO payment(rent, property_id) VALUES ('1200', '1');
+	
+INSERT INTO service_request(property_id, description, request_status) VALUES ('1', 'Great room electric sockets are not working', 'pending');
+
+
+----- SQL queries
+
+//Select * from user;
+//select * from address;
+select * from property;
+//select * from payment;
+//select * from service_request;
 
 
 

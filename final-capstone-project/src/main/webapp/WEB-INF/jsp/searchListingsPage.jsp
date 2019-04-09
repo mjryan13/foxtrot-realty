@@ -1,24 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="header.jsp"%>
 
-<div class="listing-main">
-	<c:url var="searchProperties" value="/searchListings" />
-	<p>Search for Properties:</p>
-	<form class="search" method="GET" action="${searchProperties}">
-		<input type="text" placeholder="Enter Zip..." name="zipcode" id="zipcode" />
-		
-		<select name="numberOfBedrooms" id="numberOfBedrooms">
-			<option value="0">Studio</option>
-			<option value="1">1 Bedroom</option>
-			<option value="2">2 Bedrooms</option>
-			<option value="3">3 Bedrooms</option>
-		</select>
-		<button type="submit" value="Search">
-			<i class="fa fa-search"></i>
-		</button>
-	</form>
-
-	<c:forEach items="${listings}" var="listing">
+<c:forEach items="${searchListings}" var="listing">
 		<div class="listingContainer">
 			<div class="listingImage">
 				<c:url var="listingLink" value="/propertyDetail">
@@ -53,10 +36,6 @@
 		</div>
 	</c:forEach>
 
-</div>
+
 
 <%@ include file="footer.jsp"%>
-
-
-
-
