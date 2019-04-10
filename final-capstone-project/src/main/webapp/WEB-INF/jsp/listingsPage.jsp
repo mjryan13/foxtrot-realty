@@ -1,6 +1,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="header.jsp"%>
 
+<c:url var="sortProperties" value="/sortListings" />
+
+<div class="sortBy">
+	<form class="sortBy" method="GET" action="${sortProperties}">
+		<label for="sortBy"> Sort By:</label> <select name="sortBy"
+			id="sortBy">
+			<option value="zipcode">Zipcode</option>
+			<option value="number_of_bedrooms">Bedrooms</option>
+			<option value="rent">Rent</option>
+		</select> <input type="submit" value="Search">
+
+	</form>
+</div>
 <div class="listing-main">
 	<%-- <c:url var="searchProperties" value="/searchListings" />
 	<p>Search for Properties:</p>
@@ -17,18 +30,7 @@
 			<i class="fa fa-search"></i>
 		</button>
 	</form> --%>
-	<c:url var="sortProperties" value="/sortListings" />
-	<form class="sortBy" method="GET" action="${sortProperties}">
-	<label for="sortBy"> Sort By:</label>
-	<select name="sortBy" id="sortBy">
-			<option value="zipcode">Zipcode</option>
-			<option value="number_of_bedrooms">Bedrooms</option>
-			<option value="number_of_bathrooms">Bathrooms</option>
-			<option value="rent">Rent</option>
-		</select>
-		<input type="submit" >
-		
-	</form>
+
 
 	<c:forEach items="${listings}" var="listing">
 		<div class="listingContainer">
@@ -59,8 +61,8 @@
 				<div class="bedrooms">
 					<c:out value="No. of Bedrooms:  ${listing.numberOfBedrooms}" />
 				</div>
-                <div class="rent">
-					<c:out value="Rent:  ${listing.rent}" />
+				<div class="rent">
+					<c:out value="Rent: $ ${listing.rent}" />
 				</div>
 			</div>
 
