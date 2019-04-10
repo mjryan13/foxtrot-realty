@@ -26,7 +26,8 @@
 					<li><a href="${listingsPage}">Listings</a></li>
 					<li><a href="" >Admin</a></li>
 					<li><a href="" >Property Owners</a></li>
-					<li><a href="" >Tenants</a></li>
+					<c:url var="tenantsPage" value="/tenants" />
+					<li><a href="${tenantsPage}" >Tenants</a></li>
 					<c:url var="aboutUs" value="/aboutUs" />
 					<li><a href="${aboutUs}">About Us</a></li>
 				<!-- </ul> -->
