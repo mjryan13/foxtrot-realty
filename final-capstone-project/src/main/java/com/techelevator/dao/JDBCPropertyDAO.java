@@ -67,7 +67,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 			sortProperties.add(mapRowToProperty(results));
 		}
 		for (Property p: sortProperties) {
-			System.out.println(p.getZipcode());
+		
 		}
 
 		return  sortProperties;

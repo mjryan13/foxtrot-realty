@@ -235,4 +235,39 @@ form.search::after {
 	text-align: center;
 	
 }
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+}
+.rentContainer{
+	text-align: center;
+	grid-column-start: 2;
+	grid-column-end: 2;
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	border-radius: 5px;
+	background-color: #F5F5F5;
+	margin-bottom: 20px;
+}
+.rentContainer input[type=submit] {
+	width: 10em;
+	height: 10em;
+}
 
+.serviceRequestContainer input[type=submit]{
+	width: 17em;
+	height: 15em;
+}
+
+.serviceRequestContainer{
+	text-align: center;
+    grid-column-start: 2;
+	grid-column-end: 2;
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	border-radius: 5px;
+	background-color: #F5F5F5;
+}
