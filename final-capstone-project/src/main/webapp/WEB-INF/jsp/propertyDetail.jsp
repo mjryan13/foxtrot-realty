@@ -59,11 +59,11 @@ value= "img/${property.propertyId}.jpg" />
 	<div class="zipcode">
 		<c:out value="${property.zipcode}" />
 	</div>
-	
+	<br>
 	<c:url var="application" value="/application" />
 	
 	<div class="applyNow">
-	<form class="search" method="POST" action="${application}">
+	<form class="search" method="GET" action="${application}">
 	  
 	     <!-- <h3>Enter your email below to Apply</h3>
 	     

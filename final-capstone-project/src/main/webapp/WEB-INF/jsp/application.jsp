@@ -4,6 +4,7 @@
 <div class="application">
 
 	<div class="applicationForm">
+
 	<c:url var="confirmationPage" value="/submitApplication" />
 	<form class="apply" method="POST" action="${confirmationPage}">
 	  
@@ -62,9 +63,7 @@
 			</div>
 			
 			<button type="submit" class="btn btn-primary">Submit Application</button>
-		
-	
-</form>
+	</form>	
 </div>
 </div>
 

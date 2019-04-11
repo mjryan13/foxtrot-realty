@@ -41,37 +41,39 @@
 <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 	<div class="register-page">
 		<h1 style="margin-left:0px"> Register </h1>
+		<br>
 		<div class="form-group">
-				<label for="firstName">First Name: </label>
+				<label for="firstName" style="margin-right:15px">First Name: </label>
 				<input type="text" id="firstName" name="firstName" placeHolder="First Name" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="lastName">Last Name: </label>
+				<label for="lastName" style="margin-right:15px">Last Name: </label>
 				<input type="text" id="lastName" name="lastName" placeHolder="Last Name" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="userName">User Name: </label>
+				<label for="userName" style="margin-right:15px">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="password">Password: </label>
+				<label for="password" style="margin-right:15px">Password: </label>
 				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="confirmPassword">Confirm Password: </label>
+				<label for="confirmPassword" style="margin-right:15px">Confirm Password: </label>
 				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
 			</div>
 			<div class="form-group">
-				<label for="phoneNumber">Phone Number: </label>
+				<label for="phoneNumber" style="margin-right:15px">Phone Number: </label>
 				<input type="tel" id="phoneNumber" name="phoneNumber" placeHolder="Phone Number" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="emailId">Email: </label>
+				<label for="emailId" style="margin-right:15px">Email: </label>
 				<input type="email" id="emailId" name="emailId" placeHolder="Email" class="form-control" />
 			</div>
 			<div>
+			<label for="role" style="margin-right:15px">Role: </label>
 			<select name="role">
-			<option value="tenant">Tenant</option>
+			<option value="tenant" >Tenant</option>
 			<option value="owner">Property Owner</option>
 			</select>
 			</div>
