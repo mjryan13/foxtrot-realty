@@ -10,16 +10,17 @@ value= "img/${property.propertyId}.jpg" />
 
 <img alt="Property Detail Img" src="${imageLink}" /> 
 </div>
-	<div class="offerAvailable">
+
+	<div class="details">
 	<c:choose>
 	 <c:when test="${property.offerAvailable == true }">
-	  <p> Special offer: Get $100 off when you sign within a week!!</p>
+	  <p style="margin-top: 0px; color:red"> Special offer: Get $100 off when you sign within a week!!</p>
 		</c:when>
 		<c:otherwise>
 		</c:otherwise>
 		
 		</c:choose>
-	</div>
+	
 	<div class="propertyName">
 		<c:out value="${property.propertyName}" />
 	</div>
@@ -30,10 +31,10 @@ value= "img/${property.propertyId}.jpg" />
 		<p> Property Type: <c:out value="${property.propertyType}" /> </p>
 	</div>
 	<div class=rent>
-		<p> Rent: <c:out value="${property.rent}" /> </p>
+		<p> Rent: <c:out value="$ ${property.rent}" /> </p>
 	</div>
 	<div class="squareFootage">
-		<p> Square Feet: <c:out value="${property.squareFootage}" /> </p>
+		<p> Square Feet: <c:out value="${property.squareFootage} sq. ft." /> </p>
 	</div>
 	<div class="numberOfBedrooms">
 		<p> No. of Bedrooms: <c:out value="${property.numberOfBedrooms}" /> </p>
@@ -61,14 +62,22 @@ value= "img/${property.propertyId}.jpg" />
 	
 	<c:url var="visitorConfirmation" value="/visitorConfirmation" />
 	
+	<div class="applyNow">
 	<form class="search" method="POST" action="${visitorConfirmation}">
+	  
+	     <h3>Enter your email below to Apply</h3>
+	     
 		<input type="email" placeholder="Enter your Email.." size="30" name="email" id="email" required />
 		<input type ="hidden" name="propertyId" value="${property.propertyId}" />
 		
-		<button type="submit" value="Apply Now">
+		
+		<input type="submit" value="Apply Now">
 			<i class="fa fa-search"></i>
-		</button>
+		</input>
+		
 	</form>
+	</div>
+</div>
 </div>
 
 <%@ include file="footer.jsp"%>

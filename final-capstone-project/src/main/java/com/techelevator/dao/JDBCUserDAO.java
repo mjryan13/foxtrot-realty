@@ -24,26 +24,28 @@ public class JDBCUserDAO implements UserDAO {
 	}
 	
 	@Override
-	public void saveUser(String userName, String password) {
+	public void saveUser(User user) {
 		byte[] salt = hashMaster.generateRandomSalt();
-		String hashedPassword = hashMaster.computeHash(password, salt);
+		String hashedPassword = hashMaster.computeHash(user.getPassword(), salt);
 		String saltString = new String(Base64.encode(salt));
-		
-		jdbcTemplate.update("INSERT INTO app_user(user_name, password, salt) VALUES (?, ?, ?)",
-				userName, hashedPassword, saltString);
+//		user.setUserID(getNextUserId());
+		jdbcTemplate.update("INSERT INTO users(first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+				user.getFirstName(), user.getLastName(), user.getUserName(), hashedPassword, user.getRole(), user.getPhoneNumber(), user.getEmailId(), saltString);
 	}
 
 	@Override
 	public boolean searchForUsernameAndPassword(String userName, String password) {
 		String sqlSearchForUser = "SELECT * "+
-							      "FROM app_user "+
+							      "FROM users "+
 							      "WHERE UPPER(user_name) = ? ";
-		
+		System.out.println(userName + " "+password);
 		SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUser, userName.toUpperCase());
 		if(user.next()) {
 			String dbSalt = user.getString("salt");
 			String dbHashedPassword = user.getString("password");
+			System.out.println(dbHashedPassword);
 			String givenPassword = hashMaster.computeHash(password, Base64.decode(dbSalt));
+			System.out.println(givenPassword);
 			return dbHashedPassword.equals(givenPassword);
 		} else {
 			return false;
@@ -56,9 +58,9 @@ public class JDBCUserDAO implements UserDAO {
 	}
 
 	@Override
-	public Object getUserByUserName(String userName) {
+	public User getUserByUserName(String userName) {
 		String sqlSearchForUsername ="SELECT * "+
-		"FROM app_user "+
+		"FROM users "+
 		"WHERE UPPER(user_name) = ? ";
 
 		SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUsername, userName.toUpperCase()); 
@@ -71,5 +73,15 @@ public class JDBCUserDAO implements UserDAO {
 
 		return thisUser;
 	}
+	
+//	private int getNextUserId() {
+//		SqlRowSet nextIdResult = jdbcTemplate.queryForRowSet("SELECT nextval('seq_user_id')");
+//		if(nextIdResult.next()) {
+//			return nextIdResult.getInt(1);
+//		} else {
+//			throw new RuntimeException("Something went wrong while getting an id for the new city");
+//		}
+//	}
+
 
 }

@@ -26,19 +26,23 @@
 					<li><a href="${listingsPage}">Listings</a></li>
 					<li><a href="" >Admin</a></li>
 					<li><a href="" >Property Owners</a></li>
-					<li><a href="" >Tenants</a></li>
+					<c:url var="tenantsPage" value="/tenants" />
+					<li><a href="${tenantsPage}" >Tenants</a></li>
 					<c:url var="aboutUs" value="/aboutUs" />
 					<li><a href="${aboutUs}">About Us</a></li>
 				<!-- </ul> -->
 
 <!-- 				<div class="login">
  -->					<!-- <ul> -->
-						<li><a href="">Login</a></li>
-						<li><a href="">Register</a></li>
+ 						<c:url var="login" value="/login" />
+						<li><a href="${login}">Login</a></li>
+						
+						<c:url var="register" value="/users/new" />
+						<li><a href="${register}">Register</a></li>
 					</ul>
-<!-- 				</div>
- -->			</nav>
-<!--  		</div> -->
+
+ 			</nav>
+
  
 	</header>
 
