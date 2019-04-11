@@ -66,7 +66,7 @@ public class ListingsController {
 
 	}
 	
-	@RequestMapping(path = "/application", method = RequestMethod.POST)
+	@RequestMapping(path = "/application", method = RequestMethod.GET)
 	public String showApplication (ModelMap map, @RequestParam("propertyId") int propertyId) {
             
 		return "application";
