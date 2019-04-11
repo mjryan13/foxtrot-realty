@@ -1,8 +1,10 @@
 package com.techelevator.dao;
 
+import com.techelevator.model.User;
+
 public interface UserDAO {
 
-	public void saveUser(String userName, String password);
+	public void saveUser(User user);
 
 	public boolean searchForUsernameAndPassword(String userName, String password);
 

@@ -34,8 +34,11 @@
 
 <!-- 				<div class="login">
  -->					<!-- <ul> -->
-						<li><a href="">Login</a></li>
-						<li><a href="">Register</a></li>
+ 						<c:url var="login" value="/login" />
+						<li><a href="${login}">Login</a></li>
+						
+						<c:url var="register" value="/users/new" />
+						<li><a href="${register}">Register</a></li>
 					</ul>
 
  			</nav>
