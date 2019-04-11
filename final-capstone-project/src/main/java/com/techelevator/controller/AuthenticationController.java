@@ -33,12 +33,14 @@ public class AuthenticationController {
 						HttpSession session) {
 		if(userDAO.searchForUsernameAndPassword(userName, password)) {
 			session.setAttribute("currentUser", userDAO.getUserByUserName(userName));
-			
+		
+	
 			if(destination != null && ! destination.isEmpty()) {
 				return "redirect:" + destination;
 			} else {
 				return "redirect:/users/"+userName;
 			}
+			
 		} else {
 			return "redirect:/login";
 		}
