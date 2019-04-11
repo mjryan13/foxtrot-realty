@@ -60,14 +60,14 @@ value= "img/${property.propertyId}.jpg" />
 		<c:out value="${property.zipcode}" />
 	</div>
 	
-	<c:url var="visitorConfirmation" value="/visitorConfirmation" />
+	<c:url var="application" value="/application" />
 	
 	<div class="applyNow">
-	<form class="search" method="POST" action="${visitorConfirmation}">
+	<form class="search" method="POST" action="${application}">
 	  
-	     <h3>Enter your email below to Apply</h3>
+	     <!-- <h3>Enter your email below to Apply</h3>
 	     
-		<input type="email" placeholder="Enter your Email.." size="30" name="email" id="email" required />
+		<input type="email" placeholder="Enter your Email.." size="30" name="email" id="email" required /> -->
 		<input type ="hidden" name="propertyId" value="${property.propertyId}" />
 		
 		

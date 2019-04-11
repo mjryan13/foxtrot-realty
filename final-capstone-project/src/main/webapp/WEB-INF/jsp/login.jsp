@@ -26,12 +26,13 @@
 	});
 </script>
 
-<div >
+<div class="loginPage">
 	<div>
 		<c:url var="formAction" value="/login" />
 		<form method="POST" action="${formAction}">
 		<input type="hidden" name="destination" value="${param.destination}"/>
 			<div class="form-group">
+			<h1 style="margin-left: 0px">Login</h1>
 				<label for="userName">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
 			</div>

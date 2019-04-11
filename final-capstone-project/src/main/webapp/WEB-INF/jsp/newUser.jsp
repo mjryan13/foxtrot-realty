@@ -1,4 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="header.jsp"%>
 
 <script type="text/javascript">
 	$(document).ready(function () {
@@ -38,8 +39,16 @@
 <c:url var="formAction" value="/users" />
 <form method="POST" action="${formAction}">
 <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
-	<div>
-		<div>
+	<div class="register-page">
+		<h1 style="margin-left:0px"> Register </h1>
+		<div class="form-group">
+				<label for="firstName">First Name: </label>
+				<input type="text" id="firstName" name="firstName" placeHolder="First Name" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label for="lastName">Last Name: </label>
+				<input type="text" id="lastName" name="lastName" placeHolder="Last Name" class="form-control" />
+			</div>
 			<div class="form-group">
 				<label for="userName">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
@@ -52,8 +61,25 @@
 				<label for="confirmPassword">Confirm Password: </label>
 				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
 			</div>
+			<div class="form-group">
+				<label for="phoneNumber">Phone Number: </label>
+				<input type="tel" id="phoneNumber" name="phoneNumber" placeHolder="Phone Number" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label for="emailId">Email: </label>
+				<input type="email" id="emailId" name="emailId" placeHolder="Email" class="form-control" />
+			</div>
+			<div>
+			<select name="role">
+			<option value="tenant">Tenant</option>
+			<option value="owner">Property Owner</option>
+			</select>
+			</div>
+			
 			<button type="submit" class="btn btn-primary">Create User</button>
 		</div>
-	</div>
+	
 </form>
+
+<%@ include file="footer.jsp"%>
 		

@@ -3,7 +3,7 @@ body {
 	/* font-family: sans-serif; */
 	font-family: fantasy;
 	margin: 0px;
-	min-height: 100%;
+	min-height: auto;
 	
 }
 
@@ -13,14 +13,14 @@ body, header, nav {
 	
 }
 
-header {
+/* header {
 	background-color: #659EC7;
 	margin-bottom: 30px;
 	display: flex;
 	flex-direction: row;
 	width: auto;
 	position: relative;
-}
+} */
 
 .headerTitle img{
 	width: 35%;
@@ -87,15 +87,16 @@ nav ul li {
 .homePageDesc1 {
 	text-align: center;
 	font-size: 400%;
+	font-weight: 900;
 }
 
 .homePageDesc2 {
 	text-align: center;
 	font-size: 200%;
 	font-style: italic;
+	z-index: 99;
+	position: relative;
 }
-
-
 
 footer {
 	text-align: center;
@@ -105,7 +106,7 @@ footer {
 	padding: 5px;
 	height: 100px;
 	width: 100%;
-	
+	position: relative;	
 }
 
 .copyright {
@@ -115,6 +116,10 @@ footer {
 	/* display: flex;
 	width: 100%; */
 }
+
+
+
+/* Listing Page Main */
 
 .listing-main {
 	width: 100%;
@@ -227,6 +232,11 @@ form.search button:hover {
 .propertyName {
 	font-weight: bold;
 }
+
+.applyNow input[type=submit]{
+	height: 5em;
+	width: 10em;
+}
 .aboutUs{
 	padding: 20px;
 	
@@ -236,25 +246,31 @@ form.search button:hover {
 	text-align: center;
 	
 }
-.container {
+
+/*------- Pay Rent / Request Service -------*/
+
+
+
+/* .container {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr; */
+	/* grid-template-rows: 1fr 1fr; */
 }
 .rentContainer{
-	text-align: center;
+	/* text-align: center;
 	grid-column-start: 2;
-	grid-column-end: 2;
-	border-style: solid;
+	grid-column-end: 2; */
+	/* border-style: solid;
 	border-color: gray;
 	border-width: 1px;
 	border-radius: 5px;
 	background-color: #F5F5F5;
-	margin-bottom: 20px;
+	margin-bottom: 20px; */
 }
+
 .rentContainer input[type=submit] {
-	width: 10em;
-	height: 10em;
+	width: 12em;
+	height: 10px;
 }
 
 .serviceRequestContainer input[type=submit]{
@@ -265,20 +281,38 @@ form.search button:hover {
 .serviceRequestContainer{
 	text-align: center;
     grid-column-start: 2;
-	grid-column-end: 2;
+/* 	grid-column-end: 2;
 	border-style: solid;
 	border-color: gray;
 	border-width: 1px;
 	border-radius: 5px;
-	background-color: #F5F5F5;
+	background-color: #F5F5F5; */
 }
 
 
-/* --------------- */
+/* ------- Slide Show -------- */
+.display-container {
+	display: flex;
+	justify-content: center;
+}
 
 .container{
 	position: relative;
 	text-align: center;
+ 	background: rgb(255,255,255,0.5);
+ /* 	background: rgb(255,255,255); */
+ 	
+	/* opacity: 0.5;  */
+	margin-top: 5%;
+	border-radius: 6px;
+	padding: 15px;
+	
+	/* color: black;
+	background: gray; */
+	
+	
+	
+	
 }
 
 .container > h1{
@@ -624,31 +658,54 @@ form.search button:hover {
 	}
 	100% { opacity: 0 }
 }
-
 header {
-	position : relative;
-}
-
-footer {
-	position : relative;
-}
-
-header
-{
-    /* ... */
+	background-color: #659EC7;
+	margin-bottom: 30px;
+	display: flex;
+	flex-direction: row;
+	width: auto;
+	position: relative;
     z-index: 99;
 }
+
+/*------ Tenant Page ------*/
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  padding-left: 10px;
 }
 
-=======
-.serviceRequestContainer{
-	text-align: center;
-    grid-column-start: 2;
-	grid-column-end: 2;
-	border-style: solid;
-	border-color: gray;
-	border-width: 1px;
-	border-radius: 5px;
-	background-color: #F5F5F5;
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
 }
->>>>>>> 987e6f0250599f811f2a877537e6a734bfeb0fc3
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+
+}
+
+.loginPage {
+	text-align: center;
+}
+
+/*------ Register Page ------*/
+.register-page {
+	text-align: center;
+}
