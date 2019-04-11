@@ -702,9 +702,6 @@ header {
 
 }
 
-.loginPage {
-
-
 .serviceRequestContainer{
 	text-align: center;
 }
@@ -714,4 +711,25 @@ header {
 .register-page {
 	text-align: center;
 }
+
+/*------ Application Page ------*/
+
+
+
+.application {
+	text-align: center;
+}
+
+label {
+    display: inline-block;
+    width:140px;;
+    text-align: right;
+}
+
+/*------ Login Page ------*/
+
+.loginPage {
+	text-align: center;
+}
+
 

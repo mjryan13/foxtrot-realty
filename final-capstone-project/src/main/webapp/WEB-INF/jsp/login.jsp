@@ -33,13 +33,15 @@
 		<input type="hidden" name="destination" value="${param.destination}"/>
 			<div class="form-group">
 			<h1 style="margin-left: 0px">Login</h1>
-				<label for="userName">User Name: </label>
+			<br>
+				<label for="userName" style="margin-right: 5px">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="password">Password: </label>
+				<label for="password" style="margin-right: 5px">Password: </label>
 				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" />
 			</div>
+			
 			<button type="submit" class="btn btn-primary">Login</button>
 		</form>
 	</div>
