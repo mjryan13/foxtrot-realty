@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -15,6 +15,7 @@
 	<header>
 		<div class="headerTitle">
 			<c:url var="homePage" value="/" />
+			<c:url var="logout" value="/logout" />
 			<c:url value="/img/FoxtrotRE.png" var="homepageImage" />
 			<a href="${homePage}"><img src="${homepageImage}"
 				alt="Foxtrot Logo"></a>
@@ -22,10 +23,12 @@
 		<nav>
 			<ul>
 			<li><a href="${homePage}">Home</a></li>
-			<li><a href="">Logout</a></li>
+			<li><a href="${logout}">Logout</a></li>
 			</ul>
 
 		</nav>
+
+
 	</header>
 
 	<div id="main-content">
@@ -43,21 +46,23 @@
 		<div id="payRent" class="tabcontent">
 			<div class="rentContainer">
 				<h1 style="margin-left: 0px">Pay Rent</h1>
-				<h3>
-					Rent for this property:
-					<c:out value="${rent}" />
-				</h3>
+				<c:out value="Community: ${property.propertyName}"/></br>
+				<c:out value="Rent: ${property.rent}"/>
+					
+				
 
-				<c:url var="tenantsHomeUrl" value="/tenants" />
+				<c:url var="tenantsHomeUrl" value="/tenantsPayRent" />
 
 				<form action="${tenantsHomeUrl}" method="POST">
 
-					<label for="propertyName">Property Name:</label>
-					 <input type="text"  name="propertyName" style="margin-left: 5px" /><br /> 
-						<label for="rent">Rent Amount: </label> 
-						<input type="text" name="rent" style="margin-left: 5px" /><br> 
+					<label for="creditCardNumber">Credit Card Number:</label>
+					 <input type="text"  name="creditCardNumber" style="margin-left: 5px" /><br /> 
+						<label for="expiryDate">Expiry Date: </label> 
+						<input type="text" name="expiryDate" style="margin-left: 5px" /><br> 
+						<label for="CVV">CVV: </label> 
+						<input type="text" name="CVV" style="margin-left: 5px" /><br> 
 						<br>
-						<input type="submit" value="Pay Rent" />
+						<input type="submit" value="Submit Payment" />
 
 				</form>
 			</div>
@@ -68,16 +73,15 @@
 
 				<h1 style="margin-left: 0px">Service Request</h1>
 				
-				<c:url var="tenantsHomeUrl" value="/tenants" />
+				<c:url var="tenantsHomeUrl" value="/tenantsServiceRequest" />
 				<br>
 				<form action="${tenantsHomeUrl}" method="POST">
 
-					<label for="Confirm Address">Confirm Address: </label> 
-					<input type="text" name="propertyId" style="margin-left: 5px" /><br>
+					
 
-					<!-- <label for="description">Description:</label> -->
+					<label for="description">Service Description:</label> 
 					<br>
-					<textarea placeholder="Description..." rows="4" cols="50"
+					<textarea placeholder="Service Description..." rows="4" cols="50"
 						name="description" style="margin-left: 5px"></textarea>
 					<br />
 					<br>

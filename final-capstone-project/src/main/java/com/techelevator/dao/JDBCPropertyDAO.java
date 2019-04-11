@@ -48,6 +48,21 @@ public class JDBCPropertyDAO implements PropertyDAO {
 
 		return newProperty;
 	}
+	
+	@Override
+	public Property getRentInformation(String userName) {
+		Property newProperty = null;
+		String sqlGetRent = "select property.* from property join users on property.user_id = users.user_id where users.user_name = ?";
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlGetRent, userName);
+		if (result.next()) {
+			newProperty = mapRowToProperty(result);
+		}
+		System.out.println(newProperty.getRent());
+		System.out.println(userName);
+		return newProperty;
+		
+	}
+	
 	@Override
 	public List<Property> sortPropertiesByChoice(String choice) {
 		// TODO Auto-generated method stub

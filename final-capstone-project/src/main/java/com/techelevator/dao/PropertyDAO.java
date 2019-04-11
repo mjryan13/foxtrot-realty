@@ -9,6 +9,8 @@ public interface PropertyDAO {
 	List<Property> searchAvilableProperties();
 
 	Property searchPropertyById(int propertyId);
+	
+	Property getRentInformation(String userName);
 
 	List<Property> searchPropertiesByChoice(int zipcode, int numberOfBedrooms);
 	

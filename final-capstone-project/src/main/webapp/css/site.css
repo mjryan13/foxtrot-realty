@@ -695,6 +695,7 @@ header {
   background-color: #ccc;
 }
 
+
 .tabcontent {
   display: none;
   padding: 6px 12px;
@@ -702,10 +703,15 @@ header {
 }
 
 .loginPage {
+
+
+.serviceRequestContainer{
 	text-align: center;
 }
+
 
 /*------ Register Page ------*/
 .register-page {
 	text-align: center;
 }
+

@@ -31,11 +31,11 @@ public class ServiceRequest {
 		this.description = description;
 	}
 
-	public String getRequest_status() {
+	public String getRequestStatus() {
 		return requestStatus;
 	}
 
-	public void setRequest_status(String requestStatus) {
+	public void setRequestStatus(String requestStatus) {
 		this.requestStatus = requestStatus;
 	}
 
