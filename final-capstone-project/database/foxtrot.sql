@@ -86,13 +86,14 @@ CREATE TABLE service_request
 	property_id int not null,
 	description varchar(300) not null,
 	request_status varchar(100) not null,
+	user_id int not null,
 	
-          constraint fk_property_id foreign key (property_id) references property(property_id)
-	
+          constraint fk_property_id foreign key (property_id) references property(property_id),
+	 constraint fk_user_id foreign key (user_id) references users(user_id)
 	);
 
 
-
+select * from service_request;
 
 	
 --populate data
@@ -135,9 +136,9 @@ VALUES ('2000', '3', '2', '1200', 'Come home to Orange Woods, a charming apartme
 
 INSERT INTO payment(rent, property_id) VALUES ('1200', '1');
 	
-INSERT INTO service_request(property_id, description, request_status) VALUES ('1', 'Great room electric sockets are not working', 'pending');
+INSERT INTO service_request(property_id, description, request_status,  user_id) VALUES ('1', 'Great room electric sockets are not working', 'pending', '2');
 
-
+INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Great room electric sockets are not working', 'pending', '1');
 ----- SQL queries
 
 //Select * from user;
