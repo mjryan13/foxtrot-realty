@@ -5,19 +5,13 @@
 BEGIN;
 
 -- destroy old tables so we can recreate them from scratch
-<<<<<<< HEAD
-=======
 DROP TABLE IF EXISTS application;
->>>>>>> a6d440adc9faace350b4cb5ba7300dc2a2178309
 DROP TABLE IF EXISTS service_request;
 DROP TABLE IF EXISTS payment;
 DROP TABLE IF EXISTS property;
 DROP TABLE IF EXISTS address;
 DROP TABLE IF EXISTS users;
-<<<<<<< HEAD
-=======
 
->>>>>>> a6d440adc9faace350b4cb5ba7300dc2a2178309
 
 
 CREATE TABLE users
@@ -91,8 +85,6 @@ CREATE TABLE service_request
         constraint fk_property_id foreign key (property_id) references property(property_id),
         constraint fk_user_id foreign key (user_id) references users(user_id)
 );
-<<<<<<< HEAD
-=======
 
 CREATE TABLE application
 (
@@ -116,7 +108,6 @@ CREATE TABLE application
         constraint fk_property_id foreign key (property_id) references property(property_id)
 );
 
->>>>>>> a6d440adc9faace350b4cb5ba7300dc2a2178309
 
 
 
@@ -127,10 +118,7 @@ INSERT INTO users ( first_name, last_name, user_name, password, role, phone_numb
 INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('John', 'Smith', 'SMITH2', 'password', 'tenant', '6142225656', 'john2@gmail.com', 'test');
 INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Andrew', 'Smith', 'ANDREW', 'password', 'admin', '6142225656', 'andrew@gmail.com', 'test');
 INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('John', 'Smith', 'SMITH3', 'password', 'owner', '6142225656', 'john3@gmail.com', 'test');
-<<<<<<< HEAD
-=======
 INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Nikki', 'Smith', 'Manisha', 'O6DBAoCmMb2MfqO99yr8ew==', 'tenant', '6142225656', 'john3@gmail.com', 'MR9aELVtkW1Pwe2PSpSdh1B4nLUNtJHY6nciNruecqSK9Rp179Lq7+Nq8NM0R6DG9QN51sHHvGg+cMmwoay2bqQrqpP6s6YyfokdVJPOD2PvUZZcofCFT7x2tW6jzhNpTSSaEsgSJBMjGjj7eRMDuqLoMt7PwoejzceqpzzGViU=');
->>>>>>> a6d440adc9faace350b4cb5ba7300dc2a2178309
 
 INSERT INTO address(street_name1, street_name2, city, state,  zipcode) VALUES ('1212 Kinnear Road', 'rev1 Building', 'Columbus', 'Ohio', '43015');
 
@@ -144,30 +132,16 @@ VALUES ('1500', 'Swamill Square', 'no', '2', '2', '1000', 'Situated on a wood-li
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
 VALUES ('950',  'Hiliard Square', 'yes', '1', '1', '900', 'Beautiful Apartments for Singles', 'Apartment', 'available', '3', '1', '101 Robert Road', 'Swamill', 'Hiliard', 'Ohio', '43018');
 
-<<<<<<< HEAD
-=======
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
 VALUES ('950',  'Hiliard Square', 'yes', '1', '1', '800', 'Beautiful Apartments for Singles', 'Apartment', 'available', '5', '1', '101 Robert Road', 'Swamill', 'Hiliard', 'Ohio', '43018');
 
->>>>>>> a6d440adc9faace350b4cb5ba7300dc2a2178309
 
 INSERT INTO payment(rent, property_id) VALUES ('1200', '1');
 INSERT INTO payment(rent, property_id) VALUES ('1000', '2');
 INSERT INTO payment(rent, property_id) VALUES ('2000', '3');
 	
-<<<<<<< HEAD
 
 INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Great room electric sockets are not working', 'pending', '1');
-
-
-
-
-SELECT * FROM users 
-		WHERE UPPER (user_name) = 'Manisha'
-=======
-
-INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Great room electric sockets are not working', 'pending', '1');
->>>>>>> a6d440adc9faace350b4cb5ba7300dc2a2178309
 
 
 COMMIT;
