@@ -2,21 +2,31 @@ package com.techelevator.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.techelevator.dao.ApplicationDAO;
 import com.techelevator.dao.PropertyDAO;
+import com.techelevator.model.Application;
 import com.techelevator.model.Property;
 
 @Controller
+@SessionAttributes("propertySession")
 public class ListingsController {
 
-	@Autowired
+	@Autowired	
 	PropertyDAO propertyDao;
+	
+	@Autowired 
+	ApplicationDAO applicationDao;
 
 	@RequestMapping(path = "/listings", method = RequestMethod.GET)
 	public String showListings(ModelMap map) {
@@ -27,8 +37,8 @@ public class ListingsController {
 	}
 
 	@RequestMapping(path = "/propertyDetail", method = RequestMethod.GET)
-	public String showPropertyDetail(ModelMap map, @RequestParam("propertyId") int propertyId) {
-
+	public String showPropertyDetail(ModelMap map, HttpSession session, @RequestParam("propertyId") int propertyId) {
+        session.setAttribute("propertySession", propertyDao.searchPropertyById(propertyId));
 		map.addAttribute("property", propertyDao.searchPropertyById(propertyId));
 
 		return "propertyDetail";
@@ -56,6 +66,20 @@ public class ListingsController {
 
 	}
 	
+	@RequestMapping(path = "/application", method = RequestMethod.POST)
+	public String showApplication (ModelMap map, @RequestParam("propertyId") int propertyId) {
+            
+		return "application";
+
+	}
+	
+	@RequestMapping(path ="/submitApplication", method = RequestMethod.POST)
+	public String submitApplication(ModelMap map, Application application) {
+		Property property = (Property) map.get("propertySession");
+		application.setPropertyId(property.getPropertyId());
+		applicationDao.saveApplication(application);
+		return "confirmationPage";
+	}
 	
 	@RequestMapping(path = "/visitorConfirmation", method = RequestMethod.POST)
 	public String showConfirmation (ModelMap map, @RequestParam("propertyId") int propertyId) {
