@@ -38,14 +38,11 @@ public class JDBCUserDAO implements UserDAO {
 		String sqlSearchForUser = "SELECT * "+
 							      "FROM users "+
 							      "WHERE UPPER(user_name) = ? ";
-		System.out.println(userName + " "+password);
 		SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUser, userName.toUpperCase());
 		if(user.next()) {
 			String dbSalt = user.getString("salt");
 			String dbHashedPassword = user.getString("password");
-			System.out.println(dbHashedPassword);
 			String givenPassword = hashMaster.computeHash(password, Base64.decode(dbSalt));
-			System.out.println(givenPassword);
 			return dbHashedPassword.equals(givenPassword);
 		} else {
 			return false;
@@ -61,16 +58,19 @@ public class JDBCUserDAO implements UserDAO {
 	public User getUserByUserName(String userName) {
 		String sqlSearchForUsername ="SELECT * "+
 		"FROM users "+
-		"WHERE UPPER(user_name) = ? ";
+		"WHERE user_name = ? ";
+		
 
-		SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUsername, userName.toUpperCase()); 
+		SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUsername, userName); 
+//		System.out.println(userName);
 		User thisUser = null;
 		if(user.next()) {
 			thisUser = new User();
 			thisUser.setUserName(user.getString("user_name"));
 			thisUser.setPassword(user.getString("password"));
+			thisUser.setRole(user.getString("role"));
 		}
-
+//        System.out.println("in DAO" + thisUser.getRole());
 		return thisUser;
 	}
 	

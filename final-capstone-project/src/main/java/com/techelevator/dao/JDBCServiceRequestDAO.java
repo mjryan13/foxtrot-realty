@@ -24,7 +24,7 @@ public class JDBCServiceRequestDAO implements ServiceRequestDAO {
 		// TODO Auto-generated method stub
 		String sqlInsertRequest = "INSERT INTO service_request(property_id, description, request_status, user_id) VALUES(?, ?, ?, ?)";
 		jdbcTemplate.update(sqlInsertRequest, request.getPropertyId(), request.getDescription(),
-				request.getRequest_status(), request.getUserId());
+				request.getRequestStatus(), request.getUserId());
 
 	}
 }

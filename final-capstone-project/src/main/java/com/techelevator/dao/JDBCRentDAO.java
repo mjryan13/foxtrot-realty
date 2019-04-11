@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import com.techelevator.model.Property;
 import com.techelevator.model.Rent;
 
 @Component
@@ -26,21 +27,21 @@ public class JDBCRentDAO implements RentDAO {
 	}
 
 	@Override
-	public double getRent(int propertyId) {
+	public double getRent(String userName) {
 		// TODO Auto-generated method stub
 		double rentAmount = 0;
-		Rent rent = new Rent();
-		System.out.println(propertyId);
-		String sqlGetRent = "SELECT rent FROM payment WHERE property_id = ?";
-		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlGetRent, propertyId);
+		Property property = new Property();
+		
+		String sqlGetRent = "select property.rent from property join users on property.user_id = users.user_id where users.user_name = ?";
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlGetRent, userName);
 //		rentAmount = result.getDouble("rent");
 		
 		if(result.next()) {
 			
-			rent.setRent(result.getDouble("rent"));
+			property.setRent(result.getDouble("rent"));
 			
 		}
-		return rent.getRent();
+		return property.getRent();
 	}
 
 }
