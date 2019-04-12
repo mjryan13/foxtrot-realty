@@ -21,8 +21,10 @@ public class JDBCRentDAO implements RentDAO {
 	}
 
 	@Override
-	public void payRent(int propertyId) {
+	public void payRent(Rent rent) {
 		// TODO Auto-generated method stub
+		String sqlInsertPayment = "INSERT INTO payment(rent, property_id, user_id) VALUES (? ,?, ?)";
+		jdbcTemplate.update(sqlInsertPayment, rent.getRent(), rent.getPropertyId(), rent.getUserId());
 
 	}
 
