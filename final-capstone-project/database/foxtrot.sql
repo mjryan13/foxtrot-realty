@@ -71,8 +71,10 @@ CREATE TABLE payment
 (
 	rent int not null,
 	property_id int not null,
+	user_id int not null,
 	
-        constraint fk_property_id foreign key (property_id) references property(property_id)	
+        constraint fk_property_id foreign key (property_id) references property(property_id),
+        constraint fk_user_id foreign key (user_id) references users(user_id)
 );
 	
 CREATE TABLE service_request
@@ -119,6 +121,8 @@ INSERT INTO users ( first_name, last_name, user_name, password, role, phone_numb
 INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Andrew', 'Smith', 'ANDREW', 'password', 'admin', '6142225656', 'andrew@gmail.com', 'test');
 INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('John', 'Smith', 'SMITH3', 'password', 'owner', '6142225656', 'john3@gmail.com', 'test');
 INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Nikki', 'Smith', 'Manisha', 'O6DBAoCmMb2MfqO99yr8ew==', 'tenant', '6142225656', 'john3@gmail.com', 'MR9aELVtkW1Pwe2PSpSdh1B4nLUNtJHY6nciNruecqSK9Rp179Lq7+Nq8NM0R6DG9QN51sHHvGg+cMmwoay2bqQrqpP6s6YyfokdVJPOD2PvUZZcofCFT7x2tW6jzhNpTSSaEsgSJBMjGjj7eRMDuqLoMt7PwoejzceqpzzGViU=');
+INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Andrew', 'Smith', 'Andrew', 'O6DBAoCmMb2MfqO99yr8ew==', 'admin', '6142225656', 'john3@gmail.com', 'MR9aELVtkW1Pwe2PSpSdh1B4nLUNtJHY6nciNruecqSK9Rp179Lq7+Nq8NM0R6DG9QN51sHHvGg+cMmwoay2bqQrqpP6s6YyfokdVJPOD2PvUZZcofCFT7x2tW6jzhNpTSSaEsgSJBMjGjj7eRMDuqLoMt7PwoejzceqpzzGViU=');
+
 
 INSERT INTO address(street_name1, street_name2, city, state,  zipcode) VALUES ('1212 Kinnear Road', 'rev1 Building', 'Columbus', 'Ohio', '43015');
 
@@ -135,13 +139,33 @@ VALUES ('950',  'Hiliard Square', 'yes', '1', '1', '900', 'Beautiful Apartments 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
 VALUES ('950',  'Hiliard Square', 'yes', '1', '1', '800', 'Beautiful Apartments for Singles', 'Apartment', 'available', '5', '1', '101 Robert Road', 'Swamill', 'Hiliard', 'Ohio', '43018');
 
+INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
+VALUES ('1360',  'Bethel Commons', 'yes', '3', '2', '1250', 'Beautiful Apartments for big family', 'Apartment', 'available', '5', '1', '101 Bethel Road', 'On Bethel', 'Dublin', 'Ohio', '43088');
 
-INSERT INTO payment(rent, property_id) VALUES ('1200', '1');
-INSERT INTO payment(rent, property_id) VALUES ('1000', '2');
-INSERT INTO payment(rent, property_id) VALUES ('2000', '3');
-	
+INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
+VALUES ('1000',  'Blaahha Commons', 'no', '2', '2', '1050', 'Beautiful Apartments for family', 'Apartment', 'available', '5', '1', '101 Bllha Road', 'On hjh', 'Dublin', 'Ohio', '43078');
+
+INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
+VALUES ('1000',  'billgate Apartments', 'no', '1', '2', '850', 'Beautiful Apartments for family', 'Apartment', 'available', '5', '1', '101 Billgate Road', 'Bilgate ', 'Dublin', 'Ohio', '43002');
+
+INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
+VALUES ('1000',  'Zimba Apartments', 'no', '1', '2', '1250', 'Beautiful Apartments for family', 'Apartment', 'available', '5', '1', '101 Billgate Road', 'Bilgate ', 'Dublin', 'Ohio', '43002');
+
+INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
+VALUES ('1000',  'Rocky Condos and Apt', 'no', '1', '2', '950', 'Beautiful Apartments for family', 'Apartment', 'available', '5', '1', '101 Billgate Road', 'Bilgate ', 'Pataskla', 'Ohio', '43002');
+
+INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
+VALUES ('1000',  'Windfree APT', 'no', '1', '2', '850', 'Beautiful Apartments for family', 'Apartment', 'available', '5', '1', '101 Billgate Road', 'Bilgate ', 'Pataskla', 'Ohio', '43002');
+
+INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
+VALUES ('1000',  'Cricket Apt and Condos', 'no', '1', '2', '1250', 'Beautiful Apartments for family', 'Apartment', 'available', '5', '1', '101 Tyler Road', 'Bilgate ', 'Gahana', 'Ohio', '43002');
+
+
 
 INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Great room electric sockets are not working', 'pending', '1');
+INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Sink garbage disposal is not working', 'pending', '4');
+INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Master bedroom bathroom shower is licking', 'pending', '5');
+
 
 
 COMMIT;

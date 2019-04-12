@@ -41,6 +41,9 @@ public class AuthenticationController {
 	         if(user.getRole().equals("tenant")) {
 	        	return "redirect:/tenants"; 
 	         }
+	         else if(user.getRole().equalsIgnoreCase("admin")) {
+	        	 return "redirect:/admin";
+	         }
 		    
 		    
 //			if(destination != null && ! destination.isEmpty()) {
