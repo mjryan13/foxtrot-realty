@@ -26,13 +26,25 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	public List<Property> searchAvilableProperties() {
 		// TODO Auto-generated method stub
 		List<Property> availableProperties = new ArrayList<>();
-		String sqlSelectAvailableProperties = "SELECT * FROM property where property_status = 'available' ";
+		String sqlSelectAvailableProperties = "SELECT * FROM property where property_status = 'available' OR property_status = 'pending'";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAvailableProperties);
 		while (results.next()) {
 			availableProperties.add(mapRowToProperty(results));
 		}
 		return availableProperties;
 
+	}
+	
+	@Override
+	public List<Property> showAllProperties() {
+		// TODO Auto-generated method stub
+		List<Property> allProperties = new ArrayList<>();
+		String sqlSelectAllProperties = "SELECT * FROM property";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllProperties);
+		while (results.next()) {
+			allProperties.add(mapRowToProperty(results));
+		}
+		return allProperties;
 	}
 
 	@Override
@@ -102,11 +114,6 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		return  searchProperties;
 	}
 
-	@Override
-	public Property searchByBedrooms(int noOfBedrooms) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void saveProperty(Property property) {
@@ -145,6 +152,8 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		return newProperty;
 
 	}
+
+	
 
 	
 

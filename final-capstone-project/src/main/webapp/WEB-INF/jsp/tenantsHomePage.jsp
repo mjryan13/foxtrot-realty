@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -26,7 +25,6 @@
 			<%-- <li><a href="${homePage}">Home</a></li> --%>
 			<li><a href="${logout}">Logout</a></li>
 			</ul>
-
 		</nav>
 
 
@@ -47,16 +45,23 @@
 		<div id="payRent" class="tabcontent">
 			<div class="rentContainer">
 				<h1 style="margin-left: 0px">Pay Rent</h1>
-				<c:out value="Community: ${property.propertyName}"/><br/>
+				<span style= "display: inline-block; width:250px; text-align: right;" >
+				<c:out value="Community: ${property.propertyName}"/>
+				</span><br/>
+				
+				<span style= "display: inline-block; width:150px; text-align: right;" >
 				<fmt:formatNumber var="rent" value="${property.rent}"
 					type="currency" />
 				<c:out value="Rent: ${rent}"/>
-					
+					</span>
 				
 
 				<c:url var="tenantsHomeUrl" value="/tenantsPayRent" />
 
 				<form action="${tenantsHomeUrl}" method="POST">
+				
+				<label for="creditCardNumber">Name On Card:</label>
+				<input type="text"  name="nameOnCard" placeHolder= "name-on-card" style="margin-left: 5px" /><br /> 
 
 					<label for="creditCardNumber">Credit Card Number:</label>
 					 <input type="text"  name="creditCardNumber" pattern="[0-9]{13,16}" placeHolder= "1234123412341234" style="margin-left: 5px" /><br /> 
@@ -109,7 +114,7 @@
 
 					<label for="description">Service Description:</label> 
 					<br>
-					<textarea placeholder="Service Description..." rows="4" cols="50"
+					<textarea placeholder="Describe service needed..." rows="10" cols="50"
 						name="description" style="margin-left: 5px"></textarea>
 					<br />
 					<br>
@@ -119,8 +124,6 @@
 					<input type="submit" value="Submit Service Request" /><br/>
 					<!-- onclick="showRequestConfirmation();" -->
 					<!-- <p><span id='serviceRequestConfirmation'></span></p> -->
-
-
 				</form>
 			</div>
 			</div>

@@ -6,6 +6,24 @@ public class ServiceRequest {
 	private String description;
 	private String requestStatus;
 	private int userId;
+	private Property property;
+	private User user;
+
+	public Property getProperty() {
+		return property;
+	}
+
+	public void setProperty(Property property) {
+		this.property = property;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public int getUserId() {
 		return userId;

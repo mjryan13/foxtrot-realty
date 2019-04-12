@@ -159,10 +159,6 @@ INSERT INTO property ( square_feet, property_name, offer_available, number_of_be
 VALUES ('1000',  'Cricket Apt and Condos', 'no', '1', '2', '1250', 'Beautiful Apartments for family', 'Apartment', 'available', '5', '1', '101 Tyler Road', 'Bilgate ', 'Gahana', 'Ohio', '43002');
 
 
-INSERT INTO payment(rent, property_id, user_id) VALUES ('1200', '1', '4');
-INSERT INTO payment(rent, property_id, user_id) VALUES ('850', '3', '5');
-INSERT INTO payment(rent, property_id, user_id) VALUES ('1200', '8', '3');
-
 	
 
 INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Great room electric sockets are not working', 'pending', '1');
