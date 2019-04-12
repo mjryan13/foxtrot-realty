@@ -57,10 +57,6 @@ public class ListingsController {
 	public String showSortListings(ModelMap map, @RequestParam("sortBy") String sortBy) {
 		
 		List<Property> propertiesList = propertyDao.sortPropertiesByChoice(sortBy);
-		//System.out.println(sortBy);
-//		for(Property p: propertiesList) {
-//			System.out.println(p.getZipcode());
-//		}
 		map.addAttribute("listings", propertiesList);
 		return "listingsPage";
 

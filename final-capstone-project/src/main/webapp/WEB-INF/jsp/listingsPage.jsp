@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="header.jsp"%>
 
 <c:url var="sortProperties" value="/sortListings" />
@@ -62,7 +63,9 @@
 					<c:out value="No. of Bedrooms:  ${listing.numberOfBedrooms}" />
 				</div>
 				<div class="rent">
-					<c:out value="Rent: $ ${listing.rent}" />
+				<fmt:formatNumber var="rent" value="${listing.rent}"
+					type="currency" />
+					<c:out value="Rent: ${rent}" />
 				</div>
 			</div>
 

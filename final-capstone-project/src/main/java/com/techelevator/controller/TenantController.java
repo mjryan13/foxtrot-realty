@@ -26,13 +26,8 @@ public class TenantController {
 	
 	@RequestMapping(path="/tenants", method=RequestMethod.GET)
 	public String showTenantsPage(ModelMap map) {
-		System.out.println("At line 1");
 		User user = (User) map.get("currentUser");
-		System.out.println("At line 2" + user.getUserName());
 		map.addAttribute("property", propertyDao.getRentInformation(user.getUserName()));
-		System.out.println("At line 3");
-		System.out.println("In Tenant Controller" + user.getUserName());
-		System.out.println("In Rent Controller property:" + propertyDao.getRentInformation(user.getUserName()).getRent());
 		return "tenantsHomePage";
 	}
 	
@@ -46,12 +41,12 @@ public class TenantController {
 		request.setRequestStatus("pending");
 		
 		serviceRequestDao.createServiceRequest(request);
-		return "tenantsHomePage";
+		return "serviceRequestConfirmationPage";
 	}
 	
 	@RequestMapping(path="/tenantsPayRent", method=RequestMethod.POST)
 	public String submitPayment(ModelMap map) {
-		return "tenantsHomePage";
+		return "paymentConfirmationPage";
 	}
 	
 }

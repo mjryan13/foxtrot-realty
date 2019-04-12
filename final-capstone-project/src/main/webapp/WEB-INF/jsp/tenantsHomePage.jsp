@@ -1,8 +1,8 @@
-%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,14 +15,15 @@
 	<header>
 		<div class="headerTitle">
 			<c:url var="homePage" value="/" />
+			<c:url var="tenantsHomePage" value="/tenants" />
 			<c:url var="logout" value="/logout" />
 			<c:url value="/img/FoxtrotRE.png" var="homepageImage" />
-			<a href="${homePage}"><img src="${homepageImage}"
+			<a href="${tenantsHomePage}"><img src="${homepageImage}"
 				alt="Foxtrot Logo"></a>
 		</div>
 		<nav>
 			<ul>
-			<li><a href="${homePage}">Home</a></li>
+			<%-- <li><a href="${homePage}">Home</a></li> --%>
 			<li><a href="${logout}">Logout</a></li>
 			</ul>
 
@@ -46,8 +47,10 @@
 		<div id="payRent" class="tabcontent">
 			<div class="rentContainer">
 				<h1 style="margin-left: 0px">Pay Rent</h1>
-				<c:out value="Community: ${property.propertyName}"/></br>
-				<c:out value="Rent: ${property.rent}"/>
+				<c:out value="Community: ${property.propertyName}"/><br/>
+				<fmt:formatNumber var="rent" value="${property.rent}"
+					type="currency" />
+				<c:out value="Rent: ${rent}"/>
 					
 				
 
@@ -56,13 +59,38 @@
 				<form action="${tenantsHomeUrl}" method="POST">
 
 					<label for="creditCardNumber">Credit Card Number:</label>
-					 <input type="text"  name="creditCardNumber" style="margin-left: 5px" /><br /> 
+					 <input type="text"  name="creditCardNumber" pattern="[0-9]{13,16}" placeHolder= "1234123412341234" style="margin-left: 5px" /><br /> 
 						<label for="expiryDate">Expiry Date: </label> 
-						<input type="text" name="expiryDate" style="margin-left: 5px" /><br> 
+						<!-- <input type="text" name="expiryDate" style="margin-left: 5px" /><br>  -->
+						<select  style="margin-left: 5px">
+                    <option value="01">January</option>
+                    <option value="02">February </option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <select>
+                    <option value="20"> 2020</option>
+                    <option value="21"> 2021</option>
+                    <option value="22"> 2022</option>
+                    <option value="23"> 2023</option>
+                    <option value="24"> 2024</option>
+                    <option value="25"> 2025</option>
+                    
+                </select><br/>
 						<label for="CVV">CVV: </label> 
-						<input type="text" name="CVV" style="margin-left: 5px" /><br> 
+						<input type="text" name="CVV" pattern="[0-9]{3,4}" placeHolder="3-digit code" style="margin-left: 5px" /><br> 
 						<br>
-						<input type="submit" value="Submit Payment" />
+						<img alt="flat fee mls" title="flat fee mls" src="http://www.free-credit-card-logos.com/paypal_mc_visa_amex_disc_210x80.gif" width="210" height="80" border="0" /><br/>
+						<input type="submit" value="Submit Payment"/><br/>
+						<!-- <p><span id='paymentConfirmation'></span></p> -->
 
 				</form>
 			</div>
@@ -88,7 +116,9 @@
 					<!-- 		<label for="userId">User Id:</label> 
 		<input type="text" name="userId" /><br />  -->
 
-					<input type="submit" value="Submit Service Request" />
+					<input type="submit" value="Submit Service Request" /><br/>
+					<!-- onclick="showRequestConfirmation();" -->
+					<!-- <p><span id='serviceRequestConfirmation'></span></p> -->
 
 
 				</form>
@@ -118,7 +148,13 @@
 			  evt.currentTarget.className += " active";
 			}
 			
+			function showPaymentConfirmation() {
+		        document.getElementById('paymentConfirmation').innerText = "Thank you for your payment !!!";                    
+		    }
 			
+			function showRequestConfirmation() {
+		        document.getElementById('serviceRequestConfirmation').innerText = "Thank you for submitting your request. We will reach out to you shortly !!!";                    
+		    }
 		</script>
 
 		<%@ include file="footer.jsp"%>

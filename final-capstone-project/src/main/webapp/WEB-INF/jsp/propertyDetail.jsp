@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="header.jsp"%>
 
 
@@ -31,7 +32,9 @@ value= "img/${property.propertyId}.jpg" />
 		<p> Property Type: <c:out value="${property.propertyType}" /> </p>
 	</div>
 	<div class=rent>
-		<p> Rent: <c:out value="$ ${property.rent}" /> </p>
+		<fmt:formatNumber var="rent" value="${property.rent}"
+					type="currency" />
+		<p> Rent: <c:out value="${rent}" /> </p>
 	</div>
 	<div class="squareFootage">
 		<p> Square Feet: <c:out value="${property.squareFootage} sq. ft." /> </p>
