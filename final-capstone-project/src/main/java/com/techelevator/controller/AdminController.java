@@ -31,6 +31,10 @@ public class AdminController {
 	public String showApplications(ModelMap map) {
 		List<Application> applicationList = applicationDao.showApplications();
 		map.addAttribute("applications", applicationList);
+		System.out.println("In Admin controller");
+		for (Application a : applicationList) {
+			System.out.println(a.getEmail());
+		}
 		
 		List<Property> propertiesList = propertyDao.showAllProperties();
 		map.addAttribute("propeties", propertiesList);
