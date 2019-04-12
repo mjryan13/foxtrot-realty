@@ -162,6 +162,7 @@ VALUES ('1000',  'Cricket Apt and Condos', 'no', '1', '2', '1250', 'Beautiful Ap
 
 
 
+
 INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Great room electric sockets are not working', 'pending', '1');
 INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Sink garbage disposal is not working', 'pending', '4');
 INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Master bedroom bathroom shower is licking', 'pending', '5');
