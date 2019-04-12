@@ -9,6 +9,10 @@ body, header, nav {
 	margin: 0px;
 }
 
+body, header, nav {
+	margin: 0px;
+}
+
 .headerTitle img{
 	width: 35%;
 	padding: 10px;
@@ -700,6 +704,7 @@ body {
 body, header, nav {
 	margin: 0px;
 }
+>>>>>>> 20c67de1745a0141c43d8b2c3f74a718233632f1
 
 .headerTitle img{
 	width: 35%;
