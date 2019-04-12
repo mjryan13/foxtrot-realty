@@ -7,6 +7,8 @@ import com.techelevator.model.Property;
 public interface PropertyDAO {
 
 	List<Property> searchAvilableProperties();
+	
+	List<Property> showAllProperties();
 
 	Property searchPropertyById(int propertyId);
 	
@@ -17,8 +19,6 @@ public interface PropertyDAO {
 	List<Property> sortPropertiesByChoice (String choice);
 	
 	void applyProperty(int propertyId);
-
-	Property searchByBedrooms(int noOfBedrooms);
 
 	void saveProperty(Property property);
 

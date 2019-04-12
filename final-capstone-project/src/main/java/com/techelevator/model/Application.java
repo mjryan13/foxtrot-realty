@@ -16,7 +16,14 @@ public class Application {
 	private String city;
 	private String state;
 	private int zipcode;
+	private Property property;
 	
+	public Property getProperty() {
+		return property;
+	}
+	public void setProperty(Property property) {
+		this.property = property;
+	}
 	public int getApplicationId() {
 		return applicationId;
 	}
