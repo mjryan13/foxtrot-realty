@@ -40,9 +40,10 @@
 
 		</div>
 
-		<div class="container">
+		<div class="owner-container">
 
 			<div id="myProperties" class="tabcontent">
+			<h2 style="margin-left:0px; text-align: center"> Properties </h2>
 			
 			<c:forEach items="${properties}" var="property">
 				<table>
