@@ -52,12 +52,18 @@
 				<td>${property.propertyName}</td>
 				</tr>
 				<tr>
-				<td>Rent Amount:</td>
-				<td>${property.rent}</td>
+				<td>Rent:</td>
+				<fmt:formatNumber var="rent" value="${property.rent}"
+					type="currency" />
+				<td>${rent}</td>
 				</tr>
 				<tr>
 				<td>Property Status:</td>
 				<td>${property.propertyStatus}</td>
+				</tr>
+				<tr>
+				<td>Property Address:</td>
+				<td><c:out value="${property.streetAddress1} ${property.streetAddress2},  ${property.city}, ${property.state},  ${property.zipcode}" /></td>
 				</tr>
 				</table>
 				</c:forEach>
@@ -76,7 +82,10 @@
 			
 			<div class="app-group">
 				<label for="propertyType" style="margin-right:15px">Property Type: </label>
-				<input type="text" id="propertyType" name="propertyType" placeHolder="Property Type..." class="app-control" required/>
+				<select name="propertyType" required>
+				<option value="Apartment">Apartment</option>
+				<option value="Condo">Condo</option>
+				</select>
 			</div>
 	
 	
@@ -87,24 +96,33 @@
 
           <div class="app-group">
 				<label for="squareFootage" style="margin-right:15px">Square  Feet: </label>
-				<input type="text" id="squareFootage" name="squareFootage" placeHolder="Square  Feet..." class="app-control" required/>
+				<input type="number" id="squareFootage" name="squareFootage" placeHolder="Square  Feet..." class="app-control" required/>
 			</div>
 			
 			 <div class="app-group">
 				<label for="numberOfBedrooms" style="margin-right:15px">Number Of Bedrooms: </label>
-				<input type="text" id="numberOfBedrooms" name="numberOfBedrooms" placeHolder="Number Of Bedrooms..." class="app-control" required/>
+				<select name="numberOfBedrooms" required>
+				<option value="0">Studio</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				</select>
 			</div>
 			
 			 <div class="app-group">
 				<label for="numberOfBathrooms" style="margin-right:15px">Number Of Bathrooms: </label>
-				<input type="text" id="numberOfBathrooms" name="numberOfBathrooms" placeHolder="Number Of Bathrooms..." class="app-control" required/>
+				<select name="numberOfBathrooms" required>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				</select>
 			</div>
 
 
 
      <div class="app-group">
 				<label for="rent" style="margin-right:15px">Rent: </label>
-				<input type="text" id="rent" name="rent" placeHolder="rent..." class="app-control" required/>
+				<input type="number" id="rent" name="rent" placeHolder="rent..." class="app-control" required/>
 			</div>
 			
 			
@@ -130,16 +148,19 @@
 			
 			<div class="app-group">
 				<label for="zipcode" style="margin-right:15px">Zipcode: </label>
-				<input type="text" id="zipcode" name="zipcode" placeHolder="Zipcode..." class="app-control" required/>
+				<input type="number" id="zipcode" name="zipcode" placeHolder="Zipcode..." class="app-control" required/>
 			</div>
 			
 			
 			<div class="app-group">
 				<label for="offerAvailable" style="margin-right:15px">Offer Available: </label>
-				<input type="text" id="offerAvailable" name="offerAvailable" placeHolder= "Offer Available..." class="app-control" required/>
+				<select name="offerAvailable" required>
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+				</select>
 			</div>
 			
-			<button type="submit" class="btn btn-primary">Submit Application</button>
+			<button type="submit" class="btn btn-primary">Add Property</button>
 			
 			</form>
 			

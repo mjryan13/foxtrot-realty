@@ -8,7 +8,7 @@
 	<c:url var="confirmationPage" value="/submitApplication" />
 	<form class="apply" method="POST" action="${confirmationPage}">
 	  
-<h1 style="margin-left:0px"> Application </h1><br>
+<h1 style="margin-left:0px"> You are one click away from your dream home !!! </h1><br>
 		<div class="app-group">
 				<label for="firstName" style="margin-right:15px">First Name: </label>
 				<input type="text" id="firstName" name="firstName" placeHolder="First Name..." class="app-control" required/>

@@ -120,7 +120,9 @@
 				<div style="text-align: center">
 				
 				<span style="margin: 5px"><c:out value="Property Name:   ${property.propertyName}"></c:out></span><br>
-				<span style="margin: 5px"><c:out value="Rent Amount: ${property.rent}"></c:out></span><br>
+				<fmt:formatNumber var="propertyRent" value="${property.rent}"
+					type="currency" />
+				<span style="margin: 5px"><c:out value="Rent Amount: ${propertyRent}"></c:out></span><br>
 				<span style="margin: 5px"><c:out value="Property Status: ${property.propertyStatus}"></c:out></span><br>
 				
 				</div>
@@ -137,16 +139,16 @@
 				<c:forEach items="${rents}" var="rent">
 				<div class="admin-options">
 				<table>
-				<br>
+				<!-- <br>
 				
-				<br>
+				<br> --> 
 				<tr>
 				<td>Property Name:</td>
 				<td>${rent.property.propertyName}</td>
 				</tr>
 				<tr>
 				<td>Rent Amount:</td>
-				<td>${rent.rent}</td>
+				<td>$${rent.rent}</td>
 				</tr>
 				<tr>
 				<td>Tenant Name:</td>
