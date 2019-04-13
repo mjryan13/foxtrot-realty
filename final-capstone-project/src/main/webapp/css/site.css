@@ -1,6 +1,7 @@
 body {
 	background-color: #f9f9f9;
-	font-family: fantasy;
+	/* font-family: Helvetica, Sans-Serif; */
+	font-family: Lato, Sans-Serif;
 	margin: 0px;
 	min-height: auto;
 }
@@ -696,7 +697,7 @@ label {
 
 body {
 	background-color: #f9f9f9;
-	font-family: fantasy;
+	font-family: Lato, Sans-Serif;
 	margin: 0px;
 	min-height: auto;
 }
@@ -840,7 +841,7 @@ footer {
 }
 
 .bedrooms{
-	font-family: serif; 
+	font-family: Lato, Sans-Serif; 
 }
 
 * {
@@ -963,6 +964,7 @@ form.search button:hover {
 	margin-top: 5%;
 	border-radius: 6px;
 	padding: 15px;
+	font-family: fantasy;
 	
 	/* color: black;
 	background: gray; */
@@ -1403,6 +1405,26 @@ label {
    padding: 50px;
    border-radius: 3px;
   
+}
+
+
+#map {
+  height: 100%;
+}
+
+#properties img {
+	width: 25%;
+	height: 25%;
+}
+
+.admin-options {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	border-radius: 5px;
+	background-color: #F5F5F5;
+	padding: 20px;
+	margin-bottom: 15px;
 }
 
 

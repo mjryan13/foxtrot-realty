@@ -81,6 +81,32 @@ value= "img/${property.propertyId}.jpg" />
 	</form>
 	</div>
 </div>
+
+<div id="map">
+
 </div>
+</div>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">>
+function initMap() {
+	  var myLatLng = {lat: 40.1379741, lng: -83.0157467};
+
+	  var map = new google.maps.Map(document.getElementById('map'), {
+	    zoom: 15,
+	    center: myLatLng
+	  });
+
+	  var marker = new google.maps.Marker({
+	    position: myLatLng,
+	    map: map,
+	    title: 'Hello World!'
+	  });
+	}
+	
+
+
+
+</script>
 
 <%@ include file="footer.jsp"%>
