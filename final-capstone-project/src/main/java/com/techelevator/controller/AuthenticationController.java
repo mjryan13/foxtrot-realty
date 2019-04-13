@@ -24,41 +24,40 @@ public class AuthenticationController {
 		this.userDAO = userDAO;
 	}
 
-	@RequestMapping(path="/login", method=RequestMethod.GET)
+	@RequestMapping(path = "/login", method = RequestMethod.GET)
 	public String displayLoginForm() {
 		return "login";
 	}
-	
-	@RequestMapping(path="/login", method=RequestMethod.POST)
-	public String login(@RequestParam String userName, 
-						@RequestParam String password, 
-						@RequestParam(required=false) String destination,
-						HttpSession session) {
-		if(userDAO.searchForUsernameAndPassword(userName, password)) {
-			
+
+	@RequestMapping(path = "/login", method = RequestMethod.POST)
+	public String login(@RequestParam String userName, @RequestParam String password,
+			@RequestParam(required = false) String destination, HttpSession session) {
+		if (userDAO.searchForUsernameAndPassword(userName, password)) {
+
 			session.setAttribute("currentUser", userDAO.getUserByUserName(userName));
-		    User user = (User) userDAO.getUserByUserName(userName);
-	         if(user.getRole().equals("tenant")) {
-	        	return "redirect:/tenants"; 
-	         }
-	         else if(user.getRole().equalsIgnoreCase("admin")) {
-	        	 return "redirect:/admin";
-	         }
-		    
-		    
+			User user = (User) userDAO.getUserByUserName(userName);
+			System.out.println();
+			if (user.getRole().equals("tenant")) {
+				return "redirect:/tenants";
+			} else if (user.getRole().equalsIgnoreCase("admin")) {
+				return "redirect:/admin";
+			} else {
+				return "redirect:/propertyOwners";
+			}
+
 //			if(destination != null && ! destination.isEmpty()) {
 //				return "redirect:" + destination;
 //			} else {
 //				return "redirect:/users/"+userName;
 //			}
-			
+
 		} else {
 			return "redirect:/login";
 		}
-		return "redirect:/login";
+
 	}
 
-	@RequestMapping(path="/logout", method=RequestMethod.GET)
+	@RequestMapping(path = "/logout", method = RequestMethod.GET)
 	public String logout(ModelMap model, HttpSession session) {
 		model.remove("currentUser");
 		session.invalidate();

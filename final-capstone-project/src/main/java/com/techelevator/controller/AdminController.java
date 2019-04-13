@@ -22,16 +22,16 @@ import com.techelevator.model.ServiceRequest;
 public class AdminController {
 	
 	@Autowired
-	ApplicationDAO applicationDao;
+	private ApplicationDAO applicationDao;
 	
 	@Autowired
-	PropertyDAO propertyDao;
+	private PropertyDAO propertyDao;
 	
 	@Autowired
-	ServiceRequestDAO serviceRequestDao;
+	private ServiceRequestDAO serviceRequestDao;
 	
 	@Autowired
-	RentDAO rentDao;
+	private RentDAO rentDao;
 	
 	@RequestMapping(path = "/admin", method = RequestMethod.GET)
 	public String showApplications(ModelMap map) {

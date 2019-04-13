@@ -9,6 +9,8 @@ public interface PropertyDAO {
 	List<Property> searchAvilableProperties();
 	
 	List<Property> showAllProperties();
+	
+	List<Property> ShowAllPropertiesByUserId(int userId);
 
 	Property searchPropertyById(int propertyId);
 	

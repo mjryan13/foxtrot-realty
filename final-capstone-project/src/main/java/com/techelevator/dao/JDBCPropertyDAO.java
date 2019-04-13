@@ -34,7 +34,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		return availableProperties;
 
 	}
-	
+
 	@Override
 	public List<Property> showAllProperties() {
 		// TODO Auto-generated method stub
@@ -60,7 +60,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 
 		return newProperty;
 	}
-	
+
 	@Override
 	public Property getRentInformation(String userName) {
 		Property newProperty = null;
@@ -70,59 +70,80 @@ public class JDBCPropertyDAO implements PropertyDAO {
 			newProperty = mapRowToProperty(result);
 		}
 		return newProperty;
-		
+
 	}
-	
+
 	@Override
 	public List<Property> sortPropertiesByChoice(String choice) {
 		// TODO Auto-generated method stub
 		List<Property> sortProperties = new ArrayList<>();
 		String sqlSelectPropertyBySort;
-		if(choice.equals("zipcode")) {
-			 sqlSelectPropertyBySort= "Select * from property Order By zipcode desc";	
+		if (choice.equals("zipcode")) {
+			sqlSelectPropertyBySort = "Select * from property Order By zipcode desc";
 		} else if (choice.equals("number_of_bedrooms")) {
-			 sqlSelectPropertyBySort= "Select * from property Order By number_of_bedrooms desc";	
+			sqlSelectPropertyBySort = "Select * from property Order By number_of_bedrooms desc";
 		} else {
-			 sqlSelectPropertyBySort= "Select * from property Order By rent";	
+			sqlSelectPropertyBySort = "Select * from property Order By rent";
 		}
-		
+
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPropertyBySort);
 
 		while (results.next()) {
 			sortProperties.add(mapRowToProperty(results));
 		}
-	
-		return  sortProperties;
+
+		return sortProperties;
 	}
-	
+
 	@Override
-	public List<Property>  searchPropertiesByChoice(int zipcode, int numberOfBedrooms) {
+	public List<Property> searchPropertiesByChoice(int zipcode, int numberOfBedrooms) {
 		// TODO Auto-generated method stub
 		List<Property> searchProperties = new ArrayList<>();
 		String sqlSelectPropertyBySearch = "Select * from property where zipcode = ? and number_of_bedrooms= ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPropertyBySearch, zipcode, numberOfBedrooms);
 
-		if (results.next()) {
+		while (results.next()) {
 			searchProperties.add(mapRowToProperty(results));
 		}
 
-		return  searchProperties;
+		return searchProperties;
 	}
 
+	@Override
+	public List<Property> ShowAllPropertiesByUserId(int userId) {
+		// TODO Auto-generated method stub
+		List<Property> allPropertiesForUserId = new ArrayList<>();
+		String sqlSelectPropertiesForUserId = "Select * from property where user_id = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPropertiesForUserId, userId);
+
+		while (results.next()) {
+			allPropertiesForUserId.add(mapRowToProperty(results));
+		}
+
+		return allPropertiesForUserId;
+	}
 
 	@Override
 	public void saveProperty(Property property) {
 		// TODO Auto-generated method stub
+		String sqlInsertUpdate = "INSERT INTO property (square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state, zipcode) "
+				+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		jdbcTemplate.update(sqlInsertUpdate, property.getSquareFootage(), property.getPropertyName(),
+				property.isOfferAvailable(), property.getNumberOfBedrooms(), property.getNumberOfBathrooms(),
+				property.getRent(), property.getPropertyDescription(), property.getPropertyType(),
+				property.getPropertyStatus(), property.getUserId(), property.getAddressId(),
+				property.getStreetAddress1(), property.getStreetAddress2(), property.getCity(), property.getState(),
+				property.getZipcode());
 
 	}
+
 	@Override
 	public void applyProperty(int propertyId) {
 		// TODO Auto-generated method stub
-		String sqlUpdatePropertyStatus  = "update property set property_status= 'pending' where property_id = ?";
+		String sqlUpdatePropertyStatus = "update property set property_status= 'pending' where property_id = ?";
 		jdbcTemplate.update(sqlUpdatePropertyStatus, propertyId);
-		
+
 	}
-	
 
 	private Property mapRowToProperty(SqlRowSet row) {
 		Property newProperty = new Property();
@@ -147,11 +168,5 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		return newProperty;
 
 	}
-
-	
-
-	
-
-
 
 }
