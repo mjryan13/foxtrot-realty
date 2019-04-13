@@ -9,6 +9,8 @@ public interface ApplicationDAO {
 	void saveApplication(Application application);
 	
 	List<Application> showApplications();
+	
+	void deleteApplication(int applicationId);
 			
 
 }

@@ -93,10 +93,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		while (results.next()) {
 			sortProperties.add(mapRowToProperty(results));
 		}
-		for (Property p: sortProperties) {
-		
-		}
-
+	
 		return  sortProperties;
 	}
 	
@@ -138,7 +135,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		newProperty.setRent(row.getInt("rent"));
 		newProperty.setPropertyDescription(row.getString("property_description"));
 		newProperty.setPropertyType(row.getString("property_type"));
-		newProperty.setStatusOfProperty(row.getString("property_status"));
+		newProperty.setPropertyStatus(row.getString("property_status"));
 		newProperty.setUserId(row.getInt("user_id"));
 		newProperty.setAddressId(row.getInt("address_id"));
 		newProperty.setStreetAddress1(row.getString("street_name1"));

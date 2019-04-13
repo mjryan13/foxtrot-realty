@@ -10,10 +10,11 @@ public class User {
 
 	private String userName;
 
-	@Size(min = 10, message = "Password too short, must be at least 10")
+	@Size(min = 8, message = "Password too short, must be at least 10")
 	@Pattern.List({ @Pattern(regexp = ".*[a-z].*", message = "Must have a lower case"),
 			@Pattern(regexp = ".*[A-Z].*", message = "Must have a capital") })
 	private String password;
+	private String confirmPassword;
 	private String role;
 	private Long phoneNumber;
 	private String emailId;
@@ -57,8 +58,6 @@ public class User {
 	public void setUserID(int userID) {
 		this.userID = userID;
 	}
-
-	private String confirmPassword;
 
 	public String getUserName() {
 		return userName;

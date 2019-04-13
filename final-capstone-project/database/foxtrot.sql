@@ -116,12 +116,13 @@ CREATE TABLE application
 
 	
 --populate data
-INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('John', 'Smith', 'SMITH1', 'password', 'tenant', '6142225656', 'john1@gmail.com', 'test');
-INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('John', 'Smith', 'SMITH2', 'password', 'tenant', '6142225656', 'john2@gmail.com', 'test');
-INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Andrew', 'Smith', 'ANDREW', 'password', 'admin', '6142225656', 'andrew@gmail.com', 'test');
-INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('John', 'Smith', 'SMITH3', 'password', 'owner', '6142225656', 'john3@gmail.com', 'test');
-INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Nikki', 'Smith', 'Manisha', 'O6DBAoCmMb2MfqO99yr8ew==', 'tenant', '6142225656', 'john3@gmail.com', 'MR9aELVtkW1Pwe2PSpSdh1B4nLUNtJHY6nciNruecqSK9Rp179Lq7+Nq8NM0R6DG9QN51sHHvGg+cMmwoay2bqQrqpP6s6YyfokdVJPOD2PvUZZcofCFT7x2tW6jzhNpTSSaEsgSJBMjGjj7eRMDuqLoMt7PwoejzceqpzzGViU=');
-INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Andrew', 'Smith', 'Andrew', 'O6DBAoCmMb2MfqO99yr8ew==', 'admin', '6142225656', 'john3@gmail.com', 'MR9aELVtkW1Pwe2PSpSdh1B4nLUNtJHY6nciNruecqSK9Rp179Lq7+Nq8NM0R6DG9QN51sHHvGg+cMmwoay2bqQrqpP6s6YyfokdVJPOD2PvUZZcofCFT7x2tW6jzhNpTSSaEsgSJBMjGjj7eRMDuqLoMt7PwoejzceqpzzGViU=');
+
+INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Manisha', 'Ingale', 'Manisha', 'O6DBAoCmMb2MfqO99yr8ew==', 'tenant', '6142225656', 'manisha@gmail.com', 'MR9aELVtkW1Pwe2PSpSdh1B4nLUNtJHY6nciNruecqSK9Rp179Lq7+Nq8NM0R6DG9QN51sHHvGg+cMmwoay2bqQrqpP6s6YyfokdVJPOD2PvUZZcofCFT7x2tW6jzhNpTSSaEsgSJBMjGjj7eRMDuqLoMt7PwoejzceqpzzGViU=');
+INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Andrew', 'Frank', 'Andrew', 'O6DBAoCmMb2MfqO99yr8ew==', 'admin', '6143335678', 'andrew@gmail.com', 'MR9aELVtkW1Pwe2PSpSdh1B4nLUNtJHY6nciNruecqSK9Rp179Lq7+Nq8NM0R6DG9QN51sHHvGg+cMmwoay2bqQrqpP6s6YyfokdVJPOD2PvUZZcofCFT7x2tW6jzhNpTSSaEsgSJBMjGjj7eRMDuqLoMt7PwoejzceqpzzGViU=');
+INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Nikhita', 'Reddy', 'Nikhita', 'E20LniuEBjAkjZzflkYThw==', 'admin', '6144325612', 'nikki@gmail.com', '/p7I5smTqgeH8fyspVTrux4gYPUZOV3Z+LXHHOvBt1nUCw/SHolyNMRxFZEi8GT2Idu1j5XuOw7bhs4G7N5ZT8SWbdg56RV05nTMD2SybG1cOVmCwnP9QlGSglDHaozQH6RXcC5I518vp0bp/DlLqJ4K90117/1fa1ZvMUBMGaY=');
+INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Maulik', 'Patel', 'Maulik', 'x+eIB47ViMkcMx4Oc0Wf1g==', 'tenant', '6148752323', 'maulik@gmail.com', 'X8s+kCriKKyR7r640msEn0vWL706XTewF1DJBF2c6GLWdwrHDVmntL66qQGsJegVbi706xs6ijmJU9v13o1qgHQ50dCbDFjTyWVILFloR7qrnKkyF39oUJ5+zf58lw9vPkjSU+6x7kNT4UsIMmf+36RJVPyVjTYYx4UCdvnzfso=');
+INSERT INTO users ( first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES ('Mike', 'Ryan', 'Mike', 'lsDxwaMhbuXl2F9KnuCwFw==', 'tenant', '6142795423', 'mike@gmail.com', 'ZblQfOgpTuFErD4KQvwjCmU3hQ4Cmi82vlVS3zLj3Bh+qcbAIVH+b0TWScoYfsfI8eQwsfMMgb5AT027cSka4W+qGLmVRlngisw1wSSHJ3G0kdjFXqE/THtTFpMiOkGWUcLIxBgPFTln43eV0SmIhOQ+04Smm/WpdCrdZ+2USZE=');
+
 
 
 INSERT INTO address(street_name1, street_name2, city, state,  zipcode) VALUES ('1212 Kinnear Road', 'rev1 Building', 'Columbus', 'Ohio', '43015');
@@ -155,7 +156,7 @@ INSERT INTO property ( square_feet, property_name, offer_available, number_of_be
 VALUES ('1000',  'Rocky Condos and Apt', 'no', '1', '2', '950', 'Beautiful Apartments for family', 'Apartment', 'available', '5', '1', '101 Billgate Road', 'Bilgate ', 'Pataskla', 'Ohio', '43002');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('1000',  'Windfree APT', 'no', '1', '2', '850', 'Beautiful Apartments for family', 'Apartment', 'available', '5', '1', '101 Billgate Road', 'Bilgate ', 'Pataskla', 'Ohio', '43002');
+VALUES ('1000',  'Windfree APT', 'no', '1', '2', '850', 'Beautiful Apartments for family', 'Apartment', 'rented', '5', '1', '101 Billgate Road', 'Bilgate ', 'Pataskla', 'Ohio', '43002');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
 VALUES ('1000',  'Cricket Apt and Condos', 'no', '1', '2', '1250', 'Beautiful Apartments for family', 'Apartment', 'available', '5', '1', '101 Tyler Road', 'Bilgate ', 'Gahana', 'Ohio', '43002');
@@ -163,9 +164,19 @@ VALUES ('1000',  'Cricket Apt and Condos', 'no', '1', '2', '1250', 'Beautiful Ap
 
 
 INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Great room electric sockets are not working', 'pending', '1');
-INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Sink garbage disposal is not working', 'pending', '4');
-INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Master bedroom bathroom shower is licking', 'pending', '5');
+INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('2', 'Sink garbage disposal is not working', 'pending', '4');
+INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('3', 'Master bedroom bathroom shower is leaking', 'pending', '5');
 
+INSERT INTO payment(rent, property_id, user_id) VALUES ('1200', '1', '1');
+INSERT INTO payment(rent, property_id, user_id) VALUES ('1000', '2', '2');
+INSERT INTO payment(rent, property_id, user_id) VALUES ('900', '3', '3');
+
+INSERT INTO application(property_id, first_name, last_name, ssn, birthdate, current_employer, annual_income, phone_number, email, address_line1, address_line2, city, state, zipcode)
+VALUES ('1', 'Manisha', 'Ingale', '123456789', '1990-10-10', 'Nationwide', '90000', '6142225656', 'manisha@gmail.com', 'High Street', '1212', 'Columbus', 'OH', '43035');
+INSERT INTO application(property_id, first_name, last_name, ssn, birthdate, current_employer, annual_income, phone_number, email, address_line1, address_line2, city, state, zipcode)
+VALUES ('2', 'Andrew', 'Frank', '123456789', '1985-12-12', 'Tech Elevator', '120000', '6143335678', 'andrew@gmail.com', 'Main Street', '3423', 'Columbus', 'OH', '43037');
+INSERT INTO application(property_id, first_name, last_name, ssn, birthdate, current_employer, annual_income, phone_number, email, address_line1, address_line2, city, state, zipcode)
+VALUES ('3', 'Nikhita', 'Reddy', '123456789', '1992-07-07', 'Chase', '90000', '6144325612', 'nikhita@gmail.com', 'North Street', '5459', 'Columbus', 'OH', '43081');
 
 
 COMMIT;

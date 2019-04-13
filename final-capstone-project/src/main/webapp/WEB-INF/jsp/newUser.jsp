@@ -14,7 +14,7 @@
 				},
 				password : {
 					required : true,
-					minlength: 15,
+					minlength: 8,
 					capitals: true,
 				},
 				confirmPassword : {
@@ -24,7 +24,7 @@
 			},
 			messages : {			
 				password: {
-					minlength: "Password too short, make it at least 15 characters",
+					minlength: "Password too short, make it at least 8 characters",
 					capitals: "Field must contain a capital letter",
 				},
 				confirmPassword : {
@@ -44,31 +44,31 @@
 		<br>
 		<div class="form-group">
 				<label for="firstName" style="margin-right:15px">First Name: </label>
-				<input type="text" id="firstName" name="firstName" placeHolder="First Name" class="form-control" />
+				<input type="text" id="firstName" name="firstName" placeHolder="First Name" required="true" class="form-control" />
 			</div>
 			<div class="form-group">
 				<label for="lastName" style="margin-right:15px">Last Name: </label>
-				<input type="text" id="lastName" name="lastName" placeHolder="Last Name" class="form-control" />
+				<input type="text" id="lastName" name="lastName" placeHolder="Last Name" required="true" class="form-control" />
 			</div>
 			<div class="form-group">
 				<label for="userName" style="margin-right:15px">User Name: </label>
-				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
+				<input type="text" id="userName" name="userName" placeHolder="User Name" required="true" class="form-control" />
 			</div>
 			<div class="form-group">
 				<label for="password" style="margin-right:15px">Password: </label>
-				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" />
+				<input type="password" id="password" name="password" placeHolder="Password" required="true" class="form-control" />
 			</div>
 			<div class="form-group">
 				<label for="confirmPassword" style="margin-right:15px">Confirm Password: </label>
-				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
+				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" required="true" class="form-control" />	
 			</div>
 			<div class="form-group">
 				<label for="phoneNumber" style="margin-right:15px">Phone Number: </label>
-				<input type="tel" id="phoneNumber" name="phoneNumber" placeHolder="Phone Number" class="form-control" />
+				<input type="tel" id="phoneNumber" name="phoneNumber" placeHolder="Phone Number" required="true" class="form-control" />
 			</div>
 			<div class="form-group">
 				<label for="emailId" style="margin-right:15px">Email: </label>
-				<input type="email" id="emailId" name="emailId" placeHolder="Email" class="form-control" />
+				<input type="email" id="emailId" name="emailId" placeHolder="Email" required="true" class="form-control" />
 			</div>
 			<div>
 			<label for="role" style="margin-right:15px">Role: </label>

@@ -14,15 +14,14 @@
 	<header>
 		<div class="headerTitle">
 			<c:url var="homePage" value="/" />
-			<c:url var="tenantsHomePage" value="/tenants" />
+			<c:url var="adminHomePage" value="/admin" />
 			<c:url var="logout" value="/logout" />
 			<c:url value="/img/FoxtrotRE.png" var="homepageImage" />
-			<a href="${tenantsHomePage}"><img src="${homepageImage}"
+			<a href="${adminHomePage}"><img src="${homepageImage}"
 				alt="Foxtrot Logo"></a>
 		</div>
 		<nav>
 			<ul>
-			<%-- <li><a href="${homePage}">Home</a></li> --%>
 			<li><a href="${logout}">Logout</a></li>
 			</ul>
 		</nav>
@@ -32,49 +31,151 @@
 
 	<div id="main-content">
 	
-	<div class="admin-container">
 	
 		<div class="tab">
 		<button class="tablinks" onclick="openOption(event, 'pending')" id="defaultOpen">Pending Rentals</button>
 		<button class="tablinks" onclick="openOption(event, 'properties')" >Properties</button>
 		<button class="tablinks" onclick="openOption(event, 'rents')" >Rents</button>
 		<button class="tablinks" onclick="openOption(event, 'service')">Service Request</button>
+		</div>
+					
+					<!-- <h1 style="margin-left: 0px; text-align: center">Pending Rentals</h1> -->
+	
+	
 
-	</div>
-	
-	
-		<div class="container">
-		<div id=pending class="tabcontent">
-			<div class="pending-container">
-				<h1 style="margin-left: 0px">Pending Rentals</h1>
+		<div class="containers">
+		
+					
+			<div class="pending-container" id="pending">
+			<h1 style="margin-left: 0px; text-align: center">Pending Rentals</h1>
+			<c:forEach items="${applications}" var="application">
+			
+			<h2 style="margin-left: 0px; text-align: center">Application</h2>
+				<table>
+				<tr>
+				<td>Property Name:</td>
+				<td>${application.property.propertyName}</td>
+				</tr>
+				<tr>	
+				<td>First Name:</td>
+				<td>${application.firstName}</td>
+				</tr>
+				<tr>
+				<td>Last Name:</td>
+				<td>${application.lastName}</td>
+				</tr>
+				<tr>
+				<td>Current Employer:</td>
+				<td>${application.currentEmployer}</td>
+				</tr>
+				<tr>
+				<td>Annual Income:</td>
+				<fmt:formatNumber var="annualIncome" value="${application.annualIncome}"
+					type="currency" />
+				<td>${annualIncome}</td>
+				</tr>
+				<tr>
+				<td>Phone:</td>
+				<td>${application.phoneNumber}</td>
+				</tr>
+				<tr>
+				<td>Address:</td>
+				<td><c:out value="${application.addressLine1} ${application.addressLine2},  ${application.city}, ${application.state},  ${application.zipcode}" /></td>
+				</tr>
 				
-				<c:forEach items="${applications}" var="application">
-				<c:out value="${applicaiton.propertyId}" />
-				<c:out value="${applicaiton.firstName}" />
-				<c:out value="${applicaiton.lastName}" />
-				<c:out value="${applicaiton.currentEmployer}" />
-				<c:out value="${applicaiton.annualIncome}" />
-				<c:out value="${applicaiton.phone}" />
-				<c:out value="${applicaiton.addressLine1}" />
-				<c:out value="${applicaiton.addressLine2}" />
-				<c:out value="${applicaiton.city}" />
-				<c:out value="${applicaiton.state}" />
-				<c:out value="${applicaiton.zipcode}" />
-				<c:out value="${applicaiton.currentEmployer}" />
-				
-				<input type="submit" value="Approve" /><br/>
-				<input type="submit" value="Decline" /><br/>
-				
+				</table>
+				<c:url var="approveOrDeny" value="/adminConfirm" />
+				<form  method="POST" action="${approveOrDeny}">
+				<input type="hidden" id="applicationId" name=applicationId value="${application.applicationId}"/>
+				<input type="submit" style="background-color:green; color: white; border-radius: 5px" value="Approve" />
+				</form>
+				<form  method="POST" action="${approveOrDeny}">
+				<input type="hidden" id="applicationId" name=applicationId value="${application.applicationId}"/>
+				<input type="submit" style="background-color:red; color: white; border-radius: 5px"value="Decline" />
+				</form>
 				</c:forEach>
 			</div>
+			
+				
+
+		<div id="properties"  class="pending-container">
+			<div class="property-container">
+				<h1 style="margin-left: 0px">Properties</h1>
+				
+				<c:forEach items="${properties}" var="property">
+				<table>
+				<tr>
+				<td>Property Name:</td>
+				<td>${property.propertyName}</td>
+				</tr>
+				<tr>
+				<td>Rent Amount:</td>
+				<td>${property.rent}</td>
+				</tr>
+				<tr>
+				<td>Property Status:</td>
+				<td>${property.propertyStatus}</td>
+				</tr>
+				</table>
+				</c:forEach>
 			</div>
-	
-	
-	</div>
-	
-	
-	
-	
+		</div>
+		
+		<div id="rents"  class="pending-container">
+			<div class="property-container">
+				<h1 style="margin-left: 0px">Rents</h1>
+				
+				<c:forEach items="${rents}" var="rent">
+				<table>
+				<tr>
+				<td>Property Name:</td>
+				<td>${rent.property.propertyName}</td>
+				</tr>
+				<tr>
+				<td>Rent Amount:</td>
+				<td>${rent.rent}</td>
+				</tr>
+				<tr>
+				<td>Tenant Name:</td>
+				<td>${rent.user.firstName}  ${rent.user.lastName}</td>
+				</tr>
+				</table>
+				</c:forEach>
+			</div>
+		</div>
+		
+		<div id="service"  class="pending-container">
+			<div class="property-container">
+				<h1 style="margin-left: 0px">Service Requests</h1>
+				
+				<c:forEach items="${serviceRequests}" var="service">
+				<table>
+				<tr>
+				<td>Service Description:</td>
+				<td>${service.description}</td>
+				</tr>
+				<tr>
+				<td>Property Name:</td>
+				<td>${service.property.propertyName}</td>
+				</tr>
+				<tr>
+				<td>Tenant Name:</td>
+				<td>${service.user.firstName}  ${service.user.lastName}</td>
+				</tr>
+				<tr>
+				<td>Tenant Phone Number:</td>
+				<td>${service.user.phoneNumber}</td>
+				</tr>
+				<tr>
+				<td>Tenant Email:</td>
+				<td>${service.user.emailId}</td>
+				</tr>
+				</table>
+				</c:forEach>
+			</div>
+		</div>
+		</div>
+		
 	
 	<script>
 			document.getElementById("defaultOpen").click();
@@ -82,7 +183,7 @@
 			function openOption(evt, cityName) {
 			var i, tabcontent, tablinks;
 			// Get all elements with class="tabcontent" and hide them
-			  tabcontent = document.getElementsByClassName("tabcontent");
+			  tabcontent = document.getElementsByClassName("pending-container");
 			  for (i = 0; i < tabcontent.length; i++) {
 			    tabcontent[i].style.display = "none";
 			  }
@@ -98,13 +199,8 @@
 			  evt.currentTarget.className += " active";
 			}
 			
-			function showPaymentConfirmation() {
-		        document.getElementById('paymentConfirmation').innerText = "Thank you for your payment !!!";                    
-		    }
-			
-			function showRequestConfirmation() {
-		        document.getElementById('serviceRequestConfirmation').innerText = "Thank you for submitting your request. We will reach out to you shortly !!!";                    
-		    }
 		</script>
+		
+		
 
 		<%@ include file="footer.jsp"%>

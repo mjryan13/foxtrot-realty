@@ -27,7 +27,6 @@ public class JDBCApplicationDAO implements ApplicationDAO {
 	@Override
 	public void saveApplication(Application application) {
 		// TODO Auto-generated method stub
-		System.out.println("InDAO");
 		String sqlInsertApplication = "INSERT INTO application (property_id, first_name, last_name, ssn, birthdate, current_employer, annual_income, phone_number, email, address_line1, "
 				+ "address_line2, city, state, zipcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -43,12 +42,20 @@ public class JDBCApplicationDAO implements ApplicationDAO {
 	public List<Application> showApplications() {
 		// TODO Auto-generated method stub
 		List<Application> allApplications = new ArrayList<>();
-		String sqlSelectAllApplications = "SELECT application.*, property.property_name FROM application JOIN property ON application.property_id = property.property_id";
+		String sqlSelectAllApplications = "SELECT application.*, property.property_name AS propertyName FROM application JOIN property ON application.property_id = property.property_id";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllApplications);
 		while (results.next()) {
 			allApplications.add(mapRowToApplication(results));
 		}
 		return allApplications;
+	}
+
+	@Override
+	public void deleteApplication(int applicationId) {
+		// TODO Auto-generated method stub
+		String sqlDeleteApplication = "DELETE FROM application WHERE application_id = ?";
+		jdbcTemplate.update(sqlDeleteApplication, applicationId);
+
 	}
 
 	private Application mapRowToApplication(SqlRowSet row) {
@@ -69,7 +76,7 @@ public class JDBCApplicationDAO implements ApplicationDAO {
 		application.setCity(row.getString("city"));
 		application.setState(row.getString("state"));
 		application.setZipcode(row.getInt("zipcode"));
-		property.setPropertyName(row.getString("property_name"));
+		property.setPropertyName(row.getString("propertyName"));
 		application.setProperty(property);
 		return application;
 

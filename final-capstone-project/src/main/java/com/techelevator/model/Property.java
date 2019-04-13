@@ -11,7 +11,7 @@ public class Property {
 	private int numberOfBathrooms;
 	private int squareFootage;
 	private double rent;
-	private String statusOfProperty;
+	private String propertyStatus;
 	private String streetAddress1;
 	private String streetAddress2;
 	private String city;
@@ -19,6 +19,14 @@ public class Property {
 	private int zipcode;
 	private String propertyName;
 	private boolean offerAvailable;
+
+	public String getPropertyStatus() {
+		return propertyStatus;
+	}
+
+	public void setPropertyStatus(String propertyStatus) {
+		this.propertyStatus = propertyStatus;
+	}
 
 	public String getPropertyName() {
 		return propertyName;
@@ -146,14 +154,6 @@ public class Property {
 
 	public void setRent(double rent) {
 		this.rent = rent;
-	}
-
-	public String getStatusOfProperty() {
-		return statusOfProperty;
-	}
-
-	public void setStatusOfProperty(String statusOfProperty) {
-		this.statusOfProperty = statusOfProperty;
 	}
 
 }

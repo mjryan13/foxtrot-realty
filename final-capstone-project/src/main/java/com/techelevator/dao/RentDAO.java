@@ -1,11 +1,13 @@
 package com.techelevator.dao;
 
+import java.util.List;
+
 import com.techelevator.model.Rent;
 
 public interface RentDAO {
 
 	void payRent(Rent rent);
 
-	double getRent(String userName);
+	List<Rent> getAllRents();
 
 }

@@ -620,7 +620,7 @@ form.search button:hover {
 	100% { opacity: 0 }
 }
 header {
-	background-color: #659EC7;
+	background-color: #F5F5DC;
 	margin-bottom: 30px;
 	display: flex;
 	flex-direction: row;
@@ -704,7 +704,6 @@ body {
 body, header, nav {
 	margin: 0px;
 }
->>>>>>> 20c67de1745a0141c43d8b2c3f74a718233632f1
 
 .headerTitle img{
 	width: 35%;
@@ -1385,6 +1384,25 @@ label {
 
 .loginPage {
 	text-align: center;
+}
+
+/*------ Admin Page ------*/
+
+.containers {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	align-items: center;
+	justify-content: center;
+}
+.pending-container {
+   grid-column-start: 2;
+   align-self: center;
+   justify-self: center;
+   border-style: solid;
+   border-width: 1px;
+   padding: 50px;
+   border-radius: 3px;
+  
 }
 
 

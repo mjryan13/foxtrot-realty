@@ -52,7 +52,7 @@ public class JDBCServiceRequestDAO implements ServiceRequestDAO {
 		ServiceRequest request = new ServiceRequest();
 		Property property = new Property();
 		User user = new User();
-		request.setDescription(row.getString("desciption"));
+		request.setDescription(row.getString("description"));
 		request.setRequestStatus(row.getString("request_status"));
 		property.setPropertyName(row.getString("property_name"));
 		user.setFirstName(row.getString("first_name"));

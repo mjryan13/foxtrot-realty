@@ -39,12 +39,6 @@ public class UserController {
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
 			return "redirect:/users/new";
 		}
-		
-		user.setFirstName("Nik");
-		user.setLastName("Reddy");
-		user.setRole("tenant");
-		user.setEmailId("nik@gmail.com");
-		user.setPhoneNumber((long) 93758990);
 		userDAO.saveUser(user);
 		return "redirect:/login";
 	}
