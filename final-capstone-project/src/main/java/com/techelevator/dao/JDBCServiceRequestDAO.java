@@ -38,9 +38,9 @@ public class JDBCServiceRequestDAO implements ServiceRequestDAO {
 	public List<ServiceRequest> showAllServiceRequests() {
 		// TODO Auto-generated method stub
 		List<ServiceRequest> allServiceRequests = new ArrayList<>();
-		String sqlSelectAllServiceRequests = "SELECT property.property_name, service_request.description, service_request.request_status, users.first_name, users.last_name, users.email, users.phone_number from service_request\n" + 
-				"JOIN property ON property.property_id = service_request.property_id\n" + 
-				"JOIN users ON users.user_id = service_request.user_id";
+		String sqlSelectAllServiceRequests = "SELECT property.property_name, service_request.description, service_request.request_status, users.first_name, users.last_name, users.email, users.phone_number from service_request\n"
+				+ "JOIN property ON property.property_id = service_request.property_id\n"
+				+ "JOIN users ON users.user_id = service_request.user_id";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllServiceRequests);
 		while (results.next()) {
 			allServiceRequests.add(mapRowToServiceRequest(results));

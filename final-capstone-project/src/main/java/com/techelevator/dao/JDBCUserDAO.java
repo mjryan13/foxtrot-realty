@@ -22,24 +22,23 @@ public class JDBCUserDAO implements UserDAO {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 		this.hashMaster = hashMaster;
 	}
-	
+
 	@Override
 	public void saveUser(User user) {
 		byte[] salt = hashMaster.generateRandomSalt();
 		String hashedPassword = hashMaster.computeHash(user.getPassword(), salt);
 		String saltString = new String(Base64.encode(salt));
-//		user.setUserID(getNextUserId());
-		jdbcTemplate.update("INSERT INTO users(first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-				user.getFirstName(), user.getLastName(), user.getUserName(), hashedPassword, user.getRole(), user.getPhoneNumber(), user.getEmailId(), saltString);
+		jdbcTemplate.update(
+				"INSERT INTO users(first_name, last_name, user_name, password, role, phone_number, email, salt) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+				user.getFirstName(), user.getLastName(), user.getUserName(), hashedPassword, user.getRole(),
+				user.getPhoneNumber(), user.getEmailId(), saltString);
 	}
 
 	@Override
 	public boolean searchForUsernameAndPassword(String userName, String password) {
-		String sqlSearchForUser = "SELECT * "+
-							      "FROM users "+
-							      "WHERE UPPER(user_name) = ? ";
+		String sqlSearchForUser = "SELECT * " + "FROM users " + "WHERE UPPER(user_name) = ? ";
 		SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUser, userName.toUpperCase());
-		if(user.next()) {
+		if (user.next()) {
 			String dbSalt = user.getString("salt");
 			String dbHashedPassword = user.getString("password");
 			String givenPassword = hashMaster.computeHash(password, Base64.decode(dbSalt));
@@ -56,32 +55,17 @@ public class JDBCUserDAO implements UserDAO {
 
 	@Override
 	public User getUserByUserName(String userName) {
-		String sqlSearchForUsername ="SELECT * "+
-		"FROM users "+
-		"WHERE user_name = ? ";
-		
+		String sqlSearchForUsername = "SELECT * " + "FROM users " + "WHERE user_name = ? ";
 
-		SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUsername, userName); 
-//		System.out.println(userName);
+		SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUsername, userName);
 		User thisUser = null;
-		if(user.next()) {
+		if (user.next()) {
 			thisUser = new User();
 			thisUser.setUserName(user.getString("user_name"));
 			thisUser.setPassword(user.getString("password"));
 			thisUser.setRole(user.getString("role"));
 		}
-//        System.out.println("in DAO" + thisUser.getRole());
 		return thisUser;
 	}
-	
-//	private int getNextUserId() {
-//		SqlRowSet nextIdResult = jdbcTemplate.queryForRowSet("SELECT nextval('seq_user_id')");
-//		if(nextIdResult.next()) {
-//			return nextIdResult.getInt(1);
-//		} else {
-//			throw new RuntimeException("Something went wrong while getting an id for the new city");
-//		}
-//	}
-
 
 }

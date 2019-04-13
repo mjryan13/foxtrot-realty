@@ -69,8 +69,6 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		if (result.next()) {
 			newProperty = mapRowToProperty(result);
 		}
-		System.out.println(newProperty.getRent());
-		System.out.println(userName);
 		return newProperty;
 		
 	}
