@@ -35,6 +35,19 @@
 		});
 	});
 </script>
+<div class="slideshow-container">
+<ul class="slideshow">
+  <li><span>Image 01</span></li>
+  <li><span>Image 02</span></li>
+  <li><span>Image 03</span></li>
+  <li><span>Image 04</span></li>
+  <li><span>Image 05</span></li>
+  <li><span>Image 06</span></li>
+</ul>
+
+ <div class="display-container">
+     <div class="displayMainContainer">
+
 
 <c:url var="formAction" value="/users" />
 <form method="POST" action="${formAction}">
@@ -77,11 +90,13 @@
 			<option value="owner">Property Owner</option>
 			</select>
 			</div>
-			
-			<button type="submit" class="btn btn-primary">Create User</button>
+			<br>
+			<button type="submit" class="btn btn-primary" style="background-color:green; color: white; border-radius: 5px">Create User</button>
 		</div>
 	
 </form>
+</div>
+</div>
 
 <%@ include file="footer.jsp"%>
 		

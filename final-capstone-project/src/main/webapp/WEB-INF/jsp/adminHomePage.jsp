@@ -22,7 +22,7 @@
 		</div>
 		<nav>
 			<ul>
-			<li><a href="${logout}">Logout</a></li>
+				<li><a href="${logout}">Logout</a></li>
 			</ul>
 		</nav>
 
@@ -30,208 +30,236 @@
 	</header>
 
 	<div id="main-content">
-	
-	
+
+
 		<div class="tab">
-		<button class="tablinks" onclick="openOption(event, 'pending')" id="defaultOpen">Pending Rentals</button>
-		<button class="tablinks" onclick="openOption(event, 'properties')" >Properties</button>
-		<button class="tablinks" onclick="openOption(event, 'rents')" >Rents</button>
-		<button class="tablinks" onclick="openOption(event, 'service')">Service Request</button>
+			<button class="tablinks" onclick="openOption(event, 'pending')"
+				id="defaultOpen">Pending Rentals</button>
+			<button class="tablinks" onclick="openOption(event, 'properties')">Properties</button>
+			<button class="tablinks" onclick="openOption(event, 'rents')">Rents</button>
+			<button class="tablinks" onclick="openOption(event, 'serviceRequest')">Service
+				Request</button>
 		</div>
-					
+
+		<div class="slideshow-container">
+			<ul class="slideshow">
+				<li><span>Image 01</span></li>
+				<li><span>Image 02</span></li>
+				<li><span>Image 03</span></li>
+				<li><span>Image 04</span></li>
+				<li><span>Image 05</span></li>
+				<li><span>Image 06</span></li>
+			</ul>
+
+			<div class="display-container">
+				<div class="displayMainContainer">
+
 					<!-- <h1 style="margin-left: 0px; text-align: center">Pending Rentals</h1> -->
-	
-	
 
-		<div class="containers">
-			
-<!-- 			<h2 style="margin-left: 0px; text-align: center">Application</h2>
- -->		
-			<div class="pending-container" id="pending">
-			<h1 style="margin-left: 0px; text-align: center">Pending Rentals</h1>
-			<h2 style="margin-left: 0px; text-align: center">Application</h2>
-			
-			<c:forEach items="${applications}" var="application">
-			<div class="admin-options">
-				<br>
-				
-				<br>
-				<table >
-				<tr>
-				<td>Property Name:</td>
-				<td>${application.property.propertyName}</td>
-				</tr>
-				<tr>	
-				<td>First Name:</td>
-				<td>${application.firstName}</td>
-				</tr>
-				<tr>
-				<td>Last Name:</td>
-				<td>${application.lastName}</td>
-				</tr>
-				<tr>
-				<td>Current Employer:</td>
-				<td>${application.currentEmployer}</td>
-				</tr>
-				<tr>
-				<td>Annual Income:</td>
-				<fmt:formatNumber var="annualIncome" value="${application.annualIncome}"
-					type="currency" />
-				<td>${annualIncome}</td>
-				</tr>
-				<tr>
-				<td>Phone:</td>
-				<td>${application.phoneNumber}</td>
-				</tr>
-				<tr>
-				<td>Address:</td>
-				<td><c:out value="${application.addressLine1} ${application.addressLine2},  ${application.city}, ${application.state},  ${application.zipcode}" /></td>
-				</tr>
-				
-				</table>
-				<tr style="margin-left: 10px">
-				<c:url var="approveOrDeny" value="/adminConfirm" />
-				<form  method="POST" action="${approveOrDeny}">
-				<input type="hidden" id="applicationId" name="applicationId" value="${application.applicationId}"/>
-				<input type="submit" style="background-color:green; color: white; border-radius: 5px" value="Approve" />
-				</form>
-				<form  method="POST" action="${approveOrDeny}">
-				<input type="hidden" id="applicationId" name="applicationId" value="${application.applicationId}"/>
-				<input type="submit" style="background-color:red; color: white; border-radius: 5px"value="Decline" />
-				</form>
-				</tr>
-				<br>
-				</div>
-				</c:forEach>
-			</div>
-			
-				
 
-		<div id="properties"  class="pending-container">
-			<div class="property-container">
-				<h1 style="margin-left: 0px; text-align: center">Properties</h1>
+
+					<!-- <div class="containers"> -->
+
+					<!-- 			<h2 style="margin-left: 0px; text-align: center">Application</h2>
+ -->
+					<div class="pending-container" id="pending">
+						<h1 style="margin-left: 0px; text-align: center">Pending
+							Rentals</h1>
+						<h2 style="margin-left: 0px; text-align: center">Application</h2>
+
+						<c:forEach items="${applications}" var="application">
+							<div class="admin-options">
+								<br> <br>
+								<table>
+									<tr>
+										<td>Property Name:</td>
+										<td>${application.property.propertyName}</td>
+									</tr>
+									<tr>
+										<td>First Name:</td>
+										<td>${application.firstName}</td>
+									</tr>
+									<tr>
+										<td>Last Name:</td>
+										<td>${application.lastName}</td>
+									</tr>
+									<tr>
+										<td>Current Employer:</td>
+										<td>${application.currentEmployer}</td>
+									</tr>
+									<tr>
+										<td>Annual Income:</td>
+										<fmt:formatNumber var="annualIncome"
+											value="${application.annualIncome}" type="currency" />
+										<td>${annualIncome}</td>
+									</tr>
+									<tr>
+										<td>Phone:</td>
+										<td>${application.phoneNumber}</td>
+									</tr>
+									<tr>
+										<td>Address:</td>
+										<td><c:out
+												value="${application.addressLine1} ${application.addressLine2},  ${application.city}, ${application.state},  ${application.zipcode}" /></td>
+									</tr>
+
+								</table>
+								<tr style="margin-left: 10px">
+									<c:url var="approveOrDeny" value="/adminConfirm" />
+									<form method="POST" action="${approveOrDeny}">
+										<input type="hidden" id="applicationId" name="applicationId"
+											value="${application.applicationId}" /> <input type="submit"
+											style="background-color: green; color: white; border-radius: 5px"
+											value="Approve" />
+									</form>
+									<form method="POST" action="${approveOrDeny}">
+										<input type="hidden" id="applicationId" name="applicationId"
+											value="${application.applicationId}" /> <input type="submit"
+											style="background-color: red; color: white; border-radius: 5px"
+											value="Decline" />
+									</form>
+								</tr>
+								<br>
+							</div>
+						</c:forEach>
+					</div>
+
+
+
+					<div id="properties" class="pending-container">
+						<div class="property-container">
+							<h1 style="margin-left: 0px; text-align: center">Properties</h1>
+
+							<c:forEach items="${properties}" var="property">
+								<br>
+								<div class="admin-options">
+									<div style="text-align: center; padding-top: 20px">
+										<span><img src="img/${property.propertyId}.jpg"></span>
+									</div>
+									<div style="text-align: center">
+
+										<span style="margin: 5px"><c:out
+												value="Property Name:   ${property.propertyName}"></c:out></span><br>
+										<fmt:formatNumber var="propertyRent" value="${property.rent}"
+											type="currency" />
+										<span style="margin: 5px"><c:out
+												value="Rent Amount: ${propertyRent}"></c:out></span><br> <span
+											style="margin: 5px"><c:out
+												value="Property Status: ${property.propertyStatus}"></c:out></span><br>
+
+									</div>
+
+								</div>
+							</c:forEach>
+						</div>
+					</div>
+
+					<div id="rents" class="pending-container">
+						<div class="property-container">
+							<h1 style="margin-left: 0px; text-align: center">Rent</h1>
+							<br>
+							<c:forEach items="${rents}" var="rent">
+								<div class="admin-options">
+									<table>
+										<!-- <br>
 				
-				<c:forEach items="${properties}" var="property">
-				<br>
-				<div class="admin-options">
-				<div style="text-align: center; padding-top: 20px">
-				<span><img src="img/${property.propertyId}.jpg"></span>
+				<br> -->
+										<tr>
+											<td>Property Name:</td>
+											<td>${rent.property.propertyName}</td>
+										</tr>
+										<tr>
+											<td>Rent Amount:</td>
+											<td>$${rent.rent}</td>
+										</tr>
+										<tr>
+											<td>Tenant Name:</td>
+											<td>${rent.user.firstName}${rent.user.lastName}</td>
+										</tr>
+									</table>
+								</div>
+							</c:forEach>
+						</div>
+					</div>
+
+					<div id="serviceRequest" class="pending-container">
+						<div class="property-container">
+							<h1 style="margin-left: 0px; text-align: center">Service
+								Requests</h1>
+							<br>
+							<c:forEach items="${serviceRequests}" var="service">
+								<div class="admin-options">
+									<table>
+										<br>
+
+										<br>
+										<tr>
+											<td>Service Description:</td>
+											<td>${service.description}</td>
+										</tr>
+										<tr>
+											<td>Property Name:</td>
+											<td>${service.property.propertyName}</td>
+										</tr>
+										<tr>
+											<td>Tenant Name:</td>
+											<td>${service.user.firstName}${service.user.lastName}</td>
+										</tr>
+										<tr>
+											<td>Tenant Phone Number:</td>
+											<td>${service.user.phoneNumber}</td>
+										</tr>
+										<tr>
+											<td>Tenant Email:</td>
+											<td>${service.user.emailId}</td>
+										</tr>
+									</table>
+									<c:url var="markComplete" value="/deleteServiceRequest" />
+									<form class="apply" method="POST" action="${markComplete}">
+										<input type="hidden" id="description" name="description"
+											value="${service.description}" /> <input type="hidden"
+											id="propertyId" name="propertyId"
+											value="${service.propertyId}" /> <input type="hidden"
+											id="userId" name="userId" value="${service.userId}" />
+										<button type="submit" class="btn btn-primary"
+											style="background-color: green; color: white; border-radius: 5px">Mark
+											Complete</button>
+									</form>
+								</div>
+
+							</c:forEach>
+						</div>
+
+					</div>
 				</div>
-				<div style="text-align: center">
-				
-				<span style="margin: 5px"><c:out value="Property Name:   ${property.propertyName}"></c:out></span><br>
-				<fmt:formatNumber var="propertyRent" value="${property.rent}"
-					type="currency" />
-				<span style="margin: 5px"><c:out value="Rent Amount: ${propertyRent}"></c:out></span><br>
-				<span style="margin: 5px"><c:out value="Property Status: ${property.propertyStatus}"></c:out></span><br>
-				
-				</div>
-			
-				</div>
-				</c:forEach>
+
 			</div>
-		</div>
-		
-		<div id="rents"  class="pending-container">
-			<div class="property-container">
-				<h1 style="margin-left: 0px; text-align: center">Rent</h1>
-				<br>
-				<c:forEach items="${rents}" var="rent">
-				<div class="admin-options">
-				<table>
-				<!-- <br>
-				
-				<br> --> 
-				<tr>
-				<td>Property Name:</td>
-				<td>${rent.property.propertyName}</td>
-				</tr>
-				<tr>
-				<td>Rent Amount:</td>
-				<td>$${rent.rent}</td>
-				</tr>
-				<tr>
-				<td>Tenant Name:</td>
-				<td>${rent.user.firstName}  ${rent.user.lastName}</td>
-				</tr>
-				</table>
-				</div>
-				</c:forEach>
-			</div>
-		</div>
-		
-		<div id="service"  class="pending-container">
-			<div class="property-container">
-				<h1 style="margin-left: 0px; text-align: center">Service Requests</h1>
-				<br>
-				<c:forEach items="${serviceRequests}" var="service">
-				<div class="admin-options">
-				<table>
-				<br>
-				
-				<br>
-				<tr>
-				<td>Service Description:</td>
-				<td>${service.description}</td>
-				</tr>
-				<tr>
-				<td>Property Name:</td>
-				<td>${service.property.propertyName}</td>
-				</tr>
-				<tr>
-				<td>Tenant Name:</td>
-				<td>${service.user.firstName}  ${service.user.lastName}</td>
-				</tr>
-				<tr>
-				<td>Tenant Phone Number:</td>
-				<td>${service.user.phoneNumber}</td>
-				</tr>
-				<tr>
-				<td>Tenant Email:</td>
-				<td>${service.user.emailId}</td>
-				</tr>
-				</table>
-				<c:url var="markComplete" value="/deleteServiceRequest" />
-				<form class="apply" method="POST" action="${markComplete}">
-				<input type="hidden" id="description" name="description" value="${service.description}"/>
-				<input type="hidden" id="propertyId" name="propertyId" value="${service.propertyId}"/>
-				<input type="hidden" id="userId" name="userId" value="${service.userId}"/>
-				<button type="submit" class="btn btn-primary" style="background-color:green; color: white; border-radius: 5px">Mark Complete</button>
-				</form>
-				</div>
-				
-				</c:forEach>
-			</div>
-					
-		</div>
-		</div>
-		
 	
-	<script>
+		<script>
 			document.getElementById("defaultOpen").click();
-			
+
 			function openOption(evt, cityName) {
-			var i, tabcontent, tablinks;
-			// Get all elements with class="tabcontent" and hide them
-			  tabcontent = document.getElementsByClassName("pending-container");
-			  for (i = 0; i < tabcontent.length; i++) {
-			    tabcontent[i].style.display = "none";
-			  }
+				var i, tabcontent, tablinks;
+				// Get all elements with class="tabcontent" and hide them
+				tabcontent = document
+						.getElementsByClassName("pending-container");
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				}
 
-			  // Get all elements with class="tablinks" and remove the class "active"
-			  tablinks = document.getElementsByClassName("tablinks");
-			  for (i = 0; i < tablinks.length; i++) {
-			    tablinks[i].className = tablinks[i].className.replace(" active", "");
-			  }
+				// Get all elements with class="tablinks" and remove the class "active"
+				tablinks = document.getElementsByClassName("tablinks");
+				for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(
+							" active", "");
+				}
 
-			  // Show the current tab, and add an "active" class to the button that opened the tab
-			  document.getElementById(cityName).style.display = "block";
-			  evt.currentTarget.className += " active";
+				// Show the current tab, and add an "active" class to the button that opened the tab
+				document.getElementById(cityName).style.display = "block";
+				evt.currentTarget.className += " active";
 			}
-			
-	
 		</script>
-		
-		
+
+
 
 		<%@ include file="footer.jsp"%>

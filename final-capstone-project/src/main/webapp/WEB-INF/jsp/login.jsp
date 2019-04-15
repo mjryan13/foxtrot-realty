@@ -24,10 +24,35 @@
 			errorClass : "error"
 		});
 	});
+	
+	
 </script>
 
-<div class="loginPage">
-	<div>
+
+<!-- <div class="loginPage"> -->
+
+<div class="slideshow-container">
+<ul class="slideshow">
+  <li><span>Image 01</span></li>
+  <li><span>Image 02</span></li>
+  <li><span>Image 03</span></li>
+  <li><span>Image 04</span></li>
+  <li><span>Image 05</span></li>
+  <li><span>Image 06</span></li>
+</ul>
+
+ <div class="display-container">
+     <div class="displayMainContainer">
+
+	<%-- <div class="loginImg" >
+		<c:url var= "imageLink"
+			value= "img/1.jpg" />
+
+ 			<img alt="Property Detail Img" src="${imageLink}" />  
+ --%>
+	
+	<div class="login-form">
+	
 		<c:url var="formAction" value="/login" />
 		<form method="POST" action="${formAction}">
 		<input type="hidden" name="destination" value="${param.destination}"/>
@@ -41,10 +66,14 @@
 				<label for="password" style="margin-right: 5px">Password: </label>
 				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" />
 			</div>
-			
+			<br>
 			<button type="submit" class="btn btn-primary">Login</button>
+			</div>
+   
 		</form>
 	</div>
 </div>
+</div>
+<!-- </div> -->
 
 <%@ include file="footer.jsp"%>

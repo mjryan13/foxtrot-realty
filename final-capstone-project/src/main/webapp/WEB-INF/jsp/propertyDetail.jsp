@@ -14,7 +14,7 @@ value= "img/${property.propertyId}.jpg" />
 </div>
 
 	<div class="details">
-	<c:choose>
+	 <c:choose>
 	 <c:when test="${property.offerAvailable == true }">
 	  <p style="margin-top: 0px; color:red"> Special offer: Get $100 off when you sign within a week!!</p>
 		</c:when>
@@ -77,15 +77,15 @@ value= "img/${property.propertyId}.jpg" />
 		
 		<input type="submit" value="Apply Now">
 			<i class="fa fa-search"></i>
-		</input>
+		
 		
 	</form>
+	</div> 
 	</div>
-<div id="map">
+	<div class="map">
+<div id="map"></div>
+	
 </div>
-	</div>
-
-
 
 
 </div>
@@ -95,10 +95,9 @@ value= "img/${property.propertyId}.jpg" />
 <script>
 
 function initMap() {
-	  var myLatLng = {lat: 40.1379741, lng: -83.0157467};
-
+	var myLatLng = {lat: 39.9612, lng: -82.9988};
 	  var map = new google.maps.Map(document.getElementById('map'), {
-	    zoom: 15,
+	    zoom: 10,
 	    center: myLatLng
 	  });
 
@@ -114,4 +113,4 @@ function initMap() {
 
 </script>
 
-<%-- <%@ include file="footer.jsp"%> --%>
+<%@ include file="footer.jsp"%> 

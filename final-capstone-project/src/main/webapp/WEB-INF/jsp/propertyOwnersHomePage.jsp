@@ -39,6 +39,19 @@
 				a Property</button>
 
 		</div>
+		
+		<div class="slideshow-container">
+			<ul class="slideshow">
+				<li><span>Image 01</span></li>
+				<li><span>Image 02</span></li>
+				<li><span>Image 03</span></li>
+				<li><span>Image 04</span></li>
+				<li><span>Image 05</span></li>
+				<li><span>Image 06</span></li>
+			</ul>
+
+			<div class="display-container">
+				<div class="displayMainContainer">
 
 		<div class="owner-container">
 
@@ -46,7 +59,7 @@
 			<h2 style="margin-left:0px; text-align: center"> Properties </h2>
 			
 			<c:forEach items="${properties}" var="property">
-				<table>
+				<table style= "border-style: solid">
 				<tr>
 				<td>Property Name:</td>
 				<td>${property.propertyName}</td>
@@ -160,7 +173,7 @@
 				</select>
 			</div>
 			
-			<button type="submit" class="btn btn-primary">Add Property</button>
+			<button type="submit" class="btn btn-primary" style="background-color:green; color: white; border-radius: 5px">Add Property</button>
 			
 			</form>
 			
@@ -169,6 +182,8 @@
 			
 		</div>
 
+   </div>
+   </div>
            
 
 		<script>

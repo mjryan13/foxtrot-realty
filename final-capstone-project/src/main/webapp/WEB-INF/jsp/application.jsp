@@ -47,15 +47,26 @@
 	</header>
 
 	<div id="main-content">
+	
+	<h1 style="margin-left:0px; text-align: center"> You are one click away from your dream home !!! </h1><br>
+	
 
 <div class="application">
+
+
+	<div class="propertyApplicationImg" >
+		<c:url var= "imageLink"
+			value= "img/${property.propertyId}.jpg" />
+
+ 			<img alt="Property Detail Img" src="${imageLink}" />  
+
+	</div>
 
 	<div class="applicationForm">
 
 	<c:url var="confirmationPage" value="/submitApplication" />	
 	<form class="apply" method="POST" action="${confirmationPage}">
 	  
-<h1 style="margin-left:0px"> You are one click away from your dream home !!! </h1><br>
 		<div class="app-group">
 				<label for="firstName" style="margin-right:15px">First Name: </label>
 				<input type="text" id="firstName" name="firstName" placeHolder="First Name..." class="app-control" required/>
@@ -108,8 +119,9 @@
 				<label for="annualIncome" style="margin-right:15px">Annual Income: </label>
 				<input type="number" id="annualIncome" name="annualIncome" placeHolder="$" class="app-control" required/>
 			</div>
+			<br>
 			
-			<button type="submit" class="btn btn-primary">Submit Application</button>
+			<button type="submit" class="btn btn-primary" style="background-color:green; color: white; border-radius: 5px">Submit Application</button>
 	</form>	
 </div>
 </div>

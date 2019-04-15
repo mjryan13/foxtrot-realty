@@ -37,19 +37,32 @@
 		<button class="tablinks" onclick="openOption(event, 'service')">Service Request</button>
 
 	</div>
+	<div class="slideshow-container">
+<ul class="slideshow">
+  <li><span>Image 01</span></li>
+  <li><span>Image 02</span></li>
+  <li><span>Image 03</span></li>
+  <li><span>Image 04</span></li>
+  <li><span>Image 05</span></li>
+  <li><span>Image 06</span></li>
+</ul>
+
+ <div class="display-container">
+     <div class="displayMainContainer">
 
 
 
 	
-		<div class="container">
+			<div class="tenant-container">
 		<div id="payRent" class="tabcontent">
 			<div class="rentContainer">
-				<h1 style="margin-left: 0px">Pay Rent</h1>
+				<h1 style="margin-left: 0px; text-align: center">Pay Rent</h1>
+				<br>
 				<span style= "display: inline-block; width:250px; text-align: right;" >
 				<c:out value="Community: ${property.propertyName}"/>
 				</span><br/>
 				
-				<span style= "display: inline-block; width:150px; text-align: right;" >
+				<span style= "display: inline-block; width:320px; text-align: center;" >
 				<fmt:formatNumber var="rent" value="${property.rent}"
 					type="currency" />
 				<c:out value="Rent: ${rent}"/>
@@ -63,11 +76,11 @@
 				<label for="creditCardNumber">Name On Card:</label>
 				<input type="text"  name="nameOnCard" placeHolder= "name-on-card" style="margin-left: 5px" /><br /> 
 
-					<label for="creditCardNumber">Credit Card Number:</label>
-					 <input type="text"  name="creditCardNumber" pattern="[0-9]{13,16}" placeHolder= "1234123412341234" style="margin-left: 5px" /><br /> 
-						<label for="expiryDate">Expiry Date: </label> 
+					<label for="creditCardNumber" style= "display: inline-block; width:160px; text-align: center;">Credit Card Number:</label>
+					 <input type="text"  name="creditCardNumber" pattern="[0-9]{13,16}" placeHolder= "1234123412341234" style="margin-left: 0px" /><br /> 
+						<label for="expiryDate" >Expiry Date: </label> 
 						<!-- <input type="text" name="expiryDate" style="margin-left: 5px" /><br>  -->
-						<select  style="margin-left: 5px">
+						<select>
                     <option value="01">January</option>
                     <option value="02">February </option>
                     <option value="03">March</option>
@@ -94,7 +107,7 @@
 						<input type="text" name="CVV" pattern="[0-9]{3,4}" placeHolder="3-digit code" style="margin-left: 5px" /><br> 
 						<br>
 						<img alt="flat fee mls" title="flat fee mls" src="http://www.free-credit-card-logos.com/paypal_mc_visa_amex_disc_210x80.gif" width="210" height="80" border="0" /><br/>
-						<input type="submit" value="Submit Payment"/><br/>
+						<input type="submit" value="Submit Payment" style="background-color:green; color: white; border-radius: 4px; height: 3em; padding: 0px"/><br/>
 						<!-- <p><span id='paymentConfirmation'></span></p> -->
 
 				</form>
@@ -121,14 +134,15 @@
 					<!-- 		<label for="userId">User Id:</label> 
 		<input type="text" name="userId" /><br />  -->
 
-					<input type="submit" value="Submit Service Request" /><br/>
+					<input type="submit" value="Submit Service Request"  style="background-color:green; color: white; border-radius: 4px; height: 3em; padding: 0px"/><br/>
 					<!-- onclick="showRequestConfirmation();" -->
 					<!-- <p><span id='serviceRequestConfirmation'></span></p> -->
 				</form>
 			</div>
 			</div>
 		</div>
-		
+		</div>
+		</div>
 		<script>
 			document.getElementById("defaultOpen").click();
 			
