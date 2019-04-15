@@ -57,6 +57,12 @@ public class AdminController {
 		return "redirect:/admin";
 	}
 	
+	@RequestMapping(path = "/deleteServiceRequest", method = RequestMethod.POST)
+	public String deleteServiceRequest(ModelMap map, ServiceRequest request) {
+		serviceRequestDao.deleteServiceRequest(request);
+		return "redirect:/admin";
+	}
+	
 	
 	
 	

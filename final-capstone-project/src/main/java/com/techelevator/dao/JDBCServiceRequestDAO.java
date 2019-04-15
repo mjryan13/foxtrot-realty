@@ -38,7 +38,7 @@ public class JDBCServiceRequestDAO implements ServiceRequestDAO {
 	public List<ServiceRequest> showAllServiceRequests() {
 		// TODO Auto-generated method stub
 		List<ServiceRequest> allServiceRequests = new ArrayList<>();
-		String sqlSelectAllServiceRequests = "SELECT property.property_name, service_request.description, service_request.request_status, users.first_name, users.last_name, users.email, users.phone_number from service_request\n"
+		String sqlSelectAllServiceRequests = "SELECT property.property_name, service_request.property_id, service_request.description, service_request.request_status, users.first_name, users.last_name, users.email, users.phone_number, service_request.user_id from service_request\n"
 				+ "JOIN property ON property.property_id = service_request.property_id\n"
 				+ "JOIN users ON users.user_id = service_request.user_id";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllServiceRequests);
@@ -48,12 +48,26 @@ public class JDBCServiceRequestDAO implements ServiceRequestDAO {
 		return allServiceRequests;
 	}
 
+	@Override
+	public void deleteServiceRequest(ServiceRequest request) {
+		// TODO Auto-generated method stub
+		String sqlDeleteServiceRequest = "DELETE FROM service_request WHERE property_id=? AND user_id=? AND description=?";
+		System.out.println("request.getDescription()" + request.getDescription());
+		System.out.println("request.getDescription()" + request.getPropertyId());
+		System.out.println("request.getDescription()" + request.getUserId());
+		jdbcTemplate.update(sqlDeleteServiceRequest, request.getPropertyId(), request.getUserId(),
+				request.getDescription());
+
+	}
+
 	private ServiceRequest mapRowToServiceRequest(SqlRowSet row) {
 		ServiceRequest request = new ServiceRequest();
 		Property property = new Property();
 		User user = new User();
 		request.setDescription(row.getString("description"));
 		request.setRequestStatus(row.getString("request_status"));
+		request.setPropertyId(row.getInt("property_id"));
+		request.setUserId(row.getInt("user_id"));
 		property.setPropertyName(row.getString("property_name"));
 		user.setFirstName(row.getString("first_name"));
 		user.setLastName(row.getString("last_name"));
@@ -64,4 +78,5 @@ public class JDBCServiceRequestDAO implements ServiceRequestDAO {
 		return request;
 
 	}
+
 }

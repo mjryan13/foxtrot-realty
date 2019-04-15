@@ -10,5 +10,7 @@ public interface ServiceRequestDAO {
 	
 	List<ServiceRequest> showAllServiceRequests();
 	
+	void deleteServiceRequest(ServiceRequest request);
+	
 
 }

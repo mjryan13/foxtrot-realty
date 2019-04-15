@@ -92,11 +92,11 @@
 				<tr style="margin-left: 10px">
 				<c:url var="approveOrDeny" value="/adminConfirm" />
 				<form  method="POST" action="${approveOrDeny}">
-				<input type="hidden" id="applicationId" name=applicationId value="${application.applicationId}"/>
+				<input type="hidden" id="applicationId" name="applicationId" value="${application.applicationId}"/>
 				<input type="submit" style="background-color:green; color: white; border-radius: 5px" value="Approve" />
 				</form>
 				<form  method="POST" action="${approveOrDeny}">
-				<input type="hidden" id="applicationId" name=applicationId value="${application.applicationId}"/>
+				<input type="hidden" id="applicationId" name="applicationId" value="${application.applicationId}"/>
 				<input type="submit" style="background-color:red; color: white; border-radius: 5px"value="Decline" />
 				</form>
 				</tr>
@@ -191,9 +191,18 @@
 				<td>${service.user.emailId}</td>
 				</tr>
 				</table>
+				<c:url var="markComplete" value="/deleteServiceRequest" />
+				<form class="apply" method="POST" action="${markComplete}">
+				<input type="hidden" id="description" name="description" value="${service.description}"/>
+				<input type="hidden" id="propertyId" name="propertyId" value="${service.propertyId}"/>
+				<input type="hidden" id="userId" name="userId" value="${service.userId}"/>
+				<button type="submit" class="btn btn-primary" style="background-color:green; color: white; border-radius: 5px">Mark Complete</button>
+				</form>
 				</div>
+				
 				</c:forEach>
 			</div>
+					
 		</div>
 		</div>
 		
