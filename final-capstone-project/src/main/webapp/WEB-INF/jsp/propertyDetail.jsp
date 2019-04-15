@@ -9,7 +9,8 @@
 <c:url var= "imageLink"
 value= "img/${property.propertyId}.jpg" />
 
-<img alt="Property Detail Img" src="${imageLink}" /> 
+ <img alt="Property Detail Img" src="${imageLink}" />  
+
 </div>
 
 	<div class="details">
@@ -80,15 +81,19 @@ value= "img/${property.propertyId}.jpg" />
 		
 	</form>
 	</div>
-</div>
-
 <div id="map">
+</div>
+	</div>
+
+
+
 
 </div>
-</div>
 
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">>
+
+
+<script>
+
 function initMap() {
 	  var myLatLng = {lat: 40.1379741, lng: -83.0157467};
 
@@ -103,10 +108,10 @@ function initMap() {
 	    title: 'Hello World!'
 	  });
 	}
-	
+</script>
 
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVOSanLpECyzPhbvZuIdFCbPwsILITf2Y&callback=initMap">
 
 </script>
 
-<%@ include file="footer.jsp"%>
+<%-- <%@ include file="footer.jsp"%> --%>

@@ -883,9 +883,14 @@ form.search button:hover {
 .sortBy{
 	text-align: center;
 }
-.detailContainer {
+/* .detailContainer {
 	display: flex;
 	flex-direction: row;
+} */
+
+.detailContainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 .details{
@@ -1408,9 +1413,13 @@ label {
 }
 
 
-#map {
-  height: 100%;
-}
+
+  #map {
+        width: 50%;
+        height: 50%;
+        background-color: grey;
+      }
+
 
 #properties img {
 	width: 25%;

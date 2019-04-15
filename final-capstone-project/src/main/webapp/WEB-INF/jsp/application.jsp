@@ -11,7 +11,7 @@
 <c:url value="/css/site.css" var="cssHref" />
 <link rel="stylesheet" href="${cssHref}">
 </head>
-<body background="img/${property.propertyId}.jpg">
+<body>
 	<header>
 		<div class="headerTitle">
 		<c:url var="homePage" value="/" />
