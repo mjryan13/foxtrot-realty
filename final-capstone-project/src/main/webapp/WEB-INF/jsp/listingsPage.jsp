@@ -6,11 +6,11 @@
 
 <div class="sortBy">
 	<form class="sortBy" method="GET" action="${sortProperties}">
-		<label for="sortBy"> Sort By:</label> <select name="sortBy"
-			id="sortBy">
-			<option value="zipcode">Zipcode</option>
-			<option value="number_of_bedrooms">Bedrooms</option>
-			<option value="rent">Rent</option>
+		<label for="sortBy"> Sort By:</label> 
+		<select name="sortBy" id="sortBy" onChange = "check(this);">
+			<option value="zipcode" <%if((request.getAttribute("sortBy") != null) && request.getAttribute("sortBy").equals("zipcode")){ %> selected <%} %>>Zipcode</option>
+			<option value="number_of_bedrooms" <%if((request.getAttribute("sortBy") != null) && request.getAttribute("sortBy").equals("number_of_bedrooms")){ %> selected <%} %>>Bedrooms</option>
+			<option value="rent" <%if((request.getAttribute("sortBy") != null) && request.getAttribute("sortBy").equals("rent")){ %> selected <%} %>>Rent</option>
 		</select> <input type="submit" value="Search">
 
 	</form>
@@ -53,6 +53,19 @@
 	</c:forEach>
 
 </div>
+
+<script>
+
+$(function() {
+    if (localStorage.getItem('sortBy')) {
+        $("#sortBy option").eq(localStorage.getItem('sortBy')).prop('selected', true);
+    }
+
+    $("#sortBy").on('change', function() {
+        localStorage.setItem('sortBy', $('option:selected', this).index());
+    });
+});
+</script>
 
 <%@ include file="footer.jsp"%>
 

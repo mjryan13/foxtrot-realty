@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,9 +54,11 @@ public class ListingsController {
 	}
 	
 	@RequestMapping(path = "/sortListings", method = RequestMethod.GET)
-	public String showSortListings(ModelMap map, @RequestParam("sortBy") String sortBy) {	
+	public String showSortListings(ModelMap map, @RequestParam("sortBy") String sortBy, HttpServletRequest request) {	
 		List<Property> propertiesList = propertyDao.sortPropertiesByChoice(sortBy);
 		map.addAttribute("listings", propertiesList);
+		String status = request.getParameter("sortBy");
+		request.setAttribute("sortBy", status);
 		return "listingsPage";
 
 	}

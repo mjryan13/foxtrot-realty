@@ -23,6 +23,7 @@
 		<nav>
 			<ul>
 				<%-- <li><a href="${homePage}">Home</a></li> --%>
+				<li><c:out value="Logged in as: ${user}" /></li> <br/>
 				<li><a href="${logout}">Logout</a></li>
 			</ul>
 		</nav>

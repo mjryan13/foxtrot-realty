@@ -31,6 +31,7 @@ public class TenantController {
 	@RequestMapping(path="/tenants", method=RequestMethod.GET)
 	public String showTenantsPage(ModelMap map) {
 		User user = (User) map.get("currentUser");
+		map.addAttribute("user", user.getUserName());
 		map.addAttribute("property", propertyDao.getRentInformation(user.getUserName()));
 		
 		return "tenantsHomePage";
@@ -43,7 +44,7 @@ public class TenantController {
 		request.setUserId(propertyDao.getRentInformation(user.getUserName()).getUserId());
 		request.setPropertyId(propertyDao.getRentInformation(user.getUserName()).getPropertyId());
 		request.setDescription(description);	
-		request.setRequestStatus("pending");		
+		request.setRequestStatus("Pending");		
 		serviceRequestDao.createServiceRequest(request);
 		
 		return "serviceRequestConfirmationPage";

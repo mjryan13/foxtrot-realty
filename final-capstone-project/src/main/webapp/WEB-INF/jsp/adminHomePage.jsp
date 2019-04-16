@@ -20,11 +20,16 @@
 			<a href="${adminHomePage}"><img src="${homepageImage}"
 				alt="Foxtrot Logo"></a>
 		</div>
+		
 		<nav>
 			<ul>
+				<li><c:out value="Logged in as: ${user}" /></li> <br/>
 				<li><a href="${logout}">Logout</a></li>
+				
 			</ul>
+			
 		</nav>
+		
 
 
 	</header>
@@ -39,6 +44,8 @@
 			<button class="tablinks" onclick="openOption(event, 'rents')">Rents</button>
 			<button class="tablinks" onclick="openOption(event, 'serviceRequest')">Service
 				Request</button>
+				
+			
 		</div>
 
 		<div class="slideshow-container">

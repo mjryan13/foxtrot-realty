@@ -25,6 +25,7 @@ private PropertyDAO propertyDao;
 public String showPropertyOwnersPag(ModelMap map) {
 	
 	User user = (User) map.get("currentUser");
+	map.addAttribute("user", user.getUserName());
 	List<Property> propertiesList = propertyDao.ShowAllPropertiesByUserId(user.getUserID());
     map.addAttribute("properties", propertiesList);  
     return "propertyOwnersHomePage";

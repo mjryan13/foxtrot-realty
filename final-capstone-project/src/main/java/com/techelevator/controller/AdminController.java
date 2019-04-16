@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.techelevator.dao.ApplicationDAO;
 import com.techelevator.dao.PropertyDAO;
@@ -17,8 +18,10 @@ import com.techelevator.model.Application;
 import com.techelevator.model.Property;
 import com.techelevator.model.Rent;
 import com.techelevator.model.ServiceRequest;
+import com.techelevator.model.User;
 
 @Controller
+@SessionAttributes("currentUser")
 public class AdminController {
 	
 	@Autowired
@@ -35,6 +38,9 @@ public class AdminController {
 	
 	@RequestMapping(path = "/admin", method = RequestMethod.GET)
 	public String showApplications(ModelMap map) {
+		
+		User user = (User) map.get("currentUser");
+		map.addAttribute("user", user.getUserName());
 		
 		List<Application> applicationList = applicationDao.showApplications();
 		map.addAttribute("applications", applicationList);
