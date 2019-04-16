@@ -48,7 +48,7 @@
 
 	<div id="main-content">
 	
-	<h1 style="margin-left:0px; text-align: center"> You are one click away from your dream home !!! </h1><br>
+	<h1 style="margin-left:0px; text-align: center; font-style: Italic"> You are one click away from your dream home !!! </h1><br>
 	
 
 <div class="application">
@@ -121,7 +121,7 @@
 			</div>
 			<br>
 			
-			<button type="submit" class="btn btn-primary" style="background-color:green; color: white; border-radius: 5px">Submit Application</button>
+			<button type="submit" class="btn btn-primary" style="background-color:green; color: white; border-radius: 4px; height: 3em;">Submit Application</button>
 	</form>	
 </div>
 </div>

@@ -42,7 +42,8 @@
 				id="defaultOpen">Pending Rentals</button>
 			<button class="tablinks" onclick="openOption(event, 'properties')">Properties</button>
 			<button class="tablinks" onclick="openOption(event, 'rents')">Rents</button>
-			<button class="tablinks" onclick="openOption(event, 'serviceRequest')">Service
+			<button class="tablinks"
+				onclick="openOption(event, 'serviceRequest')">Service
 				Request</button>
 				
 			
@@ -70,14 +71,14 @@
 					<!-- 			<h2 style="margin-left: 0px; text-align: center">Application</h2>
  -->
 					<div class="pending-container" id="pending">
-						<h1 style="margin-left: 0px; text-align: center">Pending
+						<h1 style="margin-left: 0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px">Pending
 							Rentals</h1>
-						<h2 style="margin-left: 0px; text-align: center">Application</h2>
+						<h2 style="margin-left: 0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black">Application</h2>
 
 						<c:forEach items="${applications}" var="application">
 							<div class="admin-options">
 								<br> <br>
-								<table>
+								<table style="text-align: left">
 									<tr>
 										<td>Property Name:</td>
 										<td>${application.property.propertyName}</td>
@@ -109,23 +110,31 @@
 										<td><c:out
 												value="${application.addressLine1} ${application.addressLine2},  ${application.city}, ${application.state},  ${application.zipcode}" /></td>
 									</tr>
+                                   <br>
+								
 
-								</table>
 								<tr style="margin-left: 10px">
+								<td>
+								<br>
 									<c:url var="approveOrDeny" value="/adminConfirm" />
 									<form method="POST" action="${approveOrDeny}">
 										<input type="hidden" id="applicationId" name="applicationId"
 											value="${application.applicationId}" /> <input type="submit"
-											style="background-color: green; color: white; border-radius: 5px"
+											style="background-color: green; color: white; border-radius: 5px; height: 2em"
 											value="Approve" />
 									</form>
+									</td>
+									<td>
+									<br>
 									<form method="POST" action="${approveOrDeny}">
 										<input type="hidden" id="applicationId" name="applicationId"
 											value="${application.applicationId}" /> <input type="submit"
-											style="background-color: red; color: white; border-radius: 5px"
+											style="background-color: red; color: white; border-radius: 5px; height: 2em"
 											value="Decline" />
 									</form>
+									</td>
 								</tr>
+                            </table>
 								<br>
 							</div>
 						</c:forEach>
@@ -135,15 +144,15 @@
 
 					<div id="properties" class="pending-container">
 						<div class="property-container">
-							<h1 style="margin-left: 0px; text-align: center">Properties</h1>
+							<h1 style="margin-left: 0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px">Properties</h1>
 
 							<c:forEach items="${properties}" var="property">
 								<br>
 								<div class="admin-options">
-									<div style="text-align: center; padding-top: 20px">
+									<div style="padding-top: 20px">
 										<span><img src="img/${property.propertyId}.jpg"></span>
 									</div>
-									<div style="text-align: center">
+									<!-- <div style="text-align: left"> -->
 
 										<span style="margin: 5px"><c:out
 												value="Property Name:   ${property.propertyName}"></c:out></span><br>
@@ -154,7 +163,7 @@
 											style="margin: 5px"><c:out
 												value="Property Status: ${property.propertyStatus}"></c:out></span><br>
 
-									</div>
+									
 
 								</div>
 							</c:forEach>
@@ -163,11 +172,11 @@
 
 					<div id="rents" class="pending-container">
 						<div class="property-container">
-							<h1 style="margin-left: 0px; text-align: center">Rent</h1>
+							<h1 style="margin-left: 0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px">Rent</h1>
 							<br>
 							<c:forEach items="${rents}" var="rent">
 								<div class="admin-options">
-									<table>
+									<table style="text-align: left">
 										<!-- <br>
 				
 				<br> -->
@@ -191,7 +200,7 @@
 
 					<div id="serviceRequest" class="pending-container">
 						<div class="property-container">
-							<h1 style="margin-left: 0px; text-align: center">Service
+							<h1 style="margin-left: 0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px">Service
 								Requests</h1>
 							<br>
 							<c:forEach items="${serviceRequests}" var="service">
@@ -229,7 +238,7 @@
 											value="${service.propertyId}" /> <input type="hidden"
 											id="userId" name="userId" value="${service.userId}" />
 										<button type="submit" class="btn btn-primary"
-											style="background-color: green; color: white; border-radius: 5px">Mark
+											style="background-color: green; color: white; border-radius: 5px; height: 2em">Mark
 											Complete</button>
 									</form>
 								</div>
@@ -241,8 +250,8 @@
 				</div>
 
 			</div>
-	
-		<script>
+
+			<script>
 			document.getElementById("defaultOpen").click();
 
 			function openOption(evt, cityName) {
@@ -269,4 +278,4 @@
 
 
 
-		<%@ include file="footer.jsp"%>
+			<%@ include file="footer.jsp"%>

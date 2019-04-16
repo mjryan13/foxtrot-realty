@@ -6,12 +6,14 @@
 
 <div class="sortBy">
 	<form class="sortBy" method="GET" action="${sortProperties}">
-		<label for="sortBy"> Sort By:</label> 
-		<select name="sortBy" id="sortBy" onChange = "check(this);">
+		<label for="sortBy" style="font-size: 18px"> Sort By:</label> 
+		<select name="sortBy"  style="margin-right: 3px" id="sortBy" onChange = "check(this);">
 			<option value="zipcode" <%if((request.getAttribute("sortBy") != null) && request.getAttribute("sortBy").equals("zipcode")){ %> selected <%} %>>Zipcode</option>
 			<option value="number_of_bedrooms" <%if((request.getAttribute("sortBy") != null) && request.getAttribute("sortBy").equals("number_of_bedrooms")){ %> selected <%} %>>Bedrooms</option>
 			<option value="rent" <%if((request.getAttribute("sortBy") != null) && request.getAttribute("sortBy").equals("rent")){ %> selected <%} %>>Rent</option>
-		</select> <input type="submit" value="Search">
+		 
+		</select> 
+		<input type="submit" value="Search"/>
 
 	</form>
 </div>

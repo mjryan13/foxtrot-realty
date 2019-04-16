@@ -59,7 +59,7 @@
 			<div class="rentContainer">
 				<h1 style="margin-left: 0px; text-align: center">Pay Rent</h1>
 				<br>
-				<span style= "display: inline-block; width:250px; text-align: right;" >
+				<span style= "display: inline-block; width:300px; text-align: right;" >
 				<c:out value="Community: ${property.propertyName}"/>
 				</span><br/>
 				
@@ -126,7 +126,9 @@
 
 					
 
-					<label for="description">Service Description:</label> 
+					<label for="description" style="width: 160px; ">Service Description:</label>   
+ 
+
 					<br>
 					<textarea placeholder="Describe service needed..." rows="10" cols="50"
 						name="description" style="margin-left: 5px"></textarea>
