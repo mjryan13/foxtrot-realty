@@ -23,7 +23,7 @@ value= "img/${property.propertyId}.jpg" />
 		
 		</c:choose>
 	
-	<div class="propertyName">
+	<div class="propertyName" style="color: #00adee">
 		<c:out value="${property.propertyName}" />
 	</div>
 	<div class="propertyDescription">

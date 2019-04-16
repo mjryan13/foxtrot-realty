@@ -6,7 +6,8 @@
 
 <div class="sortBy">
 	<form class="sortBy" method="GET" action="${sortProperties}">
-		<label for="sortBy"> Sort By:</label> <select name="sortBy"
+		<label for="sortBy" style="font-size: 18px"> Sort By:</label>
+		 <select name="sortBy" style="margin-right: 3px"
 			id="sortBy">
 			<option value="zipcode">Zipcode</option>
 			<option value="number_of_bedrooms">Bedrooms</option>
