@@ -16,23 +16,6 @@
 	</form>
 </div>
 <div class="listing-main">
-	<%-- <c:url var="searchProperties" value="/searchListings" />
-	<p>Search for Properties:</p>
-	<form class="search" method="GET" action="${searchProperties}">
-		<input type="text" placeholder="Enter Zip..." name="zipcode" id="zipcode" />
-		
-		<select name="numberOfBedrooms" id="numberOfBedrooms">
-			<option value="0">Studio</option>
-			<option value="1">1 Bedroom</option>
-			<option value="2">2 Bedrooms</option>
-			<option value="3">3 Bedrooms</option>
-		</select>
-		<button type="submit" value="Search">
-			<i class="fa fa-search"></i>
-		</button>
-	</form> --%>
-
-
 	<c:forEach items="${listings}" var="listing">
 		<div class="listingContainer">
 			<div class="listingImage">
@@ -48,10 +31,7 @@
 					<c:out value="${listing.streetAddress1}" />
 					<br />
 				</div>
-				<div class="address2">
-					<c:out value="${listing.streetAddress2}" />
-					<br />
-				</div>
+	
 				<div class="city">
 					<c:out value="${listing.city}," />
 					<c:out value="${listing.state}," />

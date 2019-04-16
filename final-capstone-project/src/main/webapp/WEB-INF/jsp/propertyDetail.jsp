@@ -96,7 +96,7 @@ value= "img/${property.propertyId}.jpg" />
 
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 8,
+      zoom: 15,
       center: {lat: 40.1379741, lng: -83.0157467}
     });
     var geocoder = new google.maps.Geocoder();
