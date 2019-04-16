@@ -290,6 +290,8 @@ form.search button:hover {
 .display-container {
 	display: flex;
 	justify-content: center;
+	
+	 
 }
 
 .container{
@@ -658,8 +660,17 @@ header {
 	width: auto;
 	position: relative;
     z-index: 99;
-    border-bottom: 20px solid white;
+    border-bottom: 5px solid white;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black; 
+    ;  
+
 }
+header:after{
+
+}
+
 
 /*------ Tenant Page ------*/
 
@@ -921,7 +932,21 @@ td{
 	border-style: solid;
 }
 
+/* .separador {
+margin-top: 50px;
+overflow: hidden;
+height: 20px;
+}
 
+.separador:after {
+content: '';
+display: block;
+width: 90%;
+height: 30px;
+margin: -30px auto 0;
+border-radius: 120px / 10px;
+box-shadow: 0px 0px 8px rgba(0,0,0,.6);
+} */
 
 
 

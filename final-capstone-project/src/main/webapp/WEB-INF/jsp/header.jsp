@@ -20,16 +20,16 @@
 			<!-- <h1 class="foxtrot">FOXTROT</h1>
 			<h2>REAL   ESTATE</h2>	 -->		
  		</div>
- <!-- 		<div class="navBar">
+ <!-- 		<div class="navBar">x
  -->			<nav>
 				<ul>
 					<c:url var="listingsPage" value="/listings" />
-					<li><a href="${homePage}">Home</a></li>
-					<li><a href="${listingsPage}">Listings</a></li>
+					<li><a href="${homePage}">Home</a></li>			
 					<!-- <li><a href="" >Admin</a></li>
 					<li><a href="" >Property Owners</a></li> -->
-					<c:url var="aboutUs" value="/aboutUs" />
+					<c:url var="aboutUs" value="/aboutUs" />			
 					<li><a href="${aboutUs}">About Us</a></li>
+					<li><a href="${listingsPage}">Listings</a></li>
 				<!-- </ul> -->
 
 <!-- 				<div class="login">
