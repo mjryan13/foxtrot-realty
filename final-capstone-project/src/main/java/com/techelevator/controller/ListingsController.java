@@ -39,6 +39,7 @@ public class ListingsController {
 	public String showPropertyDetail(ModelMap map, HttpSession session, @RequestParam("propertyId") int propertyId) {
         session.setAttribute("propertySession", propertyDao.searchPropertyById(propertyId));
 		map.addAttribute("property", propertyDao.searchPropertyById(propertyId));
+		map.addAttribute("addressMap", propertyDao.searchAddressById(propertyId));
 		return "propertyDetail";
 
 	}

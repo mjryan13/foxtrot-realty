@@ -129,43 +129,43 @@ INSERT INTO address(street_name1, street_name2, city, state,  zipcode) VALUES ('
 
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('2000', 'Polaris Point', 'yes', '3', '2', '1200', 'Come home to Orange Woods, a charming apartment home community in Lewis Center, Ohio. Situated on a wood-lined street, we offer the feel of rural living while still having the conveniences of a big city.', 'Apartment', 'available', '1', '1', '1212 Polaris Road', 'Polaris Apartment', 'Columbus', 'Ohio', '43081');
+VALUES ('2000', 'Hudson Square Apartments', 'yes', '3', '2', '1200', 'Our upscale apartment community offers luxury one and two bedroom apartment homes specially designed for your comfort and convenience.', 'Apartment', 'Available', '1', '1', '5459 Olivia Michal Pl', ' ', 'Westerville', 'Ohio', '43081');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('1500', 'Swamill Square', 'no', '2', '2', '1000', 'Situated on a wood-lined street, we offer the feel of rural living while still having the conveniences of a big city.', 'Apartment', 'available', '2', '1', '1212 Swamill Road', 'Swamill', 'Columbus', 'Ohio', '43025');
+VALUES ('1500', 'Dublin Square Apartments', 'no', '2', '2', '1000', 'Our Square is lively and fun. Experience a community where excitement and adventure is a way of life.', 'Apartment', 'Available', '2', '1', '7331 Skyline Dr', ' ', 'Columbus', 'Ohio', '43235');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('950',  'Hiliard Square', 'yes', '1', '1', '900', 'Beautiful Apartments for Singles', 'Apartment', 'available', '3', '1', '101 Robert Road', 'Swamill', 'Hiliard', 'Ohio', '43018');
+VALUES ('950',  'Hiliard Square', 'yes', '1', '1', '900', 'Welcome to Hilliard Square, a great place to call home.', 'Apartment', 'Available', '3', '1', '4674 Leap Ct', ' ', 'Hiliard', 'Ohio', '43026');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('950',  'Hiliard Square', 'yes', '1', '1', '800', 'Beautiful Apartments for Singles', 'Apartment', 'available', '5', '1', '101 Robert Road', 'Swamill', 'Hiliard', 'Ohio', '43018');
+VALUES ('950',  '801 Polaris', 'yes', '1', '1', '800', '801 Polaris is an apartment community that brings the convenience of suburban living to the sophistication of the urban experience.', 'Apartment', 'Available', '5', '1', '801 Polaris Parkway', ' ', 'Columbus', 'Ohio', '43240');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('1360',  'Bethel Commons', 'yes', '3', '2', '1250', 'Beautiful Apartments for big family', 'Apartment', 'available', '5', '1', '101 Bethel Road', 'On Bethel', 'Dublin', 'Ohio', '43088');
+VALUES ('1360',  'The Garratt', 'yes', '3', '2', '1250', 'Located in the top-rated Westerville School District and near popular recreation spots, our Cortland community delivers the best of Westerville living to your doorstep.', 'Apartment', 'Available', '5', '1', '5415 Turtle Station', ' ', 'Westerville', 'Ohio', '43081');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('1000',  'Blaahha Commons', 'no', '2', '2', '1050', 'Beautiful Apartments for family', 'Apartment', 'available', '6', '1', '101 Bllha Road', 'On hjh', 'Dublin', 'Ohio', '43078');
+VALUES ('1000',  'Albany Woods', 'no', '2', '2', '1050', 'Tranquility awaits beyond our gates in one of New Albany''s highest rated apartment communities!', 'Apartment', 'Available', '6', '1', '5775 Harlem Road', ' ', 'New Albany', 'Ohio', '43054');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('1000',  'billgate Apartments', 'no', '1', '2', '850', 'Beautiful Apartments for family', 'Apartment', 'available', '6', '1', '101 Billgate Road', 'Bilgate ', 'Dublin', 'Ohio', '43002');
+VALUES ('1100',  'Albany Landings', 'no', '1', '2', '850', 'With a picturesque location just minutes from SR-161 and world-class shopping at Easton Town Center, welcome to the ideal apartment community in New Albany.', 'Apartment', 'Available', '6', '1', '5500 Bilberry Ln', ' ', 'Westerville', 'Ohio', '43081');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('1000',  'Zimba Apartments', 'no', '1', '2', '1250', 'Beautiful Apartments for family', 'Apartment', 'available', '6', '1', '101 Billgate Road', 'Bilgate ', 'Dublin', 'Ohio', '43002');
+VALUES ('1090',  'Albany Glenn', 'no', '1', '2', '1250', 'New Albany''s Premier Apartment Home Neighborhood. Where quality meets sophistication', 'Apartment', 'Available', '6', '1', '3691 Albany Chase', ' ', 'Columbus', 'Ohio', '43230');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('1000',  'Rocky Condos and Apt', 'no', '1', '2', '950', 'Beautiful Apartments for family', 'Apartment', 'available', '5', '1', '101 Billgate Road', 'Bilgate ', 'Pataskla', 'Ohio', '43002');
+VALUES ('1140',  'The Gramercy', 'no', '1', '2', '950', 'Meet a different kind of apartment homes that combine urban barn style with modern, sophisticated finishes.', 'Apartment', 'Available', '5', '1', '5935 Central College Road', ' ', 'New Albany', 'Ohio', '43054');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('1000',  'Windfree APT', 'no', '1', '2', '850', 'Beautiful Apartments for family', 'Apartment', 'rented', '5', '1', '101 Billgate Road', 'Bilgate ', 'Pataskla', 'Ohio', '43002');
+VALUES ('1070',  'Prescott Place Apartments', 'no', '1', '2', '850', 'Leave your troubles at the door, as the management team at Prescott Place has anticipated your every need for a carefree lifestyle.', 'Apartment', 'Rented', '5', '1', '351 Peat Moss Drive', ' ', 'Columbus', 'Ohio', '43235');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('1000',  'Cricket Apt and Condos', 'no', '1', '2', '1250', 'Beautiful Apartments for family', 'Apartment', 'available', '5', '1', '101 Tyler Road', 'Bilgate ', 'Gahana', 'Ohio', '43002');
+VALUES ('1010',  'The Heights at Worthington', 'no', '1', '2', '1250', 'Our one of the kind location provides residents the best of Living, Dining and Shopping all within their backyard.', 'Apartment', 'Available', '5', '1', '160 W Wilson Bridge Road', ' ', 'Worthington', 'Ohio', '43085');
 
 
 
 INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Great room electric sockets are not working', 'pending', '1');
 INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('2', 'Sink garbage disposal is not working', 'pending', '4');
-INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('3', 'Master bedroom bathroom shower is licking', 'pending', '5');
+INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('3', 'Master bedroom bathroom shower is leaking', 'pending', '5');
 
 INSERT INTO payment(rent, property_id, user_id) VALUES ('1200', '1', '1');
 INSERT INTO payment(rent, property_id, user_id) VALUES ('1000', '2', '2');

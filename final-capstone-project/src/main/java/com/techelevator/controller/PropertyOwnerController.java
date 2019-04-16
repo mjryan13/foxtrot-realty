@@ -36,7 +36,7 @@ public String addAProperty(ModelMap map, Property property) {
 
 	User user = (User) map.get("currentUser");
 	
-	property.setPropertyStatus("available");
+	property.setPropertyStatus("Available");
 	property.setUserId(user.getUserID());
 	property.setAddressId(1);
 	propertyDao.saveProperty(property);

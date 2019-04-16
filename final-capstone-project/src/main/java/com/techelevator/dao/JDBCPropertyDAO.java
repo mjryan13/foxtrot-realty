@@ -26,7 +26,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	public List<Property> searchAvilableProperties() {
 		// TODO Auto-generated method stub
 		List<Property> availableProperties = new ArrayList<>();
-		String sqlSelectAvailableProperties = "SELECT * FROM property where property_status = 'available' OR property_status = 'pending'";
+		String sqlSelectAvailableProperties = "SELECT * FROM property where property_status = 'Available' OR property_status = 'Pending'";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAvailableProperties);
 		while (results.next()) {
 			availableProperties.add(mapRowToProperty(results));
@@ -59,6 +59,20 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		}
 
 		return newProperty;
+	}
+	
+	@Override
+	public String searchAddressById(int propertyId) {
+		// TODO Auto-generated method stub
+		Property newProperty = null;
+		String sqlSelectPropertyById = "Select street_name1, street_name2, city, state, zipcode from property where property_id = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPropertyById, propertyId);
+
+		if (results.next()) {
+			newProperty = mapRowToAddress(results);
+		}
+
+		return newProperty.getStreetAddress1() + "," + newProperty.getCity() + "," + newProperty.getState() + " " + newProperty.getZipcode();
 	}
 
 	@Override
@@ -140,7 +154,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	@Override
 	public void applyProperty(int propertyId) {
 		// TODO Auto-generated method stub
-		String sqlUpdatePropertyStatus = "update property set property_status= 'pending' where property_id = ?";
+		String sqlUpdatePropertyStatus = "update property set property_status= 'Pending' where property_id = ?";
 		jdbcTemplate.update(sqlUpdatePropertyStatus, propertyId);
 
 	}
@@ -167,6 +181,16 @@ public class JDBCPropertyDAO implements PropertyDAO {
 
 		return newProperty;
 
+	}
+	
+	private Property mapRowToAddress(SqlRowSet row) {
+		Property newProperty = new Property();
+		newProperty.setStreetAddress1(row.getString("street_name1"));
+		newProperty.setCity(row.getString("city"));
+		newProperty.setState(row.getString("state"));
+		newProperty.setZipcode(row.getInt("zipcode"));
+		return newProperty;
+		
 	}
 
 }
