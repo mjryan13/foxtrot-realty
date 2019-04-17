@@ -67,9 +67,14 @@
 				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" />
 			</div>
 			<br>
-			<button type="submit" class="btn btn-primary" style="background-color:green; color: white; border-radius: 5px; height: 2em">Login</button>
+			<button type="submit" class="btn btn-primary" style="background-color:green; color: white; border-radius: 5px; height: 2em; width: 5em">Login</button>
+			<br>
+			<br>
+			<c:url var="register" value="/users/new" />
+			<a href="${register}" style="font-size: 13px">Create Login</a>
+			
 			</div>
-   
+			
 		</form>
 	</div>
 </div>

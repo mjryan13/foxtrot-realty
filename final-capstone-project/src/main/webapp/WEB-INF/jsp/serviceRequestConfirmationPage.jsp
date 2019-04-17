@@ -26,7 +26,10 @@
 
 		</nav>
 	</header>
-	
-	<p>Thanks for submitting your request. We will  reach out to you shortly!!!</p>
-	
+	<div class="confirmation">
+		<p>Thanks for submitting your request. We will  reach out to you shortly!!!</p>
+		<br>
+		<c:url var="listingsPage" value="/listings" />
+		<a href="${homePage}" style="font-size: 20px;">Return Home</a>
+	</div>
 	<%@ include file="footer.jsp"%>

@@ -39,14 +39,9 @@
 
 	</div>
 	<div class="slideshow-container">
-<ul class="slideshow">
-  <li><span>Image 01</span></li>
-  <li><span>Image 02</span></li>
-  <li><span>Image 03</span></li>
-  <li><span>Image 04</span></li>
-  <li><span>Image 05</span></li>
-  <li><span>Image 06</span></li>
-</ul>
+		<div class="adminImage">
+			<span><img src="img/13.jpg" alt="Tenant page image"/></span>
+		</div>
 
  <div class="display-container">
      <div class="displayMainContainer">
@@ -59,7 +54,7 @@
 			<div class="rentContainer">
 				<h1 style="margin-left: 0px; text-align: center">Pay Rent</h1>
 				<br>
-				<span style= "display: inline-block; width:300px; text-align: right;" >
+				<span style= "display: inline-block; width:400px; text-align: center;" >
 				<c:out value="Community: ${property.propertyName}"/>
 				</span><br/>
 				

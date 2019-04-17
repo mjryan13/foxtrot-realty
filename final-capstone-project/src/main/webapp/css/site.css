@@ -100,20 +100,48 @@ nav ul li {
 }
 
 footer {
-	text-align: center;
 	background-color: #8FAAB3;
 	margin-top: 100px;
-	margin-bottom: 10px;
-	padding: 5px;
+	margin-bottom: 2px;
+	/* padding: 5px; */
 	height: 100px;
 	width: 100%;
-	position: relative;	
-	width: auto;
     z-index: 99;
+    position: fixed;
+	bottom: 0;
+	display: flex;
+	flex-direction: row;
+	
+	
+}
+.social-footer {
+	align-self: center;
+   justify-self: center;
+   padding: 15px;
+   width: 13%;
+}
+.social-footer img {
+	height: 30px;
+	width: 30px;
+	margin: 10x;
+	margin-right: 5px;
 }
 
-.copyright {
-	margin: 35px;	
+.copywrite {
+	text-align: right;
+	width: 40%;
+	margin: 35px;
+	color: white;	
+	
+}
+
+.contactUs {
+	text-align: right;
+	width: 44%;
+	margin-right: 10px;
+	margin-top: 10px;
+	justify-content: right;
+	
 }
 
 #main-content {
@@ -206,7 +234,7 @@ form.search button:hover {
 .detailContainer {
 	display: flex;
 	flex-direction: row;
-	padding-top: 10px;
+	padding-top: 25px;
 } 
 
 .details{
@@ -759,6 +787,8 @@ form img {
 	margin-top: 5%;
 	border-radius: 6px;
 	padding: 15px;
+		margin-bottom: 5%;
+	
 }
 
 
@@ -932,21 +962,32 @@ td{
 	border-style: solid;
 }
 
-/* .separador {
-margin-top: 50px;
-overflow: hidden;
-height: 20px;
+.adminImage {
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
 }
 
-.separador:after {
-content: '';
-display: block;
-width: 90%;
-height: 30px;
-margin: -30px auto 0;
-border-radius: 120px / 10px;
-box-shadow: 0px 0px 8px rgba(0,0,0,.6);
-} */
+.adminImage img {
+	width: 100%;
+	height: 100%;
+}
+
+.social img {
+	height: 3%;
+	width: 3%;
+	margin: 10px;
+}
+
+.confirmation {
+	text-align: center;
+	font-size: 30px;
+	font-style: Italic;
+	margin-top: 50px;
+}
 
 
 
