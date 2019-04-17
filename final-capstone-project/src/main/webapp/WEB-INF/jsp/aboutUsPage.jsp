@@ -18,8 +18,11 @@ Foxtrot’s stellar reputation among real estate professionals is a particular s
  <p > Foxtrot Real Estate Inc.<br>
  
    Phone No: 614-6786-9090
- 
-      </p>
+ <img src="img/twitter.png" />
+ <img src="img/facebook.png" />
+ <img src="img/instagram.png" />
+ </p>
+      
  </div>
 </div>
 <%@ include file="footer.jsp"%>

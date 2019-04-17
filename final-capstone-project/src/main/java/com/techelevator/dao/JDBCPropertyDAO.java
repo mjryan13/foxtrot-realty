@@ -26,7 +26,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	public List<Property> searchAvilableProperties() {
 		// TODO Auto-generated method stub
 		List<Property> availableProperties = new ArrayList<>();
-		String sqlSelectAvailableProperties = "SELECT * FROM property where property_status = 'Available' OR property_status = 'Pending'";
+		String sqlSelectAvailableProperties = "SELECT * FROM property WHERE property_status = 'Available' OR property_status = 'Pending'";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAvailableProperties);
 		while (results.next()) {
 			availableProperties.add(mapRowToProperty(results));
@@ -39,7 +39,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	public List<Property> showAllProperties() {
 		// TODO Auto-generated method stub
 		List<Property> allProperties = new ArrayList<>();
-		String sqlSelectAllProperties = "SELECT * FROM property";
+		String sqlSelectAllProperties = "SELECT * FROM property ORDER BY property_name";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllProperties);
 		while (results.next()) {
 			allProperties.add(mapRowToProperty(results));
@@ -51,7 +51,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	public Property searchPropertyById(int propertyId) {
 		// TODO Auto-generated method stub
 		Property newProperty = null;
-		String sqlSelectPropertyById = "Select * from property where property_id = ?";
+		String sqlSelectPropertyById = "SELECT * FROM property WHERE property_id = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPropertyById, propertyId);
 
 		if (results.next()) {
@@ -65,7 +65,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	public String searchAddressById(int propertyId) {
 		// TODO Auto-generated method stub
 		Property newProperty = null;
-		String sqlSelectPropertyById = "Select street_name1, street_name2, city, state, zipcode from property where property_id = ?";
+		String sqlSelectPropertyById = "SELECT street_name1, street_name2, city, state, zipcode FROM property WHERE property_id = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPropertyById, propertyId);
 
 		if (results.next()) {
@@ -78,7 +78,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	@Override
 	public Property getRentInformation(String userName) {
 		Property newProperty = null;
-		String sqlGetRent = "select property.* from property join users on property.user_id = users.user_id where users.user_name = ?";
+		String sqlGetRent = "SELECT property.* FROM property JOIN users ON property.user_id = users.user_id WHERE users.user_name = ?";
 		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlGetRent, userName);
 		if (result.next()) {
 			newProperty = mapRowToProperty(result);
@@ -93,11 +93,11 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		List<Property> sortProperties = new ArrayList<>();
 		String sqlSelectPropertyBySort;
 		if (choice.equals("zipcode")) {
-			sqlSelectPropertyBySort = "Select * from property Order By zipcode desc";
+			sqlSelectPropertyBySort = "SELECT * FROM property ORDER BY zipcode DESC";
 		} else if (choice.equals("number_of_bedrooms")) {
-			sqlSelectPropertyBySort = "Select * from property Order By number_of_bedrooms desc";
+			sqlSelectPropertyBySort = "SELECT * FROM property ORDER BY number_of_bedrooms DESC";
 		} else {
-			sqlSelectPropertyBySort = "Select * from property Order By rent";
+			sqlSelectPropertyBySort = "SELECT * FROM property ORDER BY rent";
 		}
 
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPropertyBySort);
@@ -113,7 +113,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	public List<Property> searchPropertiesByChoice(int zipcode, int numberOfBedrooms) {
 		// TODO Auto-generated method stub
 		List<Property> searchProperties = new ArrayList<>();
-		String sqlSelectPropertyBySearch = "Select * from property where zipcode = ? and number_of_bedrooms= ?";
+		String sqlSelectPropertyBySearch = "SELECT * FROM property WHERE zipcode = ? AND number_of_bedrooms= ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPropertyBySearch, zipcode, numberOfBedrooms);
 
 		while (results.next()) {
@@ -127,7 +127,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	public List<Property> ShowAllPropertiesByUserId(int userId) {
 		// TODO Auto-generated method stub
 		List<Property> allPropertiesForUserId = new ArrayList<>();
-		String sqlSelectPropertiesForUserId = "Select * from property where user_id = ?";
+		String sqlSelectPropertiesForUserId = "SELECT * FROM property WHERE user_id = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPropertiesForUserId, userId);
 
 		while (results.next()) {
@@ -154,7 +154,7 @@ public class JDBCPropertyDAO implements PropertyDAO {
 	@Override
 	public void applyProperty(int propertyId) {
 		// TODO Auto-generated method stub
-		String sqlUpdatePropertyStatus = "update property set property_status= 'Pending' where property_id = ?";
+		String sqlUpdatePropertyStatus = "UPDATE property SET property_status= 'Pending' WHERE property_id = ?";
 		jdbcTemplate.update(sqlUpdatePropertyStatus, propertyId);
 
 	}

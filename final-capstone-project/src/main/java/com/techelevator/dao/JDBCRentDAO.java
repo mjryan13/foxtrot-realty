@@ -37,7 +37,7 @@ public class JDBCRentDAO implements RentDAO {
 		// TODO Auto-generated method stub
 		List<Rent> allRents = new ArrayList<>();
 		String sqlSelectAllRents = "SELECT users.first_name, users.last_name, property.property_name, payment.rent, payment.property_id, payment.user_id\n"
-				+ "From payment\n" + "JOIN property ON property.property_id = payment.property_id\n"
+				+ "FROM payment\n" + "JOIN property ON property.property_id = payment.property_id\n"
 				+ "JOIN users ON users.user_id = payment.user_id";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllRents);
 		while (results.next()) {

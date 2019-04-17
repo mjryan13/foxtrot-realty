@@ -138,7 +138,7 @@ INSERT INTO property ( square_feet, property_name, offer_available, number_of_be
 VALUES ('950',  'Hiliard Square', 'yes', '1', '1', '900', 'Welcome to Hilliard Square, a great place to call home.', 'Apartment', 'Available', '3', '1', '4674 Leap Ct', ' ', 'Hiliard', 'Ohio', '43026');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('950',  '801 Polaris', 'yes', '1', '1', '800', '801 Polaris is an apartment community that brings the convenience of suburban living to the sophistication of the urban experience.', 'Apartment', 'Available', '5', '1', '801 Polaris Parkway', ' ', 'Columbus', 'Ohio', '43240');
+VALUES ('950',  '801 Polaris', 'yes', '1', '1', '970', '801 Polaris is an apartment community that brings the convenience of suburban living to the sophistication of the urban experience.', 'Apartment', 'Available', '5', '1', '801 Polaris Parkway', ' ', 'Columbus', 'Ohio', '43240');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
 VALUES ('1360',  'The Garratt', 'yes', '3', '2', '1250', 'Located in the top-rated Westerville School District and near popular recreation spots, our Cortland community delivers the best of Westerville living to your doorstep.', 'Apartment', 'Available', '5', '1', '5415 Turtle Station', ' ', 'Westerville', 'Ohio', '43081');
@@ -147,7 +147,7 @@ INSERT INTO property ( square_feet, property_name, offer_available, number_of_be
 VALUES ('1000',  'Albany Woods', 'no', '2', '2', '1050', 'Tranquility awaits beyond our gates in one of New Albany''s highest rated apartment communities!', 'Apartment', 'Available', '6', '1', '5775 Harlem Road', ' ', 'New Albany', 'Ohio', '43054');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
-VALUES ('1100',  'Albany Landings', 'no', '1', '2', '850', 'With a picturesque location just minutes from SR-161 and world-class shopping at Easton Town Center, welcome to the ideal apartment community in New Albany.', 'Apartment', 'Available', '6', '1', '5500 Bilberry Ln', ' ', 'Westerville', 'Ohio', '43081');
+VALUES ('1100',  'Albany Landings', 'no', '1', '2', '1350', 'With a picturesque location just minutes from SR-161 and world-class shopping at Easton Town Center, welcome to the ideal apartment community in New Albany.', 'Apartment', 'Available', '6', '1', '5500 Bilberry Ln', ' ', 'Westerville', 'Ohio', '43081');
 
 INSERT INTO property ( square_feet, property_name, offer_available, number_of_bedrooms, number_of_bathrooms, rent, property_description, property_type, property_status, user_id, address_id, street_name1, street_name2, city, state,  zipcode) 
 VALUES ('1090',  'Albany Glenn', 'no', '1', '2', '1250', 'New Albany''s Premier Apartment Home Neighborhood. Where quality meets sophistication', 'Apartment', 'Available', '6', '1', '3691 Albany Chase', ' ', 'Columbus', 'Ohio', '43230');
@@ -163,9 +163,10 @@ VALUES ('1010',  'The Heights at Worthington', 'no', '1', '2', '1250', 'Our one 
 
 
 
-INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Great room electric sockets are not working', 'pending', '1');
-INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('2', 'Sink garbage disposal is not working', 'pending', '4');
-INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('3', 'Master bedroom bathroom shower is leaking', 'pending', '5');
+INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('1', 'Great room electric sockets are not working', 'Pending', '1');
+INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('2', 'Sink garbage disposal is not working', 'Pending', '4');
+INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('3', 'Master bedroom bathroom shower is leaking', 'Pending', '5');
+INSERT INTO service_request(property_id, description, request_status, user_id) VALUES ('4', 'Fire alarm battery is down', 'Completed', '5');
 
 INSERT INTO payment(rent, property_id, user_id) VALUES ('1200', '1', '1');
 INSERT INTO payment(rent, property_id, user_id) VALUES ('1000', '2', '2');
@@ -177,7 +178,6 @@ INSERT INTO application(property_id, first_name, last_name, ssn, birthdate, curr
 VALUES ('2', 'Andrew', 'Frank', '123456789', '1985-12-12', 'Tech Elevator', '120000', '6143335678', 'andrew@gmail.com', 'Main Street', '3423', 'Columbus', 'OH', '43037');
 INSERT INTO application(property_id, first_name, last_name, ssn, birthdate, current_employer, annual_income, phone_number, email, address_line1, address_line2, city, state, zipcode)
 VALUES ('3', 'Nikhita', 'Reddy', '123456789', '1992-07-07', 'Chase', '90000', '6144325612', 'nikhita@gmail.com', 'North Street', '5459', 'Columbus', 'OH', '43081');
-
 
 
 

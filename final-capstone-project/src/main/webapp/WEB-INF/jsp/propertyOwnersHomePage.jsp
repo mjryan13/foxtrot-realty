@@ -180,7 +180,7 @@
 			</div>
 			
 			<div class="chartContainer">
-  <h2>Chart.js — Line Chart Demo</h2>
+  <h2>Median Rent by Zipcode</h2>
   <div>
     <canvas id="myChart"></canvas>
   </div>
@@ -224,18 +224,29 @@
 		var myChart = new Chart(ctx, {
 		  type: 'line',
 		  data: {
-		    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+		    labels: ['43081', '43235', '43026', '43240', '43054', '43230', '43085'],
 		    datasets: [{
-		      label: 'apples',
-		      data: [12, 19, 3, 17, 6, 3, 7],
+		      label: 'Median Rent',
+		      data: [1020, 980, 1110, 1095, 1230, 1005, 1255],
 		      backgroundColor: "rgba(153,255,51,0.6)"
-		    }, {
-		      label: 'oranges',
-		      data: [2, 29, 5, 5, 2, 3, 10],
-		      backgroundColor: "rgba(255,153,0,0.6)"
 		    }]
-		  }
+		  },
+		options: {            
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        callback: function(value, index, values) {
+                            return float2dollar(value);
+                        }
+                    }
+                }]                
+            }
+        },
 		});
+		
+		function float2dollar(value){
+		    return "U$ "+(value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+		} 
 		</script>
 		
 		
