@@ -75,6 +75,7 @@ public class ListingsController {
 	public String submitApplication(ModelMap map, Application application) {
 		Property property = (Property) map.get("propertySession");
 		application.setPropertyId(property.getPropertyId());
+		application.setAddressLine2(" ");
 		applicationDao.saveApplication(application);
 		propertyDao.applyProperty(property.getPropertyId());	
 		return "confirmationPage";

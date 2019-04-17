@@ -93,11 +93,11 @@ public class JDBCPropertyDAO implements PropertyDAO {
 		List<Property> sortProperties = new ArrayList<>();
 		String sqlSelectPropertyBySort;
 		if (choice.equals("zipcode")) {
-			sqlSelectPropertyBySort = "SELECT * FROM property ORDER BY zipcode DESC";
+			sqlSelectPropertyBySort = "SELECT * FROM property WHERE property_status = 'Available' OR property_status = 'Pending' ORDER BY zipcode DESC";
 		} else if (choice.equals("number_of_bedrooms")) {
-			sqlSelectPropertyBySort = "SELECT * FROM property ORDER BY number_of_bedrooms DESC";
+			sqlSelectPropertyBySort = "SELECT * FROM property WHERE property_status = 'Available' OR property_status = 'Pending' ORDER BY number_of_bedrooms DESC";
 		} else {
-			sqlSelectPropertyBySort = "SELECT * FROM property ORDER BY rent";
+			sqlSelectPropertyBySort = "SELECT * FROM property WHERE property_status = 'Available' OR property_status = 'Pending' ORDER BY rent";
 		}
 
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPropertyBySort);

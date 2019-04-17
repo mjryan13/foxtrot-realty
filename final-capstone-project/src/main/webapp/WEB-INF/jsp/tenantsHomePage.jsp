@@ -126,7 +126,7 @@
 
 					<br>
 					<textarea placeholder="Describe service needed..." rows="10" cols="50"
-						name="description" style="margin-left: 5px"></textarea>
+						name="description" style="margin-left: 5px" required></textarea>
 					<br />
 					<br>
 					<!-- 		<label for="userId">User Id:</label> 

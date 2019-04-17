@@ -142,7 +142,7 @@
 			
 			<div class="app-group">
 				<label for="streetAddress2" style= "display: inline-block; width:160px; text-align: right">Address Line 2: </label>
-				<input type="text" id="streetAddress2" name="streetAddress2" placeHolder="Address Line 2..." class="app-control" required/>
+				<input type="text" id="streetAddress2" name="streetAddress2" placeHolder="Address Line 2..." class="app-control"/>
 			</div>
 			
 			<div class="app-group">

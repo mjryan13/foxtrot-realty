@@ -97,7 +97,7 @@
 			</div>
 			<div class="app-group">
 				<label for="addressLine2" style="margin-right:15px">Address Line2: </label>
-				<input type="text" id="addressLine2" name="addressLine2" placeHolder="Current Address Line1" class="app-control" required/>
+				<input type="text" id="addressLine2" name="addressLine2" placeHolder="Current Address Line1" class="app-control"/>
 			</div>
 			<div class="app-group">
 				<label for="city" style="margin-right:15px">City: </label>

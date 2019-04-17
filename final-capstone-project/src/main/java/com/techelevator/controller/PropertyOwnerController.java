@@ -40,6 +40,7 @@ public String addAProperty(ModelMap map, Property property) {
 	property.setPropertyStatus("Available");
 	property.setUserId(user.getUserID());
 	property.setAddressId(1);
+	property.setStreetAddress2(" ");
 	propertyDao.saveProperty(property);
 	
 	return "redirect:/propertyOwners";
