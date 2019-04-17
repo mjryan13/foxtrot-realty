@@ -17,7 +17,7 @@
 <div class="contactUs">
 <c:url var="aboutUs" value="/aboutUs" />
 <a href="${aboutUs}" style="color: white">Contact Us</a>
-<p style="margin: 0px; font-size: 13px; padding-top: 5px;">FoxTrot Realty<br>
+<p style="margin: 0px; font-size: 11px; padding-top: 5px;">FoxTrot Realty<br>
 1275 Kinnear Rd. #121<br>
  Columbus, OH 43212
 </p>

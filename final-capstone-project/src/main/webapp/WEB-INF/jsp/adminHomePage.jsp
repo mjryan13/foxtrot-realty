@@ -41,7 +41,7 @@
 			<button class="tablinks" onclick="openOption(event, 'pending')"
 				id="defaultOpen">Pending Rentals</button>
 			<button class="tablinks" onclick="openOption(event, 'properties')">Properties</button>
-			<button class="tablinks" onclick="openOption(event, 'rents')">Rents</button>
+			<button class="tablinks" onclick="openOption(event, 'rents')">Payment History</button>
 			<button class="tablinks"
 				onclick="openOption(event, 'serviceRequest')">Service
 				Request</button>
@@ -169,7 +169,7 @@
 
 					<div id="rents" class="pending-container">
 						<div class="property-container">
-							<h1 style="margin-left: 0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px">Rent</h1>
+							<h1 style="margin-left: 0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px">Payment History</h1>
 							<br>
 							<c:forEach items="${rents}" var="rent">
 								<div class="admin-options">
