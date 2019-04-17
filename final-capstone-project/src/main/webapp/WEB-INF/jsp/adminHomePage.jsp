@@ -50,14 +50,11 @@
 		</div>
 
 		<div class="slideshow-container">
-			<ul class="slideshow">
-				<li><span>Image 01</span></li>
-				<li><span>Image 02</span></li>
-				<li><span>Image 03</span></li>
-				<li><span>Image 04</span></li>
-				<li><span>Image 05</span></li>
-				<li><span>Image 06</span></li>
-			</ul>
+			<div class="adminImage">
+				<span><img src="img/14.jpg" alt="Home page image"/></span>
+			
+			</div>
+		
 
 			<div class="display-container">
 				<div class="displayMainContainer">
@@ -205,7 +202,7 @@
 							<br>
 							<c:forEach items="${serviceRequests}" var="service">
 								<div class="admin-options">
-									<table>
+									<table style= "display: inline-block; width: 500px; text-align: left">
 										<br>
 
 										<br>
@@ -238,21 +235,24 @@
 											value="${service.propertyId}" /> <input type="hidden"
 											id="userId" name="userId" value="${service.userId}" />
 										<button type="submit" class="btn btn-primary"
-											style="background-color: green; color: white; border-radius: 5px; height: 2em">Mark
+											style="background-color: green; color: white; border-radius: 5px; height: 2em; margin: 0px">Mark
 											Complete</button>
 									</form>
 								</div>
 
 							</c:forEach>
+							<br>
+							<hr>
 							<h1 style="margin-left: 0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px">Completed Service
 								Requests</h1>
 							<br>
 							<c:forEach items="${completedServiceRequests}" var="service">
 								<div class="admin-options">
-									<table>
+									<table style= "display: inline-block; width: 500px; text-align: left">
 										<br>
 
 										<br>
+										<h3 style="color: red">Completed</h3>
 										<tr>
 											<td>Service Description:</td>
 											<td>${service.description}</td>
@@ -283,7 +283,7 @@
 				</div>
 
 			</div>
-
+	</div>
 			<script>
 			document.getElementById("defaultOpen").click();
 

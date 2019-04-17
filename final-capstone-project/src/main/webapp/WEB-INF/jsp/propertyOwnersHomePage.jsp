@@ -42,14 +42,10 @@
 		</div>
 		
 		<div class="slideshow-container">
-			<ul class="slideshow">
-				<li><span>Image 01</span></li>
-				<li><span>Image 02</span></li>
-				<li><span>Image 03</span></li>
-				<li><span>Image 04</span></li>
-				<li><span>Image 05</span></li>
-				<li><span>Image 06</span></li>
-			</ul>
+			<div class="adminImage">
+				<span><img src="img/12.jpg" alt="Home page image"/></span>
+			
+			</div>
 
 			<div class="display-container">
 				<div class="displayMainContainer" style="padding: 50px">
@@ -103,7 +99,7 @@
 	
 	
 	     <div class="app-group">
-				<label for="propertyDescription" style= "display: inline-block; width:160px; text-align: right">Property Description: </label>
+				<label for="propertyDescription" style= "display: inline-block; width:163px; text-align: center">Property Description: </label>
 				<input type="text" id="propertyDescription" name="propertyDescription" placeHolder="Property Description..." class="app-control" required/>
 			</div>
 
@@ -178,7 +174,9 @@
 			</form>
 			
 			</div>
-			
+			<br>
+			<hr>
+			<br>
 			<div class="chartContainer">
   <h2>Median Rent in Columbus by Zipcode</h2>
   <div>

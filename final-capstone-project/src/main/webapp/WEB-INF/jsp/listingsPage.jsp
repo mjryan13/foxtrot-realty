@@ -3,7 +3,7 @@
 <%@ include file="header.jsp"%>
 
 <c:url var="sortProperties" value="/sortListings" />
-
+<br>
 <div class="sortBy">
 	<form class="sortBy" method="GET" action="${sortProperties}">
 		<label for="sortBy" style="font-size: 18px"> Sort By:</label> 

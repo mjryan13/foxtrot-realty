@@ -27,6 +27,10 @@
 		</nav>
 	</header>
 	
-	<p>Thanks for your payment!!!</p>
-	
+	<div class="confirmation">
+		<p>Thanks for your payment!!!</p>
+		<br>
+		<c:url var="listingsPage" value="/listings" />
+		<a href="${homePage}" style="font-size: 20px;">Return Home</a>
+	</div>
 	<%@ include file="footer.jsp"%>
