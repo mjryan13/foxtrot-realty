@@ -121,20 +121,6 @@ function initMap() {
     });
   }
 
-
-/* function initMap() {
-	var myLatLng = {lat: 39.9612, lng: -82.9988};
-	  var map = new google.maps.Map(document.getElementById('map'), {
-	    zoom: 10,
-	    center: myLatLng
-	  });
-
-	  var marker = new google.maps.Marker({
-	    position: myLatLng,
-	    map: map,
-	    title: 'Hello World!'
-	  });
-	} */
 </script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVOSanLpECyzPhbvZuIdFCbPwsILITf2Y&callback=initMap">

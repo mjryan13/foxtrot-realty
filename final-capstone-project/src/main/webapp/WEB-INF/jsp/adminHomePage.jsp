@@ -200,7 +200,7 @@
 
 					<div id="serviceRequest" class="pending-container">
 						<div class="property-container">
-							<h1 style="margin-left: 0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px">Service
+							<h1 style="margin-left: 0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px">Pending Service
 								Requests</h1>
 							<br>
 							<c:forEach items="${serviceRequests}" var="service">
@@ -230,7 +230,7 @@
 											<td>${service.user.emailId}</td>
 										</tr>
 									</table>
-									<c:url var="markComplete" value="/deleteServiceRequest" />
+									<c:url var="markComplete" value="/completeServiceRequest" />
 									<form class="apply" method="POST" action="${markComplete}">
 										<input type="hidden" id="description" name="description"
 											value="${service.description}" /> <input type="hidden"
@@ -241,6 +241,39 @@
 											style="background-color: green; color: white; border-radius: 5px; height: 2em">Mark
 											Complete</button>
 									</form>
+								</div>
+
+							</c:forEach>
+							<h1 style="margin-left: 0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px">Completed Service
+								Requests</h1>
+							<br>
+							<c:forEach items="${completedServiceRequests}" var="service">
+								<div class="admin-options">
+									<table>
+										<br>
+
+										<br>
+										<tr>
+											<td>Service Description:</td>
+											<td>${service.description}</td>
+										</tr>
+										<tr>
+											<td>Property Name:</td>
+											<td>${service.property.propertyName}</td>
+										</tr>
+										<tr>
+											<td>Tenant Name:</td>
+											<td>${service.user.firstName}${service.user.lastName}</td>
+										</tr>
+										<tr>
+											<td>Tenant Phone Number:</td>
+											<td>${service.user.phoneNumber}</td>
+										</tr>
+										<tr>
+											<td>Tenant Email:</td>
+											<td>${service.user.emailId}</td>
+										</tr>
+									</table>
 								</div>
 
 							</c:forEach>

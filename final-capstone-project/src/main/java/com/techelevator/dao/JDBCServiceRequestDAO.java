@@ -35,12 +35,26 @@ public class JDBCServiceRequestDAO implements ServiceRequestDAO {
 	}
 
 	@Override
-	public List<ServiceRequest> showAllServiceRequests() {
+	public List<ServiceRequest> showAllPendingServiceRequests() {
 		// TODO Auto-generated method stub
 		List<ServiceRequest> allServiceRequests = new ArrayList<>();
-		String sqlSelectAllServiceRequests = "SELECT property.property_name, service_request.property_id, service_request.description, service_request.request_status, users.first_name, users.last_name, users.email, users.phone_number, service_request.user_id from service_request\n"
+		String sqlSelectAllServiceRequests = "SELECT property.property_name, service_request.property_id, service_request.description, service_request.request_status, users.first_name, users.last_name, users.email, users.phone_number, service_request.user_id FROM service_request\n"
 				+ "JOIN property ON property.property_id = service_request.property_id\n"
-				+ "JOIN users ON users.user_id = service_request.user_id";
+				+ "JOIN users ON users.user_id = service_request.user_id WHERE service_request.request_status='Pending'";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllServiceRequests);
+		while (results.next()) {
+			allServiceRequests.add(mapRowToServiceRequest(results));
+		}
+		return allServiceRequests;
+	}
+	
+	@Override
+	public List<ServiceRequest> showAllCompletedServiceRequests() {
+		// TODO Auto-generated method stub
+		List<ServiceRequest> allServiceRequests = new ArrayList<>();
+		String sqlSelectAllServiceRequests = "SELECT property.property_name, service_request.property_id, service_request.description, service_request.request_status, users.first_name, users.last_name, users.email, users.phone_number, service_request.user_id FROM service_request\n"
+				+ "JOIN property ON property.property_id = service_request.property_id\n"
+				+ "JOIN users ON users.user_id = service_request.user_id WHERE service_request.request_status='Completed'";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllServiceRequests);
 		while (results.next()) {
 			allServiceRequests.add(mapRowToServiceRequest(results));
@@ -49,12 +63,9 @@ public class JDBCServiceRequestDAO implements ServiceRequestDAO {
 	}
 
 	@Override
-	public void deleteServiceRequest(ServiceRequest request) {
+	public void completeServiceRequest(ServiceRequest request) {
 		// TODO Auto-generated method stub
-		String sqlDeleteServiceRequest = "DELETE FROM service_request WHERE property_id=? AND user_id=? AND description=?";
-		System.out.println("request.getDescription()" + request.getDescription());
-		System.out.println("request.getDescription()" + request.getPropertyId());
-		System.out.println("request.getDescription()" + request.getUserId());
+		String sqlDeleteServiceRequest = "UPDATE service_request SET request_status = 'Completed' WHERE property_id=? AND user_id=? AND description=?";
 		jdbcTemplate.update(sqlDeleteServiceRequest, request.getPropertyId(), request.getUserId(),
 				request.getDescription());
 
@@ -78,5 +89,7 @@ public class JDBCServiceRequestDAO implements ServiceRequestDAO {
 		return request;
 
 	}
+
+	
 
 }

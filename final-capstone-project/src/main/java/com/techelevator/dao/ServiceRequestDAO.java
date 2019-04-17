@@ -8,9 +8,11 @@ public interface ServiceRequestDAO {
 	
 	void createServiceRequest(ServiceRequest request);
 	
-	List<ServiceRequest> showAllServiceRequests();
+	List<ServiceRequest> showAllPendingServiceRequests();
 	
-	void deleteServiceRequest(ServiceRequest request);
+	List<ServiceRequest> showAllCompletedServiceRequests();
+	
+	void completeServiceRequest(ServiceRequest request);
 	
 
 }

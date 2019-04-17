@@ -51,8 +51,11 @@ public class AdminController {
 		List<Rent> rentsList = rentDao.getAllRents();
 		map.addAttribute("rents", rentsList);
 			
-		List<ServiceRequest>  serviceRequestsList = serviceRequestDao.showAllServiceRequests();
+		List<ServiceRequest>  serviceRequestsList = serviceRequestDao.showAllPendingServiceRequests();
 		map.addAttribute("serviceRequests", serviceRequestsList );
+		
+		List<ServiceRequest>  completeServiceRequestsList = serviceRequestDao.showAllCompletedServiceRequests();
+		map.addAttribute("completedServiceRequests", completeServiceRequestsList );
 				
 		return "adminHomePage";
 	}
@@ -63,9 +66,9 @@ public class AdminController {
 		return "redirect:/admin";
 	}
 	
-	@RequestMapping(path = "/deleteServiceRequest", method = RequestMethod.POST)
-	public String deleteServiceRequest(ModelMap map, ServiceRequest request) {
-		serviceRequestDao.deleteServiceRequest(request);
+	@RequestMapping(path = "/completeServiceRequest", method = RequestMethod.POST)
+	public String completeServiceRequest(ModelMap map, ServiceRequest request) {
+		serviceRequestDao.completeServiceRequest(request);
 		return "redirect:/admin";
 	}
 	
