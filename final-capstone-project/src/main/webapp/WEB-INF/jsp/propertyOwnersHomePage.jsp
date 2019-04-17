@@ -180,9 +180,13 @@
 			</div>
 			
 			<div class="chartContainer">
-  <h2>Median Rent by Zipcode</h2>
+  <h2>Median Rent in Columbus by Zipcode</h2>
   <div>
     <canvas id="myChart"></canvas>
+  </div>
+  <h2>Columbus, OH Apartment Rent Ranges</h2>
+  <div>
+    <canvas id="doughnut-chart" width="800" height="450"></canvas>
   </div>
 </div>
 			
@@ -247,6 +251,27 @@
 		function float2dollar(value){
 		    return "U$ "+(value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 		} 
+		</script>
+		<script>
+		new Chart(document.getElementById("doughnut-chart"), {
+		    type: 'doughnut',
+		    data: {
+		      labels: ["<$500", "$501-$700", "$701-$1,000", "$1,001-$1,500", "$1,501-$2,000", ">$2,000"],
+		      datasets: [
+		        {
+		          label: "Population (millions)",
+		          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#7FFF00"],
+		          data: [2,26,44,22,4,1]
+		        }
+		      ]
+		    },
+		    options: {
+		      title: {
+		        display: true,
+		        text: 'Columbus, OH Apartment Rent Ranges (in %)'
+		      }
+		    }
+		});
 		</script>
 		
 		
