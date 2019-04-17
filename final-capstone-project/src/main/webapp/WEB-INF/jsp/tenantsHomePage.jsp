@@ -70,10 +70,10 @@
 				<form action="${tenantsHomeUrl}" method="POST">
 				
 				<label for="creditCardNumber">Name On Card:</label>
-				<input type="text"  name="nameOnCard" placeHolder= "name-on-card" style="margin-left: 5px" /><br /> 
+				<input type="text"  name="nameOnCard" placeHolder= "name-on-card" style="margin-left: 5px" required /><br /> 
 
 					<label for="creditCardNumber" style= "display: inline-block; width:160px; text-align: center;">Credit Card Number:</label>
-					 <input type="text"  name="creditCardNumber" pattern="[0-9]{13,16}" placeHolder= "1234123412341234" style="margin-left: 0px" /><br /> 
+					 <input type="text"  name="creditCardNumber" pattern="[0-9]{13,16}" placeHolder= "1234123412341234" style="margin-left: 0px" required/><br /> 
 						<label for="expiryDate" >Expiry Date: </label> 
 						<!-- <input type="text" name="expiryDate" style="margin-left: 5px" /><br>  -->
 						<select>
@@ -100,7 +100,7 @@
                     
                 </select><br/>
 						<label for="CVV">CVV: </label> 
-						<input type="text" name="CVV" pattern="[0-9]{3,4}" placeHolder="3-digit code" style="margin-left: 5px" /><br> 
+						<input type="text" name="CVV" pattern="[0-9]{3,4}" placeHolder="3-digit code" style="margin-left: 5px" required/><br> 
 						<br>
 						<img alt="flat fee mls" title="flat fee mls" src="http://www.free-credit-card-logos.com/paypal_mc_visa_amex_disc_210x80.gif" width="210" height="80" border="0" /><br/>
 						<input type="submit" value="Submit Payment" style="background-color:green; color: white; border-radius: 4px; height: 3em; padding: 0px"/><br/>
