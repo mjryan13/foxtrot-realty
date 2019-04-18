@@ -71,7 +71,7 @@
 			<br>
 			<br>
 			<c:url var="register" value="/users/new" />
-			<a href="${register}" style="font-size: 13px">Create Login</a>
+			<a href="${register}" style="font-size: 13px">Register</a>
 			
 			</div>
 			

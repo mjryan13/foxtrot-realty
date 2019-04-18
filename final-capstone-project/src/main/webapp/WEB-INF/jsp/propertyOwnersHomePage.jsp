@@ -182,6 +182,9 @@
   <div>
     <canvas id="myChart"></canvas>
   </div>
+  <br>
+			<hr>
+			<br>
   <h2>Columbus, OH Apartment Rent Ranges</h2>
   <div>
     <canvas id="doughnut-chart" width="800" height="450"></canvas>
