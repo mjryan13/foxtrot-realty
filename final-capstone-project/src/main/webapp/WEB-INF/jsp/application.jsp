@@ -68,31 +68,31 @@
 	<form class="apply" method="POST" action="${confirmationPage}">
 	  
 		<div class="app-group">
-				<label for="firstName" style="margin-right:15px">First Name: </label>
+				<label for="firstName" style="margin-right:15px">First Name: <span style = "color:red;">*</span></label>
 				<input type="text" id="firstName" name="firstName" placeHolder="First Name..." class="app-control" required/>
 			</div>
 			<div class="app-group">
-				<label for="lastName" style="margin-right:15px">Last Name: </label>
+				<label for="lastName" style="margin-right:15px">Last Name: <span style = "color:red;">*</span></label>
 				<input type="text" id="lastName" name="lastName" placeHolder="Last Name..." class="app-control" required/>
 			</div>
 			<div class="app-group">
-				<label for=ssn style="margin-right:15px">Social Security: </label>
+				<label for=ssn style="margin-right:15px">Social Security: <span style = "color:red;">*</span></label>
 				<input type="text" pattern="^\d{3}\d{2}\d{4}$" id="ssn" name="ssn" placeHolder="Social Security" class="app-control" required />
 			</div>
 			<div class="app-group">
-				<label for="birthDate" style="margin-right:15px">BirthDay: </label>
+				<label for="birthDate" style="margin-right:15px">BirthDay: <span style = "color:red;">*</span></label>
 				<input type="date" id="birthDate" name="birthDate" placeHolder="mm/dd/yyyy" class="app-control" required/>
 			</div>
 			<div class="app-group">
-				<label for="phoneNumber" style="margin-right:15px">Phone Number: </label>
+				<label for="phoneNumber" style="margin-right:15px">Phone Number: <span style = "color:red;">*</span></label>
 				<input type="tel" id="phoneNumber"  name="phoneNumber" placeHolder="Phone Number" class="app-control" required/>
 			</div>
 			<div class="app-group">
-				<label for="email" style="margin-right:15px">Email: </label>
+				<label for="email" style="margin-right:15px">Email: <span style = "color:red;">*</span></label>
 				<input type="email" id="email" name="email" placeHolder="Email" class="app-control" required/>
 			</div>
 			<div class="app-group">
-				<label for="addressLine1" style="margin-right:15px">Address Line1: </label>
+				<label for="addressLine1" style="margin-right:15px">Address Line1: <span style = "color:red;">*</span></label>
 				<input type="text" id="addressLine1" name="addressLine1" placeHolder="Current Address Line1" class="app-control" required/>
 			</div>
 			<div class="app-group">
@@ -100,23 +100,23 @@
 				<input type="text" id="addressLine2" name="addressLine2" placeHolder="Current Address Line1" class="app-control"/>
 			</div>
 			<div class="app-group">
-				<label for="city" style="margin-right:15px">City: </label>
+				<label for="city" style="margin-right:15px">City: <span style = "color:red;">*</span></label>
 				<input type="text" id="city" name="city" placeHolder="City" class="app-control" required/>
 			</div>
 			<div class="app-group">
-				<label for="state" style="margin-right:15px">State: </label>
+				<label for="state" style="margin-right:15px">State: <span style = "color:red;">*</span></label>
 				<input type="text" id="state" name="state" placeHolder="State" class="app-control" required/>
 			</div>
 			<div class="app-group">
-				<label for="zipcode" style="margin-right:15px">Zipcode: </label>
+				<label for="zipcode" style="margin-right:15px">Zipcode: <span style = "color:red;">*</span></label>
 				<input type="text" pattern="[0-9]{5}"id="zipcode" name="zipcode" placeHolder="Zipcode" class="app-control" required/>
 			</div>
 			<div class="app-group">
-				<label for="currentEmployer" style="margin-right:15px">Current Employer: </label>
+				<label for="currentEmployer" style="margin-right:15px">Current Employer: <span style = "color:red;">*</span></label>
 				<input type="text" id="currentEmployer" name="currentEmployer" placeHolder="Enter current employer" class="app-control" required/>
 			</div>
 			<div class="app-group">
-				<label for="annualIncome" style="margin-right:15px">Annual Income: </label>
+				<label for="annualIncome" style="margin-right:15px">Annual Income: <span style = "color:red;">*</span></label>
 				<input type="number" id="annualIncome" name="annualIncome" placeHolder="$" class="app-control" required/>
 			</div>
 			<br>

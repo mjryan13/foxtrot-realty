@@ -54,11 +54,11 @@
 			<div class="rentContainer">
 				<h1 style="margin-left: 0px; text-align: center">Pay Rent</h1>
 				<br>
-				<span style= "display: inline-block; width:400px; text-align: center;" >
+				<span style= "display: inline-block; width:400px; text-align: center; color:#00adee" >
 				<c:out value="Community: ${property.propertyName}"/>
 				</span><br/>
 				
-				<span style= "display: inline-block; width:320px; text-align: center;" >
+				<span style= "display: inline-block; width:320px; text-align: center; color:red" >
 				<fmt:formatNumber var="rent" value="${property.rent}"
 					type="currency" />
 				<c:out value="Rent: ${rent}"/>
@@ -69,12 +69,12 @@
 
 				<form action="${tenantsHomeUrl}" method="POST">
 				
-				<label for="creditCardNumber">Name On Card:</label>
+				<label for="creditCardNumber">Name On Card: <span style = "color:red;">*</span></label>
 				<input type="text"  name="nameOnCard" placeHolder= "name-on-card" style="margin-left: 5px" required /><br /> 
 
-					<label for="creditCardNumber" style= "display: inline-block; width:160px; text-align: center;">Credit Card Number:</label>
+					<label for="creditCardNumber" style= "display: inline-block; width:170px; text-align: center;">Credit Card Number: <span style = "color:red;">*</span></label>
 					 <input type="text"  name="creditCardNumber" pattern="[0-9]{13,16}" placeHolder= "1234123412341234" style="margin-left: 0px" required/><br /> 
-						<label for="expiryDate" >Expiry Date: </label> 
+						<label for="expiryDate" >Expiry Date: <span style = "color:red;">*</span></label> 
 						<!-- <input type="text" name="expiryDate" style="margin-left: 5px" /><br>  -->
 						<select>
                     <option value="01">January</option>
@@ -99,7 +99,7 @@
                     <option value="25"> 2025</option>
                     
                 </select><br/>
-						<label for="CVV">CVV: </label> 
+						<label for="CVV">CVV: <span style = "color:red;">*</span></label> 
 						<input type="text" name="CVV" pattern="[0-9]{3,4}" placeHolder="3-digit code" style="margin-left: 5px" required/><br> 
 						<br>
 						<img alt="flat fee mls" title="flat fee mls" src="http://www.free-credit-card-logos.com/paypal_mc_visa_amex_disc_210x80.gif" width="210" height="80" border="0" /><br/>
@@ -121,7 +121,7 @@
 
 					
 
-					<label for="description" style="width: 160px; ">Service Description:</label>   
+					<label for="description" style="width: 170px; ">Service Description: <span style = "color:red;">*</span></label>   
  
 
 					<br>

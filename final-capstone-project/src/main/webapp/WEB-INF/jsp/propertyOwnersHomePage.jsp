@@ -85,12 +85,12 @@
 	<form class="apply" method="POST" action="${addProperty}">
 	  <h2  style="margin-left:0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px">Add Property</h2>
 	<div class="app-group">
-				<label for="propertyName" style= "display: inline-block; width:160px; text-align: right">Property Name: </label>
+				<label for="propertyName" style= "display: inline-block; width:160px; text-align: right">Property Name: <span style = "color:red;">*</span></label>
 				<input type="text" id="propertyName" name="propertyName" placeHolder="Property Name..." class="app-control" required/>
 			</div>
 			
 			<div class="app-group">
-				<label for="propertyType" style= "display: inline-block; width:160px; text-align: right">Property Type: </label>
+				<label for="propertyType" style= "display: inline-block; width:160px; text-align: right">Property Type: <span style = "color:red;">*</span></label>
 				<select name="propertyType" required>
 				<option value="Apartment">Apartment</option>
 				<option value="Condo">Condo</option>
@@ -99,17 +99,17 @@
 	
 	
 	     <div class="app-group">
-				<label for="propertyDescription" style= "display: inline-block; width:163px; text-align: center">Property Description: </label>
+				<label for="propertyDescription" style= "display: inline-block; width:170px; text-align: center">Property Description: <span style = "color:red;">*</span></label>
 				<input type="text" id="propertyDescription" name="propertyDescription" placeHolder="Property Description..." class="app-control" required/>
 			</div>
 
           <div class="app-group">
-				<label for="squareFootage" style= "display: inline-block; width:160px; text-align: right">Square  Feet: </label>
+				<label for="squareFootage" style= "display: inline-block; width:160px; text-align: right">Square  Feet: <span style = "color:red;">*</span></label>
 				<input type="number" id="squareFootage" name="squareFootage" placeHolder="Square  Feet..." class="app-control" required/>
 			</div>
 			
 			 <div class="app-group">
-				<label for="numberOfBedrooms" style= "display: inline-block; width:200px; text-align: right">Number Of Bedrooms: </label>
+				<label for="numberOfBedrooms" style= "display: inline-block; width:200px; text-align: right">Number Of Bedrooms: <span style = "color:red;">*</span></label>
 				<select name="numberOfBedrooms" required>
 				<option value="0">Studio</option>
 				<option value="1">1</option>
@@ -119,7 +119,7 @@
 			</div>
 			
 			 <div class="app-group">
-				<label for="numberOfBathrooms" style= "display: inline-block; width:200px; text-align: right">Number Of Bathrooms: </label>
+				<label for="numberOfBathrooms" style= "display: inline-block; width:200px; text-align: right">Number Of Bathrooms: <span style = "color:red;">*</span></label>
 				<select name="numberOfBathrooms" required>
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -130,13 +130,13 @@
 
 
      <div class="app-group">
-				<label for="rent" style= "display: inline-block; width:100px; text-align: right">Rent: </label>
+				<label for="rent" style= "display: inline-block; width:100px; text-align: right">Rent: <span style = "color:red;">*</span></label>
 				<input type="number" id="rent" name="rent" placeHolder="rent..." class="app-control" required/>
 			</div>
 			
 			
 			<div class="app-group">
-				<label for="streetAddress1" style= "display: inline-block; width:160px; text-align: right">Address Line 1: </label>
+				<label for="streetAddress1" style= "display: inline-block; width:160px; text-align: right">Address Line 1: <span style = "color:red;">*</span></label>
 				<input type="text" id="streetAddress1" name="streetAddress1" placeHolder="Address Line 1..." class="app-control" required/>
 			</div>
 			
@@ -146,23 +146,23 @@
 			</div>
 			
 			<div class="app-group">
-				<label for="city" style= "display: inline-block; width:160px; text-align: right">City: </label>
+				<label for="city" style= "display: inline-block; width:160px; text-align: right">City: <span style = "color:red;">*</span></label>
 				<input type="text" id="city" name="city" placeHolder="city..." class="app-control" required/>
 			</div>
 			
 			<div class="app-group">
-				<label for="state" style= "display: inline-block; width:160px; text-align: right">State: </label>
+				<label for="state" style= "display: inline-block; width:160px; text-align: right">State: <span style = "color:red;">*</span></label>
 				<input type="text" id="state" name="state" placeHolder="State..." class="app-control" required/>
 			</div>
 			
 			<div class="app-group">
-				<label for="zipcode" style= "display: inline-block; width:160px; text-align: right">Zipcode: </label>
+				<label for="zipcode" style= "display: inline-block; width:160px; text-align: right">Zipcode: <span style = "color:red;">*</span></label>
 				<input type="number" id="zipcode" name="zipcode" placeHolder="Zipcode..." class="app-control" required/>
 			</div>
 			
 			
 			<div class="app-group">
-				<label for="offerAvailable" style= "display: inline-block; width:160px; text-align: right">Offer Available: </label>
+				<label for="offerAvailable" style= "display: inline-block; width:160px; text-align: right">Offer Available: <span style = "color:red;">*</span></label>
 				<select name="offerAvailable" required>
 				<option value="Yes">Yes</option>
 				<option value="No">No</option>
