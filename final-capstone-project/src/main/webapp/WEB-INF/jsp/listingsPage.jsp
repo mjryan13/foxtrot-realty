@@ -29,18 +29,26 @@
 			</div>
 
 			<div class="listingInfo">
+			<c:choose>
+	 <c:when test="${listing.offerAvailable == true }">
+	  <p style="margin-top: 2px; margin-bottom: 2px; color:red"> Special offer!!!</p>
+		</c:when>
+		<c:otherwise>
+		</c:otherwise>
+		
+		</c:choose>	
 				<div class="address1">
 					<c:out value="${listing.streetAddress1}" />
 					<br />
 				</div>
 	
-				<div class="city">
+				<div class="city" style="margin-bottom: 3px">
 					<c:out value="${listing.city}," />
 					<c:out value="${listing.state}," />
 					<c:out value="${listing.zipcode}" />
 					<br />
 				</div>
-				<br>
+				
 				<div class="bedrooms">
 					<c:out value="No. of Bedrooms:  ${listing.numberOfBedrooms}" />
 				</div>

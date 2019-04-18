@@ -54,11 +54,11 @@
 			<div class="rentContainer">
 				<h1 style="margin-left: 0px; text-align: center">Pay Rent</h1>
 				<br>
-				<span style= "display: inline-block; width:400px; text-align: center;" >
+				<span style= "display: inline-block; width:400px; text-align: center; color:#00adee" >
 				<c:out value="Community: ${property.propertyName}"/>
 				</span><br/>
 				
-				<span style= "display: inline-block; width:320px; text-align: center;" >
+				<span style= "display: inline-block; width:320px; text-align: center; color:red" >
 				<fmt:formatNumber var="rent" value="${property.rent}"
 					type="currency" />
 				<c:out value="Rent: ${rent}"/>
