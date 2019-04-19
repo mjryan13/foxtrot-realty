@@ -53,7 +53,7 @@
 		<div class="owner-container">
 				<div style="border-style: solid; border-width: 1px; border-radius: 5px; padding: 15px">
 			<div id="myProperties" class="tabcontent">
-			<h2 style="margin-left:0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px"> Properties </h2>
+			<h2 style="margin-left:0px; text-align: center; color: #8faab3; -webkit-text-stroke: 1px black; font-size: 40px"> My Properties </h2>
 			
 			<c:forEach items="${properties}" var="property">
 				<table style= "border-style: solid; border-width: 1px; border-radius: 5px; padding: 10px; margin: 10px; width: 100%">

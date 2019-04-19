@@ -48,7 +48,7 @@
 
 	<div id="main-content">
 	
-	<h1 style="margin-left:0px; text-align: center; font-style: Italic"> You are one click away from your dream home !!! </h1><br>
+	<h1 style="margin-left:0px; text-align: center; font-style: Italic"> "You are one click away from your dream home !!!" - Steve </h1><br>
 	
 
 <div class="application">
